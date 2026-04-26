@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free CMA &amp; Property Tax Protest | Axial Realty LLC — Frisco, McKinney, DFW</title>
+  <meta name="description" content="Request a free Comparative Market Analysis (CMA) from David Tung at Axial Realty LLC. We help DFW homeowners understand their home's value and protest unfair property tax appraisals.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://axialrealty.com/cma.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:        #253151;
+      --navy-mid:    #1b2540;
+      --navy-dark:   #141c32;
+      --gold:        #c9a96e;
+      --gold-light:  #dfc28d;
+      --cream:       #f8f5ef;
+      --cream-2:     #fdfcf9;
+      --warm-gray:   #e8e3d9;
+      --text:        #1e1b14;
+      --text-muted:  #6b6455;
+      --border:      #ddd8cc;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Inter', Arial, sans-serif;
+      --content:      1200px;
+      --radius-sm:   0.375rem;
+      --radius-md:   0.75rem;
+      --radius-lg:   1rem;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(20,28,50,.08);
+      --shadow-md: 0 8px 24px rgba(20,28,50,.1);
+      --shadow-lg: 0 20px 60px rgba(20,28,50,.14);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden;  font-family: var(--font-body); background: var(--cream); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 2.5rem), var(--content)); margin: 0 auto; }
+
+    /* ── NAV ── */
+    header { position: sticky; top: 0; z-index: 100; background: rgba(253,252,249,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 1.5rem; }
+    .nav-logo { display: flex; align-items: center; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
+    .nav-links a { font-size: .68rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); transition: color .15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .btn-gold {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 44px; padding: 0 1.5rem;
+      background: var(--gold); color: var(--navy-dark);
+      border-radius: var(--radius-full); font-size: .8rem; font-weight: 700;
+      letter-spacing: .05em; text-transform: uppercase;
+      transition: background .18s, transform .12s;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── HERO BANNER ── */
+    .cma-hero {
+      background: var(--navy-dark);
+      padding: 5rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cma-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cma-hero .eyebrow {
+      font-family: var(--font-body);
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .cma-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 600; color: #fff;
+      line-height: 1.15; margin-bottom: 1.25rem;
+    }
+    .cma-hero h1 em { font-style: italic; color: var(--gold); }
+    .cma-hero p {
+      color: rgba(255,255,255,.7); font-size: clamp(.95rem, 1.5vw, 1.1rem);
+      max-width: 52ch; margin: 0 auto 2rem;
+    }
+    .deadline-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(201,169,110,.15); border: 1px solid rgba(201,169,110,.35);
+      color: var(--gold); border-radius: var(--radius-full);
+      font-size: .78rem; font-weight: 600; letter-spacing: .04em;
+      padding: .4rem 1rem; margin-bottom: 2rem;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .cma-body { padding: 4rem 0 5rem; }
+    .cma-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .section-eyebrow {
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: .6rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 600; color: var(--navy-dark);
+      line-height: 1.2; margin-bottom: .75rem;
+    }
+    .gold-rule { width: 48px; height: 2px; background: var(--gold); margin: 1rem 0 1.5rem; border-radius: 2px; }
+    .section-desc { color: var(--text-muted); font-size: .95rem; max-width: 54ch; margin-bottom: 2.5rem; line-height: 1.7; }
+
+    .steps { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem; }
+    .step {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1.4rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .step-num {
+      flex-shrink: 0; width: 36px; height: 36px;
+      border-radius: 50%; background: var(--navy-dark);
+      color: var(--gold); font-size: .8rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      letter-spacing: .04em;
+    }
+    .step h3 { font-size: .95rem; font-weight: 600; color: var(--navy-dark); margin-bottom: .25rem; }
+    .step p { font-size: .875rem; color: var(--text-muted); line-height: 1.6; }
+
+    .info-box {
+      background: rgba(201,169,110,.08); border: 1px solid rgba(201,169,110,.25);
+      border-radius: var(--radius-lg); padding: 1.4rem 1.5rem;
+    }
+    .info-box h4 { font-size: .9rem; font-weight: 700; color: var(--navy-dark); margin-bottom: .5rem; }
+    .info-box p { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 1.25rem; padding: 2rem 2rem 2.25rem;
+      box-shadow: var(--shadow-md);
+      position: sticky; top: 88px;
+    }
+    .form-card-header { margin-bottom: 1.5rem; }
+    .form-card-header .tag {
+      display: inline-block;
+      background: var(--gold); color: var(--navy-dark);
+      font-size: .68rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: .3rem .75rem;
+      border-radius: var(--radius-full); margin-bottom: .75rem;
+    }
+    .form-card-header h2 {
+      font-family: var(--font-display);
+      font-size: 1.65rem; font-weight: 600; color: var(--navy-dark);
+      line-height: 1.2; margin-bottom: .5rem;
+    }
+    .form-card-header p { font-size: .84rem; color: var(--text-muted); line-height: 1.55; }
+
+    .form-divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
+
+    .form-field { margin-bottom: 1rem; }
+    .form-field label {
+      display: block; font-size: .78rem; font-weight: 600;
+      color: var(--navy); letter-spacing: .03em; margin-bottom: .35rem;
+    }
+    .form-field label .req { color: var(--gold); margin-left: 2px; }
+    .form-field input, .form-field textarea {
+      width: 100%; padding: .7rem .9rem;
+      border: 1.5px solid var(--border); border-radius: var(--radius-md);
+      font-family: var(--font-body); font-size: .88rem; color: var(--text);
+      background: var(--cream); transition: border-color .15s;
+      outline: none;
+    }
+    .form-field input:focus, .form-field textarea:focus { border-color: var(--gold); background: white; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #b0a896; }
+    .form-field textarea { resize: vertical; min-height: 80px; }
+
+    .form-submit {
+      width: 100%; margin-top: 1.25rem; min-height: 52px;
+      background: var(--gold); color: var(--navy-dark);
+      border: none; border-radius: var(--radius-full);
+      font-family: var(--font-body); font-size: .88rem; font-weight: 700;
+      letter-spacing: .05em; text-transform: uppercase;
+      cursor: pointer; transition: background .18s, transform .12s;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .form-note {
+      text-align: center; font-size: .75rem; color: var(--text-muted);
+      margin-top: .85rem; line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy-dark); color: rgba(255,255,255,.55); padding: 2.5rem 0 1.5rem; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 1.25rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .78rem; }
+    .footer-links a { color: rgba(255,255,255,.45); transition: color .15s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: .72rem; }
+    .equal-housing { display: flex; align-items: center; gap: .45rem; color: rgba(255,255,255,.45); font-size: .72rem; }
+
+    /* ── SUCCESS STATE ── */
+    .form-success {
+      display: none; text-align: center; padding: 2rem 1rem;
+    }
+    .form-success .check {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(201,169,110,.15); border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+    .form-success h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy-dark); margin-bottom: .5rem; }
+    .form-success p { font-size: .875rem; color: var(--text-muted); }
+
+    @media (max-width: 860px) {
+      .cma-grid { grid-template-columns: 1fr; }
+      .form-card { position: static; }
+      .nav-links { display: none; }
+    }
+  
+    /* ── MOBILE NAV ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      z-index: 200;
+    }
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--navy, #253151);
+      border-radius: 2px;
+      transition: transform .25s, opacity .25s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      top: 0;
+      z-index: 150;
+      background: rgba(27,37,64,.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.75rem;
+      padding: 2rem;
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: .04em;
+      transition: color .15s;
+    }
+    .mobile-drawer a:hover { color: var(--gold, #c9a96e); }
+    .mobile-drawer a.gold { color: var(--gold, #c9a96e); }
+    .mobile-drawer .drawer-cta {
+      margin-top: .5rem;
+      background: var(--gold, #c9a96e);
+      color: #fff !important;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: .82rem !important;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .75rem 2rem;
+      border-radius: 9999px;
+    }
+    .drawer-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,.6);
+      font-size: 1.5rem;
+      line-height: 1;
+      padding: .5rem;
+    }
+
+    @media (max-width: 960px) { .hamburger { display: flex; } }
+  
+    /* ── MOBILE NAV OVERFLOW FIX ── */
+    @media (max-width: 960px) {
+      /* Shrink logo so it takes less horizontal space */
+      .logo svg, .nav-logo svg { height: 44px !important; }
+      /* Tighten nav-inner */
+      .nav-inner { gap: .4rem !important; padding-left: .75rem !important; padding-right: .75rem !important; }
+      /* Hide desktop nav links & Book a Consultation CTA */
+      nav, .nav-cta, .btn-gold.nav-cta { display: none !important; }
+      /* Hide Book a Consultation on inner pages (news/cma) */
+      header .btn-gold { display: none !important; }
+      /* Tenant Login — icon only, tighter padding */
+      .tenant-btn-text { display: none !important; }
+      .tenant-btn { padding: .4rem .5rem !important; gap: 0 !important; }
+      /* Hamburger */
+      .hamburger { flex-shrink: 0; }
+    }
+
+  
+  .lang-btn.lang-active { background:var(--navy) !important; color:var(--cream) !important; border-color:var(--navy) !important; }
+  .lang-btn:hover:not(.lang-active) { border-color:var(--gold) !important; color:var(--gold) !important; }
+  /* Hide Google Translate top bar */
+  .goog-te-banner-frame, .skiptranslate { display:none !important; }
+  body { top: 0 !important; }
+  .goog-te-gadget { display:none !important; }
+
+
+    @media (max-width: 960px) {
+      .lang-btn { display: none !important; }
+      .tenant-btn { font-size: .68rem !important; padding: .35rem .65rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="drawer-close" onclick="document.getElementById('mobile-drawer').classList.remove('open');document.getElementById('hamburger-btn').classList.remove('open');document.body.style.overflow='';" aria-label="Close menu">&#10005;</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#about">About</a>
+  <a href="neighborhoods.html" class="gold">Neighborhoods</a>
+  <a href="news.html" class="gold">Market News</a>
+  <a href="cma.html" class="gold">Free CMA</a>
+  <a href="apply.html" class="gold">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a>
+  <a href="vendors.html" class="gold">Vendors</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="tenant-portal.html">Tenant Login</a>
+  <a href="index.html#contact" class="drawer-cta">Book a Consultation</a>
+</div>
+
+  <header>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Axial Realty LLC home" style="display:flex;align-items:center;">
+        <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Axial Realty LLC" role="img" style="height:60px;width:auto;">
+          <!-- A shape -->
+          <path d="M14 46 L24 18 L34 46" stroke="#253151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M17.5 37 L30.5 37" stroke="#253151" stroke-width="2" stroke-linecap="round"/>
+          <!-- R overlaid — stem -->
+          <line x1="27" y1="18" x2="27" y2="46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- R bowl -->
+          <path d="M27 18 Q38 18 38 26 Q38 34 27 34" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- R leg -->
+          <path d="M27 34 L38 46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- Divider line -->
+          <line x1="52" y1="16" x2="52" y2="44" stroke="#c9a96e" stroke-width="1" opacity="0.4"/>
+          <!-- AXIAL text -->
+          <text x="62" y="35" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#253151">AXIAL</text>
+          <!-- REALTY text -->
+          <text x="63" y="48" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="5" fill="#c9a96e">REALTY</text>
+          <!-- thin rule under AXIAL -->
+          <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="neighborhoods.html">Neighborhoods</a></li>
+        <li><a href="news.html" style="color:var(--gold);font-weight:700;">Market News</a></li>
+        <li><a href="cma.html" class="active" style="color:var(--navy);">Free CMA</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="apply.html" style="color:var(--gold);font-weight:700;">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a></li>
+      <li><a href="vendors.html" style="color:var(--gold);font-weight:700;">Vendors</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn-gold">Book a Consultation</a>
+      <button id="hamburger-btn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="cma-hero">
+      <div class="container">
+        <div class="deadline-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Property Tax Protest Deadlines Are Coming — Act Now
+        </div>
+        <div class="eyebrow">Complimentary Service</div>
+        <h1>Free CMA Report for<br><em>Property Tax Protest</em></h1>
+        <p>Received a higher-than-expected appraisal notice from your county? Request a free Comparative Market Analysis and get the data you need to protest effectively.</p>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <section class="cma-body">
+      <div class="container">
+        <div class="cma-grid">
+
+          <!-- LEFT: Explanation -->
+          <div>
+            <div class="section-eyebrow">How It Works</div>
+            <h2 class="section-title">We Pull the Comps.<br>You File the Protest.</h2>
+            <div class="gold-rule"></div>
+            <p class="section-desc">Your county appraisal district sets your home's taxable value — and they don't always get it right. A CMA gives you real sales data from comparable homes in your neighborhood to challenge an inflated appraisal and potentially lower your property tax bill.</p>
+
+            <div class="steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div>
+                  <h3>Submit Your Request</h3>
+                  <p>Fill out the form with your property address and the appraisal value shown on your notice. Takes less than 2 minutes.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div>
+                  <h3>David Pulls the Comps</h3>
+                  <p>David Tung will run a Comparative Market Analysis using recent sales data from the MLS to determine what your home is actually worth in today's market.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div>
+                  <h3>You Receive Your CMA</h3>
+                  <p>We'll send your free CMA report by email. Use it as supporting evidence when you file your protest with your county appraisal district.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div>
+                  <h3>File Your Protest</h3>
+                  <p>Submit your protest online or by mail before your county's deadline (typically May 15 or 30 days after receiving your notice, whichever is later).</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Which counties do we cover?</h4>
+              <p>We pull comps for properties in Collin County, Denton County, Dallas County, Tarrant County, and Rockwall County — covering Frisco, Plano, Allen, McKinney, Prosper, Celina, Melissa, Anna, Lewisville, Richardson, Coppell, Flower Mound, and surrounding DFW communities.</p>
+            </div>
+          </div>
+
+          <!-- RIGHT: Form -->
+          <div>
+            <div class="form-card">
+              <div class="form-card-header">
+                <span class="tag">100% Free · No Obligation</span>
+                <h2>Request Your Free CMA</h2>
+                <p>Fill out the form below and David Tung will prepare your Comparative Market Analysis — typically within 1–2 business days.</p>
+              </div>
+              <div class="form-divider"></div>
+
+              <form id="cmaForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="09ac0000-3fab-42b0-8fad-5cb87c7df530">
+                <input type="hidden" name="subject" value="New CMA Request — Axial Realty">
+                <input type="hidden" name="from_name" value="Axial Realty Website">
+
+                <div class="form-field">
+                  <label for="name">Full Name <span class="req">*</span></label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-field">
+                  <label for="email">Email Address <span class="req">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-field">
+                  <label for="phone">Phone Number <span class="req">*</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="(469) 000-0000" required>
+                </div>
+                <div class="form-field">
+                  <label for="address">Property Address <span class="req">*</span></label>
+                  <input type="text" id="address" name="property_address" placeholder="123 Main St, Frisco, TX 75034" required>
+                </div>
+                <div class="form-field">
+                  <label for="appraisal">Appraisal Value on Your Notice <span class="req">*</span></label>
+                  <input type="text" id="appraisal" name="appraisal_value" placeholder="e.g. $485,000" required>
+                </div>
+                <div class="form-field">
+                  <label for="notes">Anything else we should know? <span style="color:var(--text-muted);font-weight:400;">(optional)</span></label>
+                  <textarea id="notes" name="notes" placeholder="Renovations, unique features, concerns about the appraisal…" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Send My CMA Request</button>
+              </form>
+
+              <div class="form-success" id="formSuccess">
+                <div class="check">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3>Request Received!</h3>
+                <p>David Tung will review your property and send your CMA report within 1–2 business days. Check your inbox at the email you provided.</p>
+              </div>
+
+              <p class="form-note">Your information is kept private and never sold. This is a complimentary service with no obligation.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:44px;width:auto;" aria-label="Axial Realty LLC" role="img">
+            <path d="M14 46 L24 18 L34 46" stroke="rgba(255,255,255,.7)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M17.5 37 L30.5 37" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="27" y1="18" x2="27" y2="46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M27 18 Q38 18 38 26 Q38 34 27 34" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M27 34 L38 46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="52" y1="16" x2="52" y2="44" stroke="#c9a96e" stroke-width="1" opacity="0.4"/>
+            <text x="62" y="35" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="rgba(255,255,255,.85)">AXIAL</text>
+            <text x="63" y="48" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="5" fill="#c9a96e">REALTY</text>
+            <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
+          </svg>
+          <p style="margin-top:.6rem;font-size:.78rem;">David Tung, Broker &amp; Owner · Frisco, TX<br>Call or Text <a href="tel:4699808298" style="color:rgba(255,255,255,.55);">(469) 980-8298</a> · <a href="mailto:davidtung@axialrealty.com" style="color:rgba(255,255,255,.55);">davidtung@axialrealty.com</a></p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#about">About</a>
+          <a href="neighborhoods.html">Neighborhoods</a>
+          <a href="news.html">Market News</a>
+          <a href="cma.html" style="color:var(--gold);">Free CMA</a>
+          <a href="apply.html" style="color:var(--gold);">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a>
+          <a href="tenant-portal.html">Tenant Login</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+      <div style="margin-bottom:.5rem;">
+        <a href="IABS-2026.pdf" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:3px;letter-spacing:.02em;">Texas law requires all license holders to provide the Information About Brokerage Services form to prospective clients.</a>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Axial Realty LLC. All rights reserved.</span>
+        <div class="equal-housing">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100" aria-label="Equal Housing Opportunity" role="img">
+            <rect width="100" height="100" fill="none"/>
+            <polygon points="50,5 95,45 85,45 85,95 15,95 15,45 5,45" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="5"/>
+            <rect x="38" y="60" width="24" height="35" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="4"/>
+            <rect x="25" y="48" width="50" height="12" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="4"/>
+          </svg>
+          <span>Equal Housing Opportunity</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('cmaForm');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      const data = new FormData(form);
+      // Dynamically set _replyto to customer email
+      data.set('_replyto', data.get('email') || '');
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        const json = await res.json();
+        if (json.success) {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Send My CMA Request';
+          alert('Something went wrong. Please call or text (469) 980-8298 directly.');
+        }
+      } catch(err) {
+        btn.disabled = false;
+        btn.textContent = 'Send My CMA Request';
+        alert('Something went wrong. Please call or text (469) 980-8298 directly.');
+      }
+    });
+  </script>
+
+
+<script>
+  (function() {
+    var btn = document.getElementById('hamburger-btn');
+    var drawer = document.getElementById('mobile-drawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('open');
+      drawer.classList.toggle('open');
+      document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+    });
+    drawer.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        btn.classList.remove('open');
+        drawer.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
+</script>
+
+
+<!-- Google Translate -->
+<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
+<script>
+(function() {
+  // ── Google Translate Init ──────────────────────────────
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,zh-TW,zh-CN',
+      autoDisplay: false
+    }, 'google_translate_element');
+  };
+
+  // Poll until the .goog-te-combo select exists, then apply pending lang
+  var _pendingLang = null;
+  var _pollInterval = null;
+
+  function applyLang(lang) {
+    var sel = document.querySelector('.goog-te-combo');
+    if (!sel) return false;
+    if (lang === 'en') {
+      // Reset to English
+      sel.value = 'en';
+      sel.dispatchEvent(new Event('change'));
+      // Also try clicking the restore button if present
+      var restore = document.querySelector('.goog-te-menu-value span');
+      if (restore) restore.click();
+    } else {
+      sel.value = lang;
+      sel.dispatchEvent(new Event('change'));
+    }
+    return true;
+  }
+
+  window.setLang = function(lang) {
+    // Update button active states immediately
+    document.querySelectorAll('.lang-btn').forEach(function(b) {
+      b.classList.toggle('lang-active', b.dataset.lang === lang);
+    });
+    // Try to apply now
+    if (!applyLang(lang)) {
+      // Widget not ready yet — store pending and start polling
+      _pendingLang = lang;
+      if (!_pollInterval) {
+        _pollInterval = setInterval(function() {
+          if (applyLang(_pendingLang)) {
+            clearInterval(_pollInterval);
+            _pollInterval = null;
+            _pendingLang = null;
+          }
+        }, 200);
+      }
+    }
+    // Save preference
+    try { localStorage.setItem('axial_lang', lang); } catch(e) {}
+  };
+
+  // Restore saved preference after widget loads
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      try {
+        var saved = localStorage.getItem('axial_lang');
+        if (saved && saved !== 'en') {
+          window.setLang(saved);
+        }
+      } catch(e) {}
+    }, 1200);
+  });
+
+  // Load Google Translate script
+  var s = document.createElement('script');
+  s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  s.async = true;
+  document.head.appendChild(s);
+})();
+</script>
+
+</body>
+</html>

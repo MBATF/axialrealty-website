@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tenant Portal — Axial Realty LLC</title>
+  <meta name="description" content="Axial Realty tenant portal. Pay rent, submit maintenance requests, and manage your lease online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #253151;
+      --navy-dark:  #1b2540;
+      --navy-deep:  #141c32;
+      --gold:       #c9a96e;
+      --gold-light: #dfc28d;
+      --cream:      #f8f5ef;
+      --cream-2:    #fdfcf9;
+      --border:     #ddd8cc;
+      --text:       #1e1b14;
+      --text-muted: #6b6455;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Inter', Arial, sans-serif;
+    }
+
+    html, body { overflow-x: hidden; 
+      min-height: 100vh;
+      font-family: var(--font-body);
+      background: var(--cream-2);
+      color: var(--text);
+    }
+
+    /* ── Header ── */
+    .site-header {
+      background: var(--cream-2);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-link {
+      display: flex; align-items: center; gap: .75rem;
+      text-decoration: none;
+    }
+    .logo-wordmark {
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-weight: 600; letter-spacing: .18em;
+      color: var(--navy); text-transform: uppercase; line-height: 1;
+    }
+    .logo-sub {
+      font-size: .6rem; font-weight: 600; letter-spacing: .14em;
+      color: var(--gold); text-transform: uppercase; margin-top: 3px;
+    }
+    .back-link {
+      font-size: .8rem; font-weight: 600; color: var(--text-muted);
+      text-decoration: none; letter-spacing: .04em;
+      display: flex; align-items: center; gap: .35rem;
+      transition: color .15s;
+    }
+    .back-link:hover { color: var(--navy); }
+
+    /* ── Main layout ── */
+    .page-wrap {
+      min-height: calc(100vh - 68px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* ── Portal card ── */
+    .portal-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 4px 32px rgba(37,49,81,.08);
+      width: 100%;
+      max-width: 480px;
+      padding: 2.8rem 2.8rem 2.4rem;
+      text-align: center;
+    }
+
+    /* Key icon */
+    .portal-icon {
+      width: 60px; height: 60px;
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      border-radius: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 16px rgba(37,49,81,.2);
+    }
+
+    .portal-card h1 {
+      font-family: var(--font-display);
+      font-size: 2rem; font-weight: 600;
+      color: var(--navy); line-height: 1.1;
+      margin-bottom: .5rem;
+    }
+    .portal-card .eyebrow {
+      font-size: .7rem; font-weight: 700; letter-spacing: .12em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: .6rem; display: block;
+    }
+    .portal-card p {
+      font-size: .9rem; color: var(--text-muted);
+      line-height: 1.65; margin-bottom: 2rem;
+    }
+
+    /* Gold divider */
+    .gold-rule {
+      width: 40px; height: 2px;
+      background: var(--gold); border-radius: 2px;
+      margin: .8rem auto 1.4rem;
+    }
+
+    /* Feature pills */
+    .feature-list {
+      display: flex; flex-direction: column; gap: .65rem;
+      margin-bottom: 2rem; text-align: left;
+    }
+    .feature-item {
+      display: flex; align-items: center; gap: .75rem;
+      font-size: .85rem; color: var(--text); font-weight: 500;
+    }
+    .feature-dot {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(201,169,110,.15);
+      border: 1px solid rgba(201,169,110,.4);
+      display: grid; place-items: center;
+      color: var(--gold); font-size: .65rem; font-weight: 800;
+    }
+
+    /* CTA button */
+    .btn-portal {
+      display: flex; align-items: center; justify-content: center; gap: .6rem;
+      width: 100%;
+      background: var(--navy);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: .88rem; font-weight: 700;
+      letter-spacing: .05em; text-transform: uppercase;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      border: none; cursor: pointer;
+      transition: background .18s, transform .12s, box-shadow .18s;
+      box-shadow: 0 4px 18px rgba(37,49,81,.22);
+    }
+    .btn-portal:hover {
+      background: var(--navy-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37,49,81,.3);
+    }
+    .btn-portal svg { flex-shrink: 0; }
+
+    .portal-note {
+      margin-top: 1.2rem;
+      font-size: .75rem; color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .portal-note a {
+      color: var(--navy); font-weight: 600; text-decoration: none;
+    }
+    .portal-note a:hover { color: var(--gold); }
+
+    /* ── Help section ── */
+    .help-strip {
+      margin-top: 2rem;
+      width: 100%; max-width: 480px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem 1.8rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .help-strip p {
+      font-size: .82rem; color: var(--text-muted); line-height: 1.5;
+    }
+    .help-strip p strong { color: var(--navy); display: block; margin-bottom: .15rem; }
+    .help-contact {
+      display: flex; flex-direction: column; gap: .4rem; flex-shrink: 0;
+    }
+    .help-contact a {
+      font-size: .8rem; font-weight: 600; color: var(--navy);
+      text-decoration: none; display: flex; align-items: center; gap: .4rem;
+      transition: color .15s;
+    }
+    .help-contact a:hover { color: var(--gold); }
+
+    /* ── Footer ── */
+    .page-footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: .72rem; color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 540px) {
+      .portal-card { padding: 2rem 1.5rem; }
+      .help-strip { flex-direction: column; text-align: center; }
+      .help-contact { align-items: center; }
+    }
+  
+    /* ── MOBILE NAV ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      z-index: 200;
+    }
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--navy, #253151);
+      border-radius: 2px;
+      transition: transform .25s, opacity .25s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      top: 0;
+      z-index: 150;
+      background: rgba(27,37,64,.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.75rem;
+      padding: 2rem;
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: .04em;
+      transition: color .15s;
+    }
+    .mobile-drawer a:hover { color: var(--gold, #c9a96e); }
+    .mobile-drawer a.gold { color: var(--gold, #c9a96e); }
+    .mobile-drawer .drawer-cta {
+      margin-top: .5rem;
+      background: var(--gold, #c9a96e);
+      color: #fff !important;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: .82rem !important;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .75rem 2rem;
+      border-radius: 9999px;
+    }
+    .drawer-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,.6);
+      font-size: 1.5rem;
+      line-height: 1;
+      padding: .5rem;
+    }
+
+    @media (max-width: 960px) { .hamburger { display: flex; } }
+  
+    /* ── MOBILE NAV OVERFLOW FIX ── */
+    @media (max-width: 960px) {
+      /* Shrink logo so it takes less horizontal space */
+      .logo svg, .nav-logo svg { height: 44px !important; }
+      /* Tighten nav-inner */
+      .nav-inner { gap: .4rem !important; padding-left: .75rem !important; padding-right: .75rem !important; }
+      /* Hide desktop nav links & Book a Consultation CTA */
+      nav, .nav-cta, .btn-gold.nav-cta { display: none !important; }
+      /* Hide Book a Consultation on inner pages (news/cma) */
+      header .btn-gold { display: none !important; }
+      /* Tenant Login — icon only, tighter padding */
+      .tenant-btn-text { display: none !important; }
+      .tenant-btn { padding: .4rem .5rem !important; gap: 0 !important; }
+      /* Hamburger */
+      .hamburger { flex-shrink: 0; }
+    }
+
+  
+  .lang-btn.lang-active { background:var(--navy) !important; color:var(--cream) !important; border-color:var(--navy) !important; }
+  .lang-btn:hover:not(.lang-active) { border-color:var(--gold) !important; color:var(--gold) !important; }
+  /* Hide Google Translate top bar */
+  .goog-te-banner-frame, .skiptranslate { display:none !important; }
+  body { top: 0 !important; }
+  .goog-te-gadget { display:none !important; }
+
+
+    @media (max-width: 960px) {
+      .lang-btn { display: none !important; }
+      .tenant-btn { font-size: .68rem !important; padding: .35rem .65rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="drawer-close" onclick="document.getElementById('mobile-drawer').classList.remove('open');document.getElementById('hamburger-btn').classList.remove('open');document.body.style.overflow='';" aria-label="Close menu">&#10005;</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#about">About</a>
+  <a href="neighborhoods.html" class="gold">Neighborhoods</a>
+  <a href="news.html" class="gold">Market News</a>
+  <a href="cma.html" class="gold">Free CMA</a>
+  <a href="apply.html" class="gold">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a>
+  <a href="vendors.html" class="gold">Vendors</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#contact" class="drawer-cta">Book a Consultation</a>
+</div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="index.html" class="logo-link" aria-label="Axial Realty LLC home">
+      <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Axial Realty LLC" role="img" height="60">
+        <path d="M14 46 L24 18 L34 46" stroke="#253151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M17.5 37 L30.5 37" stroke="#253151" stroke-width="2" stroke-linecap="round"/>
+        <line x1="27" y1="18" x2="27" y2="46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M27 18 Q38 18 38 26 Q38 34 27 34" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M27 34 L38 46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="52" y1="16" x2="52" y2="44" stroke="#c9a96e" stroke-width="1" opacity="0.4"/>
+        <text x="62" y="35" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#253151">AXIAL</text>
+        <text x="63" y="48" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="5" fill="#c9a96e">REALTY</text>
+        <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
+      </svg>
+    </a>
+    <a href="index.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to main site
+    </a>
+    <button id="hamburger-btn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- Main -->
+  <main class="page-wrap">
+
+    <div class="portal-card">
+      <div class="portal-icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+      </div>
+
+      <span class="eyebrow">Tenant Portal</span>
+      <h1>Resident Login</h1>
+      <div class="gold-rule"></div>
+      <p>Access your resident account to pay rent, and submit maintenance requests — all in one place.</p>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="feature-dot">✓</span>
+          Pay rent online
+        </div>
+        <div class="feature-item">
+          <span class="feature-dot">✓</span>
+          Submit maintenance requests
+        </div>
+        <div class="feature-item">
+          <span class="feature-dot">✓</span>
+          Track payment history
+        </div>
+      </div>
+
+      <a href="https://rentecdirect.com/login" target="_blank" rel="noopener" class="btn-portal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Log In to Tenant Portal
+      </a>
+
+      <p class="portal-note">
+        Powered by <strong>Rentec Direct</strong> — secure resident management.
+      </p>
+    </div>
+
+    <!-- Help strip -->
+    <div class="help-strip">
+      <p>
+        <strong>Need help with your account?</strong>
+        Contact Axial Realty directly and we'll get you sorted.
+      </p>
+      <div class="help-contact">
+        <a href="tel:4699808298">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.57a16 16 0 0 0 6.52 6.52l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          Call or Text (469) 980-8298
+        </a>
+        <a href="mailto:davidtung@axialrealty.com">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          davidtung@axialrealty.com
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="page-footer">
+    &copy; 2026 Axial Realty LLC &mdash; Frisco, TX &mdash; All rights reserved.
+  </footer>
+
+
+<!-- Google Translate -->
+<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
+<script>
+(function() {
+  // ── Google Translate Init ──────────────────────────────
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,zh-TW,zh-CN',
+      autoDisplay: false
+    }, 'google_translate_element');
+  };
+
+  // Poll until the .goog-te-combo select exists, then apply pending lang
+  var _pendingLang = null;
+  var _pollInterval = null;
+
+  function applyLang(lang) {
+    var sel = document.querySelector('.goog-te-combo');
+    if (!sel) return false;
+    if (lang === 'en') {
+      // Reset to English
+      sel.value = 'en';
+      sel.dispatchEvent(new Event('change'));
+      // Also try clicking the restore button if present
+      var restore = document.querySelector('.goog-te-menu-value span');
+      if (restore) restore.click();
+    } else {
+      sel.value = lang;
+      sel.dispatchEvent(new Event('change'));
+    }
+    return true;
+  }
+
+  window.setLang = function(lang) {
+    // Update button active states immediately
+    document.querySelectorAll('.lang-btn').forEach(function(b) {
+      b.classList.toggle('lang-active', b.dataset.lang === lang);
+    });
+    // Try to apply now
+    if (!applyLang(lang)) {
+      // Widget not ready yet — store pending and start polling
+      _pendingLang = lang;
+      if (!_pollInterval) {
+        _pollInterval = setInterval(function() {
+          if (applyLang(_pendingLang)) {
+            clearInterval(_pollInterval);
+            _pollInterval = null;
+            _pendingLang = null;
+          }
+        }, 200);
+      }
+    }
+    // Save preference
+    try { localStorage.setItem('axial_lang', lang); } catch(e) {}
+  };
+
+  // Restore saved preference after widget loads
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      try {
+        var saved = localStorage.getItem('axial_lang');
+        if (saved && saved !== 'en') {
+          window.setLang(saved);
+        }
+      } catch(e) {}
+    }, 1200);
+  });
+
+  // Load Google Translate script
+  var s = document.createElement('script');
+  s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  s.async = true;
+  document.head.appendChild(s);
+})();
+</script>
+
+</body>
+</html>

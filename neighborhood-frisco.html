@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Living in Frisco, TX | Axial Realty LLC</title>
+  <meta name="description" content="Thinking about living in Frisco, TX? Explore the vibe, lifestyle, top neighborhoods, and what makes Frisco one of the most sought-after cities in DFW."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:#1b2540; --navy-2:#253151; --gold:#c9a96e; --gold-light:#dfc28d;
+      --cream:#f8f5ef; --cream-2:#fdfcf9; --text:#2d3442; --border:rgba(27,37,64,.12);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',Arial,sans-serif;background:var(--cream);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    img{max-width:100%;display:block;}
+    a{color:inherit;text-decoration:none;}
+    .container{width:min(calc(100% - 2.5rem),900px);margin:0 auto;}
+
+    /* ── NAV ── */
+    header{position:sticky;top:0;z-index:100;background:rgba(253,252,249,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;gap:0.5rem;}
+    .nav-logo svg{height:60px;width:auto;}
+    .nav-links{display:flex;list-style:none;gap:0.7rem;}
+    .nav-links a{font-size:.65rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);opacity:.7;transition:opacity .15s;}
+    .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--navy);}
+    .btn-gold{font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.55rem 1.25rem;background:var(--gold);color:#fff;border-radius:9999px;transition:background .15s;}
+    .btn-gold:hover{background:var(--gold-light);}
+
+    /* ── MOBILE NAV ── */
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:4px;border-radius:8px;flex-shrink:0;z-index:200;}
+    .hamburger span{display:block;height:2px;background:var(--navy);border-radius:2px;transition:transform .25s,opacity .25s;}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-drawer{display:none;position:fixed;inset:0;top:0;z-index:150;background:rgba(27,37,64,.97);flex-direction:column;align-items:center;justify-content:center;gap:1.75rem;padding:2rem;}
+    .mobile-drawer.open{display:flex;}
+    .mobile-drawer a{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.04em;transition:color .15s;}
+    .mobile-drawer a:hover{color:var(--gold);}
+    .mobile-drawer a.gold{color:var(--gold);}
+    .mobile-drawer .drawer-cta{margin-top:.5rem;background:var(--gold);color:#fff!important;font-family:'Inter',Arial,sans-serif;font-size:.82rem!important;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.75rem 2rem;border-radius:9999px;}
+    .drawer-close{position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.6);font-size:1.5rem;line-height:1;padding:.5rem;}
+    @media(max-width:960px){
+      .hamburger{display:flex;}
+      .logo svg,.nav-logo svg{height:44px!important;}
+      .nav-inner{gap:.4rem!important;padding-left:.75rem!important;padding-right:.75rem!important;}
+      nav,.nav-cta,.btn-gold.nav-cta{display:none!important;}
+      header .btn-gold{display:none!important;}
+      .hamburger{flex-shrink:0;}
+    }
+
+    /* ── HERO ── */
+    .page-hero{background:var(--navy);color:#fff;padding:4rem 0 3rem;}
+    .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+    .page-hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:600;line-height:1.15;margin-bottom:1rem;}
+    .gold-rule{width:40px;height:2px;background:var(--gold);margin:.75rem 0 1rem;}
+    .page-hero p{font-size:1rem;color:rgba(255,255,255,.7);max-width:600px;line-height:1.7;}
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb{padding:.75rem 0;font-size:.75rem;color:rgba(45,52,66,.5);}
+    .breadcrumb a{color:var(--gold);}
+    .breadcrumb a:hover{text-decoration:underline;}
+
+    /* ── CONTENT ── */
+    .guide-body{padding:3rem 0 4rem;}
+    .guide-grid{display:grid;grid-template-columns:1fr 320px;gap:2.5rem;align-items:start;}
+    @media(max-width:768px){.guide-grid{grid-template-columns:1fr;}}
+
+    .guide-main h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;font-weight:600;color:var(--navy);margin:2rem 0 .6rem;border-bottom:1px solid var(--border);padding-bottom:.4rem;}
+    .guide-main h2:first-child{margin-top:0;}
+    .guide-main p{margin-bottom:1rem;line-height:1.75;color:#3a4155;}
+    .guide-main ul{margin:0 0 1rem 1.2rem;}
+    .guide-main ul li{margin-bottom:.4rem;line-height:1.7;color:#3a4155;}
+
+    /* ── VIBE TAGS ── */
+    .vibe-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.5rem;}
+    .vibe-tag{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.3rem .8rem;border-radius:9999px;background:var(--cream);border:1.5px solid var(--border);color:var(--navy-2);}
+
+    /* ── SIDEBAR ── */
+    .sidebar-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.25rem;}
+    .sidebar-card h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:.75rem;}
+    .stat-row{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:.8rem;}
+    .stat-row:last-child{border-bottom:none;}
+    .stat-label{color:rgba(45,52,66,.6);}
+    .stat-value{font-weight:700;color:var(--navy);}
+    .cta-card{background:var(--navy);color:#fff;border-radius:12px;padding:1.5rem;text-align:center;}
+    .cta-card h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;margin-bottom:.5rem;}
+    .cta-card p{font-size:.8rem;color:rgba(255,255,255,.7);margin-bottom:1rem;}
+    .cta-card a{display:inline-block;background:var(--gold);color:#fff;font-weight:700;font-size:.75rem;letter-spacing:.07em;text-transform:uppercase;padding:.65rem 1.5rem;border-radius:9999px;}
+
+    /* ── BACK LINK ── */
+    .back-strip{background:var(--cream-2);border-top:1px solid var(--border);padding:1.5rem 0;}
+    .back-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:600;color:var(--navy);letter-spacing:.04em;}
+    .back-link:hover{color:var(--gold);}
+
+    /* ── FOOTER ── */
+    footer{background:var(--navy);color:rgba(255,255,255,.45);font-size:.72rem;text-align:center;padding:2rem 1rem;letter-spacing:.03em;}
+    footer a{color:var(--gold);}
+    .footer-links{display:flex;justify-content:center;gap:.75rem 1.25rem;margin-bottom:.75rem;flex-wrap:wrap;}
+    @media(max-width:700px){.footer-links{gap:.5rem .75rem;}.footer-links a{font-size:.65rem;}}
+  
+  .lang-btn.lang-active { background:var(--navy) !important; color:var(--cream) !important; border-color:var(--navy) !important; }
+  .lang-btn:hover:not(.lang-active) { border-color:var(--gold) !important; color:var(--gold) !important; }
+  /* Hide Google Translate top bar */
+  .goog-te-banner-frame, .skiptranslate { display:none !important; }
+  body { top: 0 !important; }
+  .goog-te-gadget { display:none !important; }
+
+
+    @media (max-width: 960px) {
+      .lang-btn { display: none !important; }
+      .tenant-btn { font-size: .68rem !important; padding: .35rem .65rem !important; }
+    }
+  </style>
+  <link rel="canonical" href="https://axialrealty.com/neighborhood-frisco.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://axialrealty.com/"},
+      {"@type":"ListItem","position":2,"name":"Neighborhood Guides","item":"https://axialrealty.com/neighborhoods.html"},
+      {"@type":"ListItem","position":3,"name":"Living in Frisco, TX","item":"https://axialrealty.com/neighborhood-frisco.html"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Living in Frisco, TX — Neighborhood Guide",
+    "author": {"@type":"Person","name":"David Tung"},
+    "publisher": {"@type":"Organization","name":"Axial Realty LLC","url":"https://axialrealty.com"},
+    "url": "https://axialrealty.com/neighborhood-frisco.html",
+    "dateModified": "2026-04-20",
+    "description": "A comprehensive guide to living in Frisco, TX — vibe, lifestyle, top neighborhoods, and what makes it one of the best places to live in North Texas."
+  }
+  </script>
+  <meta property="og:title" content="Living in Frisco, TX — Neighborhood Guide | Axial Realty LLC">
+  <meta property="og:description" content="Explore the vibe, lifestyle, and top neighborhoods in Frisco, TX. Your complete guide to living in one of North Texas's best cities.">
+  <meta property="og:url" content="https://axialrealty.com/neighborhood-frisco.html">
+  <meta property="og:type" content="article">
+</head>
+<body>
+
+<div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="drawer-close" onclick="document.getElementById('mobile-drawer').classList.remove('open');document.getElementById('hamburger-btn').classList.remove('open');document.body.style.overflow='';" aria-label="Close menu">&#10005;</button>
+  <a href="index.html">Home</a>
+  <a href="neighborhoods.html" class="gold">Neighborhoods</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#about">About</a>
+  <a href="news.html" class="gold">Market News</a>
+  <a href="cma.html" class="gold">Free CMA</a>
+  <a href="apply.html" class="gold">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a>
+  <a href="vendors.html" class="gold">Vendors</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="tenant-portal.html">Tenant Login</a>
+  <a href="index.html#contact" class="drawer-cta">Book a Consultation</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Axial Realty LLC home">
+      <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" height="60">
+        <path d="M14 46 L24 18 L34 46" stroke="#253151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M17.5 37 L30.5 37" stroke="#253151" stroke-width="2" stroke-linecap="round"/>
+        <line x1="27" y1="18" x2="27" y2="46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M27 18 Q38 18 38 26 Q38 34 27 34" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M27 34 L38 46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="52" y1="16" x2="52" y2="44" stroke="#c9a96e" stroke-width="1" opacity="0.4"/>
+        <text x="62" y="35" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#253151">AXIAL</text>
+        <text x="63" y="48" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="5" fill="#c9a96e">REALTY</text>
+        <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
+      </svg>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="neighborhoods.html" style="color:var(--gold);font-weight:700;">Neighborhoods</a></li>
+        <li><a href="news.html">Market News</a></li>
+        <li><a href="cma.html" style="color:var(--gold);font-weight:700;">Free CMA</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="apply.html" style="color:var(--gold);font-weight:700;">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a></li>
+      <li><a href="vendors.html" style="color:var(--gold);font-weight:700;">Vendors</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#contact" class="btn-gold">Book a Consultation</a>
+    <button id="hamburger-btn" class="hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Neighborhood Guide · Collin County</div>
+    <h1>Living in Frisco, TX<br><span style="font-style:italic;color:var(--gold-light);">Master-Planned Excellence & Big-League Amenities</span></h1>
+    <div class="gold-rule"></div>
+    <div class="vibe-tags"><span class="vibe-tag">Families</span><span class="vibe-tag">Master-Planned</span><span class="vibe-tag">Luxury</span><span class="vibe-tag">Top Schools</span><span class="vibe-tag">Fast-Growing</span></div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="neighborhoods.html">Neighborhood Guides</a> &rsaquo; Frisco, TX
+  </div>
+</div>
+
+<section class="guide-body">
+  <div class="container">
+    <div class="guide-grid">
+      <div class="guide-main">
+        <h2>Overview</h2>
+        <p>Frisco is the marquee suburb of North Texas — and it knows it. Home to The Star (the Dallas Cowboys' world headquarters), the PGA Frisco district, and a seemingly endless parade of master-planned communities, Frisco has evolved from a quiet Collin County town into a genuine destination city. If you want big-league amenities, elite schools, and a neighborhood that feels like a resort, Frisco delivers.</p><p>The tradeoff is real: home prices are among the highest in the metro, traffic on the Dallas North Tollway is a daily test of patience, and construction cranes are permanent fixtures on the northern horizon. But for families prioritizing schools, safety, and community — few suburbs in Texas can compete.</p>
+
+        <h2>The Vibe</h2>
+        <p>Frisco runs on organized ambition. Weekends are full — youth sports tournaments at the Ford Center, community pool parties in Phillips Creek Ranch, dinner at Legacy West, then a Cowboys practice sighting at The Star. Neighbors know each other from the trail, the splash pad, or the HOA meeting. It's suburban life turned up to 11.</p><p>The northern edge is where the next chapter is being written. Fields Frisco — a 2,500-acre development — is quickly becoming the city's new epicenter, with Fields West shaping up as Frisco's answer to Legacy West. If you want to get in before the price goes up further, that's the corridor to watch.</p>
+
+        <h2>Lifestyle Highlights</h2>
+        <ul>
+<li><strong>The Star</strong> — Dallas Cowboys HQ turned dining and entertainment district, with upscale restaurants, a hotel, and live events year-round</li>
+<li><strong>PGA Frisco</strong> — Two championship golf courses, the PGA headquarters, and a golf-centric lifestyle unlike anything else in Texas</li>
+<li><strong>Stonebriar Centre</strong> — One of the best-positioned malls in North Texas, with easy access from most neighborhoods</li>
+<li><strong>Frisco ISD</strong> — Consistently ranked among the top districts in Texas; newer northern schools are expanding as the city grows</li>
+<li><strong>Trail networks</strong> — Neighborhoods like Phillips Creek Ranch and The Grove have extensive trail systems connecting parks and amenities</li>
+<li><strong>Frisco Lakes (55+)</strong> — One of the premier active adult communities in North Texas, with a championship golf course and vibrant social calendar</li>
+</ul>
+
+        <h2>Who It's For</h2>
+        <p>Frisco attracts executives relocating from out of state, growing families who want elite schools and community amenities, and buyers who prioritize new construction, resort-style neighborhoods, and the prestige of the address. It's also a strong choice for professional athletes and high-net-worth buyers who want privacy and custom homes in Starwood or Newman Village.</p>
+
+        <div style="margin-top:2.5rem;padding:1.5rem;background:#fff;border:1px solid var(--border);border-radius:12px;">
+          <p style="font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:.5rem;">Ready to explore homes in Frisco, TX?</p>
+          <p style="font-size:.85rem;color:#6b7280;margin-bottom:1rem;">David Tung has helped buyers and sellers navigate the DFW market for 10+ years. Get a free consultation to find the right neighborhood and price range for your goals.</p>
+          <a href="index.html#contact" style="display:inline-block;background:var(--gold);color:#fff;font-weight:700;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;padding:.65rem 1.5rem;border-radius:9999px;">Talk to David</a>
+        </div>
+      </div>
+
+      <div class="guide-sidebar">
+        <div class="sidebar-card">
+          <h3>Quick Facts</h3>
+          <div class="stat-row"><span class="stat-label">County</span><span class="stat-value">Collin</span></div><div class="stat-row"><span class="stat-label">School District</span><span class="stat-value">Frisco ISD</span></div><div class="stat-row"><span class="stat-label">Commute to Dallas</span><span class="stat-value">~30 min</span></div><div class="stat-row"><span class="stat-label">Vibe</span><span class="stat-value">Polished & Active</span></div><div class="stat-row"><span class="stat-label">Home Prices</span><span class="stat-value">$500K–$2.5M+</span></div>
+        </div>
+
+        <div class="cta-card">
+          <h3>Free CMA Report</h3>
+          <p>Find out what homes are worth in Frisco, TX today — no obligation.</p>
+          <a href="cma.html">Request Free CMA</a>
+        </div>
+
+        <div class="sidebar-card" style="margin-top:1.25rem;">
+          <h3>Explore More Areas</h3>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:.25rem;">
+            <a href="neighborhoods.html" style="font-size:.8rem;color:var(--gold);font-weight:600;">&#8592; All Neighborhood Guides</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BACK STRIP ── -->
+<div class="back-strip">
+  <div class="container">
+    <a href="neighborhoods.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      All Neighborhood Guides
+    </a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="neighborhoods.html">Neighborhoods</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="news.html">Market News</a>
+    <a href="cma.html" style="color:var(--gold);">Free CMA</a>
+          <a href="apply.html" style="color:var(--gold);font-weight:600;">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a>
+    <a href="tenant-portal.html">Tenant Login</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:.75rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" width="22" height="24" aria-label="Equal Housing Opportunity" role="img">
+      <polygon points="50,5 95,45 85,45 85,105 15,105 15,45 5,45" fill="white" stroke="white" stroke-width="2"/>
+      <rect x="38" y="72" width="24" height="33" fill="#1b2540"/>
+      <rect x="22" y="55" width="56" height="6" fill="#1b2540"/>
+      <rect x="22" y="65" width="40" height="6" fill="#1b2540"/>
+    </svg>
+    <span style="font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.06em;">Equal Housing Opportunity</span>
+  </div>
+  <div style="margin-bottom:.5rem;">
+    <a href="IABS-2026.pdf" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:3px;">Texas law requires all license holders to provide the Information About Brokerage Services form to prospective clients.</a>
+  </div>
+  <div>© 2026 Axial Realty LLC. All rights reserved. Licensed Real Estate Brokerage · Texas.</div>
+  <div style="margin-top:.4rem;">Frisco, TX · Call or Text (469) 980-8298 · <a href="mailto:davidtung@axialrealty.com">davidtung@axialrealty.com</a></div>
+</footer>
+
+<script>
+  (function() {
+    var btn = document.getElementById('hamburger-btn');
+    var drawer = document.getElementById('mobile-drawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('open');
+      drawer.classList.toggle('open');
+      document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+    });
+    drawer.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        btn.classList.remove('open');
+        drawer.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
+</script>
+
+<!-- Google Translate -->
+<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
+<script>
+(function() {
+  // ── Google Translate Init ──────────────────────────────
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,zh-TW,zh-CN',
+      autoDisplay: false
+    }, 'google_translate_element');
+  };
+
+  // Poll until the .goog-te-combo select exists, then apply pending lang
+  var _pendingLang = null;
+  var _pollInterval = null;
+
+  function applyLang(lang) {
+    var sel = document.querySelector('.goog-te-combo');
+    if (!sel) return false;
+    if (lang === 'en') {
+      // Reset to English
+      sel.value = 'en';
+      sel.dispatchEvent(new Event('change'));
+      // Also try clicking the restore button if present
+      var restore = document.querySelector('.goog-te-menu-value span');
+      if (restore) restore.click();
+    } else {
+      sel.value = lang;
+      sel.dispatchEvent(new Event('change'));
+    }
+    return true;
+  }
+
+  window.setLang = function(lang) {
+    // Update button active states immediately
+    document.querySelectorAll('.lang-btn').forEach(function(b) {
+      b.classList.toggle('lang-active', b.dataset.lang === lang);
+    });
+    // Try to apply now
+    if (!applyLang(lang)) {
+      // Widget not ready yet — store pending and start polling
+      _pendingLang = lang;
+      if (!_pollInterval) {
+        _pollInterval = setInterval(function() {
+          if (applyLang(_pendingLang)) {
+            clearInterval(_pollInterval);
+            _pollInterval = null;
+            _pendingLang = null;
+          }
+        }, 200);
+      }
+    }
+    // Save preference
+    try { localStorage.setItem('axial_lang', lang); } catch(e) {}
+  };
+
+  // Restore saved preference after widget loads
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      try {
+        var saved = localStorage.getItem('axial_lang');
+        if (saved && saved !== 'en') {
+          window.setLang(saved);
+        }
+      } catch(e) {}
+    }, 1200);
+  });
+
+  // Load Google Translate script
+  var s = document.createElement('script');
+  s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  s.async = true;
+  document.head.appendChild(s);
+})();
+</script>
+
+</body>
+</html>

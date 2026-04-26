@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>North Texas Real Estate News &amp; Market Updates | Axial Realty LLC</title>
+  <meta name="description" content="Stay informed on new development projects, corporate relocations to DFW, and city rankings for Frisco, McKinney, Allen, Plano and North Texas."/>
+  <link rel="canonical" href="https://axialrealty.com/news.html"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #253151;
+      --navy-dark:  #1b2540;
+      --navy-950:   #0e1423;
+      --gold:       #c9a96e;
+      --gold-light: #dfc28d;
+      --cream:      #f8f5ef;
+      --cream-2:    #fdfcf9;
+      --text:       #1b2540;
+      --text-muted: #6b7280;
+      --border:     rgba(37,49,81,.12);
+      --radius:     10px;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Inter', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; 
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--cream-2);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── NAV ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253,252,249,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+      flex-shrink: 0;
+      margin-right: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color .15s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .btn-gold {
+      background: var(--gold);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .55rem 1.2rem;
+      border-radius: 9999px;
+      transition: background .15s;
+      white-space: nowrap;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: var(--navy-dark);
+      padding: 4rem 0 3.5rem;
+      text-align: center;
+    }
+    .page-hero .eyebrow {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .75rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: .9rem;
+    }
+    .page-hero p {
+      color: rgba(255,255,255,.6);
+      max-width: 540px;
+      margin: 0 auto;
+      font-size: .93rem;
+    }
+    .gold-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+
+    /* ── FILTER TABS ── */
+    .filter-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+    .filter-inner {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-btn {
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 9999px;
+      padding: .38rem .95rem;
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .filter-btn:hover { border-color: var(--gold); color: var(--navy); }
+    .filter-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    /* ── MAIN GRID ── */
+    .news-section {
+      padding: 3.5rem 0 5rem;
+    }
+    .section-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ── CARD ── */
+    .news-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .news-card:hover {
+      box-shadow: 0 8px 32px rgba(37,49,81,.12);
+      transform: translateY(-2px);
+    }
+    .card-badge-bar {
+      padding: 1rem 1.25rem .6rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .badge {
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .22rem .65rem;
+      border-radius: 9999px;
+    }
+    .badge-dev   { background: #eef4ff; color: #3b5bdb; }
+    .badge-corp  { background: #fff3e0; color: #e65100; }
+    .badge-rank  { background: #f0fdf4; color: #15803d; }
+    .badge-infra { background: #fdf4ff; color: #7c3aed; }
+    .badge-market{ background: #fff1f2; color: #be123c; }
+
+    .card-date {
+      font-size: .7rem;
+      color: var(--text-muted);
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    .card-body {
+      padding: 0 1.25rem 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: .5rem;
+    }
+    .card-excerpt {
+      font-size: .82rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .76rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: .04em;
+      border-bottom: 1.5px solid var(--gold);
+      padding-bottom: 1px;
+      transition: color .15s;
+      width: fit-content;
+    }
+    .card-link:hover { color: var(--gold); }
+    .card-link svg { flex-shrink: 0; }
+
+    /* ── FEATURED CARD (wide) ── */
+    .card-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .card-featured .card-feat-left {
+      background: var(--navy-dark);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-featured .card-feat-right {
+      padding: 2rem;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-featured .card-title { color: #fff; font-size: 1.4rem; }
+    .card-featured .card-excerpt { color: rgba(255,255,255,.65); }
+    .card-featured .card-link { color: var(--gold); border-color: var(--gold); }
+
+    .stat-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: left; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .68rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      margin-top: .15rem;
+    }
+
+    /* City Rankings table */
+    .rank-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .6rem .8rem;
+      border-radius: 8px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+    .rank-num {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold);
+      width: 2rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .rank-city { font-weight: 600; font-size: .88rem; color: var(--navy); }
+    .rank-note { font-size: .75rem; color: var(--text-muted); margin-left: auto; }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      background: var(--navy);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .cta-strip h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: #fff;
+      margin-bottom: .6rem;
+    }
+    .cta-strip p {
+      color: rgba(255,255,255,.6);
+      font-size: .9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-950);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: .78rem;
+    }
+    footer a { color: var(--gold); }
+    footer .footer-links { display: flex; justify-content: center; gap: .75rem 1.25rem; margin-bottom: .75rem; flex-wrap: wrap; }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      padding: 1rem 0;
+      font-size: .72rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .footer-links { gap: .5rem .75rem; }
+      .footer-links a { font-size: .65rem; }
+      .nav-links { display: none; }
+      .card-featured { grid-template-columns: 1fr; }
+      .card-feat-left { padding: 1.5rem; }
+      .stat-row { gap: 1rem; }
+    }
+  
+    /* ── MOBILE NAV ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      z-index: 200;
+    }
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--navy, #253151);
+      border-radius: 2px;
+      transition: transform .25s, opacity .25s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      top: 0;
+      z-index: 150;
+      background: rgba(27,37,64,.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.75rem;
+      padding: 2rem;
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: .04em;
+      transition: color .15s;
+    }
+    .mobile-drawer a:hover { color: var(--gold, #c9a96e); }
+    .mobile-drawer a.gold { color: var(--gold, #c9a96e); }
+    .mobile-drawer .drawer-cta {
+      margin-top: .5rem;
+      background: var(--gold, #c9a96e);
+      color: #fff !important;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: .82rem !important;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .75rem 2rem;
+      border-radius: 9999px;
+    }
+    .drawer-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,.6);
+      font-size: 1.5rem;
+      line-height: 1;
+      padding: .5rem;
+    }
+
+    @media (max-width: 960px) { .hamburger { display: flex; } }
+  
+    /* ── MOBILE NAV OVERFLOW FIX ── */
+    @media (max-width: 960px) {
+      /* Shrink logo so it takes less horizontal space */
+      .logo svg, .nav-logo svg { height: 44px !important; }
+      /* Tighten nav-inner */
+      .nav-inner { gap: .4rem !important; padding-left: .75rem !important; padding-right: .75rem !important; }
+      /* Hide desktop nav links & Book a Consultation CTA */
+      nav, .nav-cta, .btn-gold.nav-cta { display: none !important; }
+      /* Hide Book a Consultation on inner pages (news/cma) */
+      header .btn-gold { display: none !important; }
+      /* Tenant Login — icon only, tighter padding */
+      .tenant-btn-text { display: none !important; }
+      .tenant-btn { padding: .4rem .5rem !important; gap: 0 !important; }
+      /* Hamburger */
+      .hamburger { flex-shrink: 0; }
+    }
+
+  
+  .lang-btn.lang-active { background:var(--navy) !important; color:var(--cream) !important; border-color:var(--navy) !important; }
+  .lang-btn:hover:not(.lang-active) { border-color:var(--gold) !important; color:var(--gold) !important; }
+  /* Hide Google Translate top bar */
+  .goog-te-banner-frame, .skiptranslate { display:none !important; }
+  body { top: 0 !important; }
+  .goog-te-gadget { display:none !important; }
+
+
+    @media (max-width: 960px) {
+      .lang-btn { display: none !important; }
+      .tenant-btn { font-size: .68rem !important; padding: .35rem .65rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="drawer-close" onclick="document.getElementById('mobile-drawer').classList.remove('open');document.getElementById('hamburger-btn').classList.remove('open');document.body.style.overflow='';" aria-label="Close menu">&#10005;</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#about">About</a>
+  <a href="neighborhoods.html" class="gold">Neighborhoods</a>
+  <a href="news.html" class="gold">Market News</a>
+  <a href="cma.html" class="gold">Free CMA</a>
+  <a href="apply.html" class="gold">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a>
+  <a href="vendors.html" class="gold">Vendors</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="tenant-portal.html">Tenant Login</a>
+  <a href="index.html#contact" class="drawer-cta">Book a Consultation</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Axial Realty LLC home">
+      <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Axial Realty LLC" role="img" height="60">
+        <path d="M14 46 L24 18 L34 46" stroke="#253151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M17.5 37 L30.5 37" stroke="#253151" stroke-width="2" stroke-linecap="round"/>
+        <line x1="27" y1="18" x2="27" y2="46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M27 18 Q38 18 38 26 Q38 34 27 34" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M27 34 L38 46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="52" y1="16" x2="52" y2="44" stroke="#c9a96e" stroke-width="1" opacity="0.4"/>
+        <text x="62" y="35" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#253151">AXIAL</text>
+        <text x="63" y="48" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="5" fill="#c9a96e">REALTY</text>
+        <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="news.html" class="active">Market News</a></li>
+      <li><a href="cma.html" style="color:var(--gold);font-weight:700;">Free CMA</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="apply.html" style="color:var(--gold);font-weight:700;">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a></li>
+      <li><a href="vendors.html" style="color:var(--gold);font-weight:700;">Vendors</a></li>
+    </ul>
+    <a href="index.html#contact" class="btn-gold">Book a Consultation</a>
+    <button id="hamburger-btn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  </header>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">North Texas Market Insights</div>
+    <h1>What's Shaping DFW<br>Real Estate Right Now</h1>
+    <div class="gold-rule"></div>
+    <p>New development projects, corporate relocations, and city rankings that matter to buyers, sellers, and investors in the Dallas-Fort Worth area.</p>
+  </div>
+</section>
+
+<!-- ── FILTER BAR ── -->
+<div class="filter-bar">
+  <div class="container filter-inner">
+    <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
+    <button class="filter-btn" onclick="filterCards('dev', this)">Development</button>
+    <button class="filter-btn" onclick="filterCards('corp', this)">Corporate Moves</button>
+    <button class="filter-btn" onclick="filterCards('rank', this)">City Rankings</button>
+    <button class="filter-btn" onclick="filterCards('infra', this)">Infrastructure</button>
+  </div>
+</div>
+
+<!-- ── MAIN CONTENT ── -->
+<section class="news-section">
+  <div class="container">
+
+    <!-- ── FEATURED: DFW #1 HQ Relocations ── -->
+    <div class="section-label">Featured</div>
+    <div class="cards-grid" style="margin-bottom:2.5rem;">
+      <div class="news-card card-featured" data-cat="corp">
+        <div class="card-feat-left">
+          <div>
+            <span class="badge badge-corp">Corporate Moves</span>
+            <h2 class="card-title" style="margin-top:.75rem;">DFW Tops the Nation for Corporate HQ Relocations — Again</h2>
+            <p class="card-excerpt" style="margin-top:.5rem;">Between 2018 and 2024, 100 companies announced moves to North Texas — more than any other metro in the country. In 2025 alone, DFW attracted 11 interstate headquarters relocations.</p>
+            <a class="card-link" href="https://www.bizjournals.com/dallas/news/2026/04/15/dfw-leads-nation-in-hq-relocations-headquarters.html" target="_blank" rel="noopener">
+              Read on Dallas Business Journal
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">HQ Moves Since 2018</div></div>
+            <div class="stat-item"><div class="stat-num">#1</div><div class="stat-label">Metro in the U.S.</div></div>
+            <div class="stat-item"><div class="stat-num">11</div><div class="stat-label">Relocations in 2025</div></div>
+          </div>
+        </div>
+        <div class="card-feat-right">
+          <div class="section-label" style="margin-bottom:1rem;">Recent Company Arrivals — North Texas</div>
+          <ul class="rank-list">
+            <li class="rank-item">
+              <div class="rank-num" style="font-size:.9rem;width:auto;color:var(--navy);">AT&T</div>
+              <div>
+                <div class="rank-city">New 54-acre Global HQ Campus</div>
+                <div class="rank-note">Plano, TX · 2026</div>
+              </div>
+            </li>
+            <li class="rank-item">
+              <div class="rank-num" style="font-size:.9rem;width:auto;color:var(--navy);">KFC</div>
+              <div>
+                <div class="rank-city">Headquarters Relocated from Louisville</div>
+                <div class="rank-note">Plano, TX · 2025</div>
+              </div>
+            </li>
+            <li class="rank-item">
+              <div class="rank-num" style="font-size:.9rem;width:auto;color:var(--navy);">Dude Perfect</div>
+              <div>
+                <div class="rank-city">Expanded Frisco Headquarters</div>
+                <div class="rank-note">Frisco, TX · 2025</div>
+              </div>
+            </li>
+            <li class="rank-item">
+              <div class="rank-num" style="font-size:.9rem;width:auto;color:var(--navy);">Globe Life</div>
+              <div>
+                <div class="rank-city">Upgrading to New Campus</div>
+                <div class="rank-note">McKinney, TX · 2025</div>
+              </div>
+            </li>
+            <li class="rank-item">
+              <div class="rank-num" style="font-size:.9rem;width:auto;color:var(--navy);">Sally Beauty</div>
+              <div>
+                <div class="rank-city">Headquarters</div>
+                <div class="rank-note">Plano, TX</div>
+              </div>
+            </li>
+          </ul>
+          <a class="card-link" href="https://www.localprofile.com/news/dfw-tops-us-list-for-corporate-hq-relocations-10855197" target="_blank" rel="noopener" style="margin-top:1.25rem;">
+            Full story — Local Profile
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── DEVELOPMENT PROJECTS ── -->
+    <div class="section-label">New Development Projects</div>
+    <div class="cards-grid">
+
+      <!-- ── NEW Apr 23 2026 CRON ── -->
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">Apr 17, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">$750M Super Studios Film Campus Greenlit in Mansfield, DFW</div>
+          <p class="card-excerpt">Super Studios USA has received city approval to build a $750 million TV and film production campus in Mansfield — spanning 10 phases of soundstages, production offices, hotels, retail, and apartments — with the $50 million first phase set to break ground as early as August 2026, fueled by new Texas film incentives.</p>
+          <a class="card-link" href="https://www.bizjournals.com/dallas/news/2026/04/15/super-studios-mansfield-film-campus.html" target="_blank" rel="noopener">
+            Read on Dallas Business Journal
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="corp">
+        <div class="card-badge-bar">
+          <span class="badge badge-corp">Corporate Moves</span>
+          <span class="card-date">Apr 17, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">DFW Still Tops U.S. in Corporate HQ Relocations — But Competition Is Rising</div>
+          <p class="card-excerpt">DFW captured 11 interstate headquarters relocations in 2025 — more than any other U.S. metro — yet momentum is slowing as Nashville, Atlanta, and Charlotte emerge as rivals, prompting more companies to choose regional hubs in North Texas over full headquarters moves, according to a Bisnow analysis.</p>
+          <a class="card-link" href="https://www.bisnow.com/dallas-ft-worth/news/commercial-real-estate/dfw-corporate-relocations-134175" target="_blank" rel="noopener">
+            Read on Bisnow
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">Apr 14, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Frisco Grand Park — 1,000+ Acre Public Green Space Breaking Ground April 2026</div>
+          <p class="card-excerpt">Frisco's Grand Park, a 1,000+ acre public park planned as the centerpiece of the city's long-term vision, is scheduled to break ground this month — joining Firefly Park and The Fields as part of a trifecta of landmark projects transforming Frisco into one of the most ambitious development corridors in the country.</p>
+          <a class="card-link" href="https://communityimpact.com/dallas-fort-worth/frisco/government/2026/04/03/3b-development-underway-10-area-farmers-markets-6-trending-dallas-fort-worth-stories/" target="_blank" rel="noopener">
+            Read on Community Impact
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="ranking">
+        <div class="card-badge-bar">
+          <span class="badge badge-rank">Rankings</span>
+          <span class="card-date">Apr 2, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Plano Ranks #6 Best City in America for Second Straight Year — Niche 2026</div>
+          <p class="card-excerpt">Niche's 2026 Best Cities to Live in America list places Plano at No. 6 for the second consecutive year, with additional top-5 rankings for best retirement city and best public schools — while AT&T's relocation of its headquarters from Dallas to a new Plano campus further cements the city's rise.</p>
+          <a class="card-link" href="https://www.dallasobserver.com/news/dallas-suburb-named-one-of-best-places-to-live-in-us-again-40659044/" target="_blank" rel="noopener">
+            Read on Dallas Observer
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- ── END NEW Apr 23 2026 CRON ── -->
+
+      <!-- ── NEW Apr 20 2026 CRON ── -->
+      <div class="news-card" data-cat="infra">
+        <div class="card-badge-bar">
+          <span class="badge badge-infra">Infrastructure</span>
+          <span class="card-date">Apr 10, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">McKinney Launches $56M+ Road & Utility Rebuild Across Six Major Corridors</div>
+          <p class="card-excerpt">McKinney has six active or imminent infrastructure projects totaling over $56 million — including the $10.3M Virginia Parkway rehabilitation now underway, a $16M Tennessee/Lamar/Hunt street rebuild, and $15M East Virginia Street reconstruction with a new roundabout — signaling aggressive investment in the city's aging road and utility network.</p>
+          <a class="card-link" href="https://communityimpact.com/dallas-fort-worth/mckinney/transportation/2026/04/10/virginia-parkway-reconstruction-see-updates-for-6-transportation-projects-in-mckinney/" target="_blank" rel="noopener">
+            Read on Community Impact
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="infra">
+        <div class="card-badge-bar">
+          <span class="badge badge-infra">Infrastructure</span>
+          <span class="card-date">Apr 15, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Allen Approves $2.2M Greengate Neighborhood Sidewalk & Accessibility Overhaul</div>
+          <p class="card-excerpt">Allen City Council unanimously approved a $2.15 million contract with Cole Construction to replace 109 ADA ramps, 50 alley approaches, and 63% of sidewalk panels in the aging Greengate neighborhood — funded by the city's 2023 voter-approved bond — with construction set to run from May through November 2026.</p>
+          <a class="card-link" href="https://communityimpact.com/dallas-fort-worth/allen/government/2026/04/15/nearly-22m-in-infrastructure-improvements-coming-to-allens-greengate-neighborhood/" target="_blank" rel="noopener">
+            Read on Community Impact
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="corp">
+        <div class="card-badge-bar">
+          <span class="badge badge-corp">Corporate Moves</span>
+          <span class="card-date">Apr 2, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Prospere Companies Relocates DFW Corporate HQ to Southlake</div>
+          <p class="card-excerpt">Prospere Companies — the nation's top Transworld Business Advisors franchise with over 110 team members — has relocated its Dallas-Fort Worth headquarters to Southlake, Texas, citing rapid growth and the city's position at the heart of DFW's thriving business community.</p>
+          <a class="card-link" href="https://fortworthbusiness.com/business/top-transworld-franchise-prospere-companies-relocates-dfw-headquarters-to-southlake-signaling-continued-growth-for-north-texas-business-community/" target="_blank" rel="noopener">
+            Read on Fort Worth Business Press
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- ── END NEW Apr 20 2026 CRON ── -->
+
+      <!-- ── NEW Apr 20 2026 ── -->
+      <div class="news-card" data-cat="corp">
+        <div class="card-badge-bar">
+          <span class="badge badge-corp">Corporate Moves</span>
+          <span class="card-date">Apr 15, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">DFW Led Nation in Corporate HQ Relocations in 2025, CBRE Finds</div>
+          <p class="card-excerpt">A new CBRE report confirms DFW attracted more interstate and international headquarters relocations in 2025 than any other U.S. metro — continuing a streak driven by companies leaving high-cost coastal markets for North Texas's talent pool and business climate.</p>
+          <a class="card-link" href="https://www.bizjournals.com/dallas/news/2026/04/15/dfw-leads-nation-in-hq-relocations-headquarters.html" target="_blank" rel="noopener">
+            Read on Dallas Business Journal
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="corp">
+        <div class="card-badge-bar">
+          <span class="badge badge-corp">Corporate Moves</span>
+          <span class="card-date">Apr 8, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Public Storage Relocates HQ from California to Frisco's HALL Park</div>
+          <p class="card-excerpt">Public Storage, one of America's largest REITs, has officially relocated its corporate headquarters from Glendale, California to HALL Park in Frisco — the latest in a string of major California companies choosing North Texas for their next chapter.</p>
+          <a class="card-link" href="https://hallpark.com/public-storage-relocates-corporate-headquarters-to-hall-park-in-frisco-tx/" target="_blank" rel="noopener">
+            Read on HALL Park
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">Apr 7, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">New Master-Planned Community Launches in Forney with Homes from $300Ks</div>
+          <p class="card-excerpt">Westfield Homes has acquired lots in Meraki, a new master-planned community about 20 miles east of downtown Dallas in Kaufman County — offering homes in the low $300,000s with walking trails, parks, a resort-style pool, and future on-site schools, with first occupancy expected summer 2026.</p>
+          <a class="card-link" href="https://www.yahoo.com/news/articles/master-planned-community-coming-dallas-174036745.html" target="_blank" rel="noopener">
+            Read on Yahoo Finance
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">Apr 3, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">$3B Railhead Mixed-Use Development Advances in Northwest Frisco</div>
+          <p class="card-excerpt">The Railhead, an 80-acre mixed-use development in northwest Frisco, is moving forward with final site adjustments — including multifamily housing, office space, retail, restaurants, and a hotel — as developers work through the final phase of a project that broke ground in 2022.</p>
+          <a class="card-link" href="https://communityimpact.com/dallas-fort-worth/frisco/government/2026/04/03/3b-development-underway-10-area-farmers-markets-6-trending-dallas-fort-worth-stories/" target="_blank" rel="noopener">
+            Read on Community Impact
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="rank">
+        <div class="card-badge-bar">
+          <span class="badge badge-rank">Rankings</span>
+          <span class="card-date">Apr 16, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Plano Ranks #6 Best City in America, Richardson #15 — Niche 2026</div>
+          <p class="card-excerpt">Niche's 2026 Best Cities in America rankings placed Plano at #6 and Richardson at #15 nationally — both earning A+ grades across schools, safety, and quality of life — reinforcing North Texas's position as one of the most livable regions in the country.</p>
+          <a class="card-link" href="https://www.niche.com/places-to-live/search/best-cities/s/texas/" target="_blank" rel="noopener">
+            View Full Rankings — Niche
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="infra">
+        <div class="card-badge-bar">
+          <span class="badge badge-infra">Infrastructure</span>
+          <span class="card-date">Apr 3, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">DFW Airport's $4B Terminal F Expansion on Track for 2027 Opening</div>
+          <p class="card-excerpt">DFW International Airport's massive Terminal F — expanding to 31 gates for American Airlines with a new Skylink Station and Terminal D walking connection — is progressing on schedule at an estimated $4 billion cost, with the first 15 gates set to open in 2027.</p>
+          <a class="card-link" href="https://www.chron.com/news/article/dallas-airport-expansion-21355259.php" target="_blank" rel="noopener">
+            Read on Chron
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- ── END NEW Apr 20 2026 ── -->
+
+      <!-- ── NEW Apr 19 2026 ── -->
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">Apr 10, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">1,000-Home Master-Plan Launches in North Celina</div>
+          <p class="card-excerpt">A newly announced master-planned community in north Celina will bring 1,000 homes priced from $400K to $900K — spanning 1,800 to 4,500 sq ft — as demand for new construction continues to push growth into Collin County's fastest-expanding cities.</p>
+          <a class="card-link" href="https://finance.yahoo.com/markets/stocks/articles/developer-plans-1-000-homes-130656621.html" target="_blank" rel="noopener">
+            Read on Yahoo Finance
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">Apr 3, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">97-Home Saddlebrook Community Breaks Ground in Corinth</div>
+          <p class="card-excerpt">Bridge Tower Homes and Japan-based Hankyu Hanshin Properties have broken ground on Saddlebrook, a 97-home development in Corinth along the I-35 corridor, with homes ranging from 1,700 to 2,650 sq ft starting at $385,000 — the first project under their new joint venture.</p>
+          <a class="card-link" href="https://www.chron.com/texas/article/north-texas-corinth-housing-22187537.php" target="_blank" rel="noopener">
+            Read on Houston Chronicle
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">Mar 23, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Allen Approves 311-Unit Alta Preserve & $17M Downtown Catalyst</div>
+          <p class="card-excerpt">Allen City Council approved two major projects: Wood Partners' 311-unit Alta Preserve luxury apartments at The Farm along SH-121 (with rooftop skydeck, golf simulator, and resort pool), plus the first phase of the city's $17M Downtown Catalyst Project bringing restaurants and a public park to revitalized downtown Allen.</p>
+          <a class="card-link" href="https://communityimpact.com/dallas-fort-worth/allen/government/2026/03/23/311-unit-multifamily-project-downtown-revitalization-check-out-3-allen-development-updates/" target="_blank" rel="noopener">
+            Community Impact
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="corp">
+        <div class="card-badge-bar">
+          <span class="badge badge-corp">Corporate Moves</span>
+          <span class="card-date">Apr 17, 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">DFW Still Leads the U.S. in Corporate Relocations — But Competition Is Rising</div>
+          <p class="card-excerpt">DFW landed 11 of 164 corporate HQ relocations in 2025 — more than any other U.S. city — but competing metros like Nashville and Charlotte are closing the gap. Goldman Sachs and ScotiaBank have recently committed to major regional hubs in Dallas, signaling sustained confidence in the market.</p>
+          <a class="card-link" href="https://www.bisnow.com/dallas-ft-worth/news/commercial-real-estate/dfw-corporate-relocations-134175" target="_blank" rel="noopener">
+            Read on Bisnow
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="rank">
+        <div class="card-badge-bar">
+          <span class="badge badge-rank">Rankings</span>
+          <span class="card-date">2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Coppell, Flower Mound & Frisco Lead Niche's 2026 Best DFW Suburbs List</div>
+          <p class="card-excerpt">Niche's 2026 rankings of the best places to live in the Dallas-Fort Worth metro put Coppell at #1 (A+ overall), Flower Mound at #5, and Frisco at #7 — with Allen, Plano, and Richardson also earning A+ grades across schools, safety, and quality of life.</p>
+          <a class="card-link" href="https://www.niche.com/places-to-live/search/best-places-to-live/m/dallas-fort-worth-metro-area/" target="_blank" rel="noopener">
+            View Full Rankings — Niche
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- ── END NEW Apr 19 2026 ── -->
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">2025–2027</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Firefly Park — Frisco's $4 Billion Urban District</div>
+          <p class="card-excerpt">A 217-acre mixed-use district at the Dallas North Tollway and Hwy 380. Vertical construction is now underway with mid-rise residences, 120,000+ sq ft of retail, a Dream Hotel with rooftop bar, and a 45-acre central park — nine times the size of Klyde Warren Park.</p>
+          <a class="card-link" href="https://fireflypark.com/news/firefly-park-goes-vertical" target="_blank" rel="noopener">
+            Visit Firefly Park
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">2026–2035</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Sloan Corners — $3 Billion Mixed-Use in Allen & Fairview</div>
+          <p class="card-excerpt">A 500-acre master-planned development at one of DFW's largest undeveloped intersections. Allen's 261-acre portion will include $2 billion in commercial construction and 50 acres of parks. First 500 apartments and public amenities slated for mid-2026.</p>
+          <a class="card-link" href="https://www.dallaschamber.org/wp-content/uploads/2026/03/EDG2026_ProjectPipeline-FutureProj.pdf" target="_blank" rel="noopener">
+            View Dallas Chamber Pipeline
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">2025–2030</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">The Mix — $3 Billion Office & Retail Hub in Frisco</div>
+          <p class="card-excerpt">Located in Frisco's North Platinum Corridor, The Mix spans 112 acres with 2 million sq ft of office space, 375,000 sq ft of retail, two hotels, 630 townhomes, and 16 acres of green space. Phase 1 broke ground in 2025 with an upscale retail center anchored by Whole Foods.</p>
+          <a class="card-link" href="https://www.dmagazine.com/publications/d-ceo/2026/april/north-texas-new-development-projects-growth/" target="_blank" rel="noopener">
+            Read on D Magazine
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Universal Kids Resort — Opening Mid-2026 in Frisco</div>
+          <p class="card-excerpt">Universal's first Texas theme park is under construction in Frisco and on track to open in mid-2026, further cementing Frisco's position as a regional entertainment and hospitality destination.</p>
+          <a class="card-link" href="https://www.localprofile.com/news/10-major-projects-events-defining-north-texas-2026-11689649" target="_blank" rel="noopener">
+            10 Projects Defining North Texas 2026
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">2026–2027</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">McKinney Sunset Amphitheater — $300M Entertainment Venue</div>
+          <p class="card-excerpt">A $300 million amphitheater already under construction in McKinney, now projected to open in 2027. The venue will bring major concert tours to Collin County and add a significant cultural anchor to the region.</p>
+          <a class="card-link" href="https://communityimpact.com/dallas-fort-worth/frisco/government/2026/01/09/att-announces-hq-move-to-plano-mckinney-sunset-amphitheater-opening-delayed-8-recent-dallas-fort-worth-stories/" target="_blank" rel="noopener">
+            Community Impact Story
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="dev">
+        <div class="card-badge-bar">
+          <span class="badge badge-dev">Development</span>
+          <span class="card-date">2025</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">121 Technology Park — Allen's New Industrial Hub</div>
+          <p class="card-excerpt">A major industrial and technology campus in Allen with direct access to SH-121, minutes from Plano, Frisco, and McKinney. Designed to attract tech and logistics companies with incentives from the Allen Economic Development Corporation.</p>
+          <a class="card-link" href="https://leedallas.com/news/121-technology-park-allens-new-industrial-powerhouse-driving-innovation-jobs-and-regional-economic-growth/" target="_blank" rel="noopener">
+            Read Full Report
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── INFRASTRUCTURE ── -->
+    <div class="section-label">Infrastructure</div>
+    <div class="cards-grid">
+
+      <div class="news-card" data-cat="infra">
+        <div class="card-badge-bar">
+          <span class="badge badge-infra">Infrastructure</span>
+          <span class="card-date">Late 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">McKinney National Airport Gets Its First Commercial Terminal</div>
+          <p class="card-excerpt">TKI is constructing a full commercial passenger terminal on schedule for late 2026. The $22.4M project — backed by the McKinney Economic Development Corporation — will give Collin County residents a direct commercial flight option without the drive to DFW or Love Field.</p>
+          <a class="card-link" href="https://www.mckinneytexas.org/CivicAlerts.aspx?AID=6676" target="_blank" rel="noopener">
+            McKinney City Official Release
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="infra">
+        <div class="card-badge-bar">
+          <span class="badge badge-infra">Infrastructure</span>
+          <span class="card-date">2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">AT&T's New 54-Acre Global Headquarters Campus — Plano</div>
+          <p class="card-excerpt">AT&T announced plans to relocate its global HQ to a brand-new 54-acre campus in Plano, reinforcing the city's status as a Fortune 500 magnet and adding thousands of jobs to the Collin County economy.</p>
+          <a class="card-link" href="https://communityimpact.com/dallas-fort-worth/frisco/government/2026/01/09/att-announces-hq-move-to-plano-mckinney-sunset-amphitheater-opening-delayed-8-recent-dallas-fort-worth-stories/" target="_blank" rel="noopener">
+            Community Impact
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── CITY RANKINGS ── -->
+    <div class="section-label">City Rankings</div>
+    <div class="cards-grid">
+
+      <div class="news-card" data-cat="rank" style="grid-column: span 2;">
+        <div class="card-badge-bar">
+          <span class="badge badge-rank">Rankings</span>
+          <span class="card-date">March 2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">North Texas Sweeps National Growth & Affordability Rankings</div>
+          <p class="card-excerpt" style="margin-bottom:1.25rem;">A national study evaluating cities with populations over 100,000 ranked them on population growth and housing affordability. North Texas dominated the results — with Frisco, McKinney, and Allen all landing in the top 10 nationally.</p>
+          <ul class="rank-list" style="max-width:560px;">
+            <li class="rank-item"><div class="rank-num">1</div><div><div class="rank-city">Frisco, TX</div></div><div class="rank-note">National #1 — Growth & Affordability</div></li>
+            <li class="rank-item"><div class="rank-num">4</div><div><div class="rank-city">McKinney, TX</div></div><div class="rank-note">Top 5 Nationally</div></li>
+            <li class="rank-item"><div class="rank-num">6</div><div><div class="rank-city">Allen, TX</div></div><div class="rank-note">Top 10 Nationally</div></li>
+            <li class="rank-item"><div class="rank-num">11</div><div><div class="rank-city">Lewisville, TX</div></div><div class="rank-note">Top 15 Nationally</div></li>
+          </ul>
+          <a class="card-link" href="https://www.mymetrotex.com/north-texas-fast-growing-affordable-cities/" target="_blank" rel="noopener" style="margin-top:1.25rem;">
+            Full Rankings — MetroTex
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="rank">
+        <div class="card-badge-bar">
+          <span class="badge badge-rank">Rankings</span>
+          <span class="card-date">2025</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Allen, Frisco, Plano & McKinney — Top 4 Cities in Texas</div>
+          <p class="card-excerpt">Consumer Affairs ranked the 50 most popular Texas cities on affordability, economy, safety, education, and quality of life. The top four spots — every one of them — went to North Dallas suburbs: Allen (#1), Frisco (#2), Plano (#3), McKinney (#4).</p>
+          <a class="card-link" href="https://elementmoving.com/blog/plano-vs-frisco-vs-allen-best-dallas-suburbs/" target="_blank" rel="noopener">
+            Compare Frisco, Allen & Plano
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="news-card" data-cat="rank">
+        <div class="card-badge-bar">
+          <span class="badge badge-rank">Rankings</span>
+          <span class="card-date">2026</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">7 Development Projects Shaping North Texas Growth — D Magazine</div>
+          <p class="card-excerpt">D CEO's April 2026 deep dive identifies the seven newly announced projects where developers see the most opportunity in a market defined by higher costs and cautious capital — all within the DFW metro.</p>
+          <a class="card-link" href="https://www.dmagazine.com/publications/d-ceo/2026/april/north-texas-new-development-projects-growth/" target="_blank" rel="noopener">
+            Read on D Magazine
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA STRIP ── -->
+<section class="cta-strip">
+  <div class="container">
+    <h2>Ready to Make a Move in North Texas?</h2>
+    <p>Whether you're buying, selling, or investing — the market is moving. Let's talk strategy.</p>
+    <a href="index.html#contact" class="btn-gold" style="display:inline-block;padding:.75rem 2rem;font-size:.85rem;">Schedule a Free Consultation</a>
+  </div>
+</section>
+
+<!-- ── DISCLAIMER ── -->
+<div class="disclaimer">
+  <div class="container">
+    All news links lead to third-party sources. Axial Realty LLC is not affiliated with the linked publications. Content is provided for informational purposes only and is subject to change. Last updated: April 23, 2026.
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="neighborhoods.html">Neighborhoods</a>
+    <a href="news.html">Market News</a>
+    <a href="cma.html" style="color:var(--gold);">Free CMA</a>
+          <a href="apply.html" style="color:var(--gold);font-weight:600;">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a>
+    <a href="tenant-portal.html">Tenant Login</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:.75rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" width="22" height="24" aria-label="Equal Housing Opportunity" role="img">
+      <polygon points="50,5 95,45 85,45 85,105 15,105 15,45 5,45" fill="white" stroke="white" stroke-width="2"/>
+      <rect x="38" y="72" width="24" height="33" fill="#1b2540"/>
+      <rect x="22" y="55" width="56" height="6" fill="#1b2540"/>
+      <rect x="22" y="65" width="40" height="6" fill="#1b2540"/>
+    </svg>
+    <span style="font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.06em;">Equal Housing Opportunity</span>
+  </div>
+  <div style="margin-bottom:.5rem;">
+    <a href="IABS-2026.pdf" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:3px;letter-spacing:.02em;">Texas law requires all license holders to provide the Information About Brokerage Services form to prospective clients.</a>
+  </div>
+  <div>© 2026 Axial Realty LLC. All rights reserved. Licensed Real Estate Brokerage · Texas.</div>
+  <div style="margin-top:.4rem;">Frisco, TX · Call or Text (469) 980-8298 · <a href="mailto:davidtung@axialrealty.com">davidtung@axialrealty.com</a></div>
+</footer>
+
+<script>
+  function filterCards(cat, btn) {
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    // Show/hide cards
+    document.querySelectorAll('.news-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    // Show/hide section labels based on visible cards
+    document.querySelectorAll('.section-label').forEach(label => {
+      const grid = label.nextElementSibling;
+      if (!grid) return;
+      const visible = grid.querySelectorAll('.news-card:not([style*="display: none"])').length;
+      label.style.display = visible > 0 ? '' : 'none';
+    });
+  }
+</script>
+
+
+<script>
+  (function() {
+    var btn = document.getElementById('hamburger-btn');
+    var drawer = document.getElementById('mobile-drawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('open');
+      drawer.classList.toggle('open');
+      document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+    });
+    drawer.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        btn.classList.remove('open');
+        drawer.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
+</script>
+
+
+<!-- Google Translate -->
+<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
+<script>
+(function() {
+  // ── Google Translate Init ──────────────────────────────
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,zh-TW,zh-CN',
+      autoDisplay: false
+    }, 'google_translate_element');
+  };
+
+  // Poll until the .goog-te-combo select exists, then apply pending lang
+  var _pendingLang = null;
+  var _pollInterval = null;
+
+  function applyLang(lang) {
+    var sel = document.querySelector('.goog-te-combo');
+    if (!sel) return false;
+    if (lang === 'en') {
+      // Reset to English
+      sel.value = 'en';
+      sel.dispatchEvent(new Event('change'));
+      // Also try clicking the restore button if present
+      var restore = document.querySelector('.goog-te-menu-value span');
+      if (restore) restore.click();
+    } else {
+      sel.value = lang;
+      sel.dispatchEvent(new Event('change'));
+    }
+    return true;
+  }
+
+  window.setLang = function(lang) {
+    // Update button active states immediately
+    document.querySelectorAll('.lang-btn').forEach(function(b) {
+      b.classList.toggle('lang-active', b.dataset.lang === lang);
+    });
+    // Try to apply now
+    if (!applyLang(lang)) {
+      // Widget not ready yet — store pending and start polling
+      _pendingLang = lang;
+      if (!_pollInterval) {
+        _pollInterval = setInterval(function() {
+          if (applyLang(_pendingLang)) {
+            clearInterval(_pollInterval);
+            _pollInterval = null;
+            _pendingLang = null;
+          }
+        }, 200);
+      }
+    }
+    // Save preference
+    try { localStorage.setItem('axial_lang', lang); } catch(e) {}
+  };
+
+  // Restore saved preference after widget loads
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      try {
+        var saved = localStorage.getItem('axial_lang');
+        if (saved && saved !== 'en') {
+          window.setLang(saved);
+        }
+      } catch(e) {}
+    }, 1200);
+  });
+
+  // Load Google Translate script
+  var s = document.createElement('script');
+  s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  s.async = true;
+  document.head.appendChild(s);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Preferred Vendors | Axial Realty LLC — Trusted DFW Professionals</title>
+  <meta name="description" content="Axial Realty's hand-picked preferred vendors in DFW — roofing, lending, and more. Trusted professionals personally vetted by David Tung."/>
+  <link rel="canonical" href="https://axialrealty.com/vendors.html"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #253151;
+      --navy-dark:  #1b2540;
+      --navy-950:   #0e1423;
+      --gold:       #c9a96e;
+      --gold-light: #dfc28d;
+      --cream:      #f8f5ef;
+      --cream-2:    #fdfcf9;
+      --text:       #1b2540;
+      --text-muted: #6b7280;
+      --border:     rgba(37,49,81,.12);
+      --radius:     10px;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Inter', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; font-family: var(--font-body); color: var(--text); background: var(--cream-2); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAV ── */
+    header { position: sticky; top: 0; z-index: 100; background: rgba(253,252,249,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { display: flex; align-items: center; gap: 0.5rem; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: .6rem; text-decoration: none; flex-shrink: 0; margin-right: auto; }
+    .nav-links { display: flex; align-items: center; gap: 0.7rem; list-style: none; }
+    .nav-links a { font-size: .68rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--text-muted); transition: color .15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .btn-gold { background: var(--gold); color: #fff; font-size: .78rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: .55rem 1.2rem; border-radius: 9999px; transition: background .15s; white-space: nowrap; }
+    .btn-gold:hover { background: var(--gold-light); }
+
+    /* ── MOBILE DRAWER ── */
+    .mobile-drawer { display: none; position: fixed; inset: 0; background: var(--navy-dark); z-index: 200; flex-direction: column; padding: 2rem 1.75rem; gap: 1.25rem; overflow-y: auto; }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a { font-size: 1.05rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.85); }
+    .mobile-drawer a:hover { color: var(--gold); }
+    .mobile-drawer a.gold { color: var(--gold); }
+    .drawer-close { background: none; border: none; color: rgba(255,255,255,.6); font-size: 1.5rem; cursor: pointer; align-self: flex-end; margin-bottom: .5rem; }
+    .drawer-cta { display: inline-block; background: var(--gold); color: #fff !important; padding: .7rem 1.5rem; border-radius: 9999px; font-size: .85rem !important; text-align: center; margin-top: .5rem; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; flex-shrink: 0; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .25s; }
+
+    .lang-btn.lang-active { background: var(--navy) !important; color: var(--cream) !important; border-color: var(--navy) !important; }
+    .lang-btn:hover:not(.lang-active) { border-color: var(--gold) !important; color: var(--gold) !important; }
+    .goog-te-banner-frame, .skiptranslate { display: none !important; }
+    body { top: 0 !important; }
+    .goog-te-gadget { display: none !important; }
+
+    /* ── HERO ── */
+    .page-hero { background: var(--navy-dark); padding: 4rem 0 3.5rem; text-align: center; }
+    .page-hero .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: .9rem; }
+    .page-hero p { color: rgba(255,255,255,.6); max-width: 540px; margin: 0 auto; font-size: .93rem; }
+    .gold-rule { width: 48px; height: 2px; background: var(--gold); margin: 1rem auto; border-radius: 2px; }
+
+    /* ── FILTER BAR ── */
+    .filter-bar { background: var(--cream); border-bottom: 1px solid var(--border); padding: .6rem 0; position: sticky; top: 64px; z-index: 90; }
+    .filter-inner { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+    .filter-btn { background: none; border: 1.5px solid var(--border); border-radius: 9999px; padding: .38rem .95rem; font-size: .76rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); cursor: pointer; transition: all .15s; }
+    @media (max-width: 640px) {
+      .filter-bar { padding: .45rem 0; }
+      .filter-inner { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
+      .filter-inner::-webkit-scrollbar { display: none; }
+      .filter-btn { font-size: .68rem; padding: .3rem .7rem; white-space: nowrap; flex-shrink: 0; }
+    }
+    .filter-btn:hover { border-color: var(--gold); color: var(--navy); }
+    .filter-btn.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+    /* ── VENDOR GRID ── */
+    .vendors-section { padding: 3.5rem 0 5rem; }
+    .section-label { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
+    .vendors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+
+    /* ── VENDOR CARD ── */
+    .vendor-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; }
+    .vendor-card:hover { box-shadow: 0 8px 32px rgba(37,49,81,.12); transform: translateY(-2px); }
+    .vendor-card-top { padding: 1.5rem 1.5rem 1rem; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 1rem; }
+    .vendor-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .vendor-icon.roofing { background: #eef4ff; }
+    .vendor-icon.lending { background: #f0fdf4; }
+    .vendor-icon.insurance { background: #fff3e0; }
+    .vendor-icon.inspection { background: #fdf4ff; }
+    .vendor-meta { flex: 1; min-width: 0; }
+    .vendor-category { font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .3rem; }
+    .vendor-category.roofing { color: #3b5bdb; }
+    .vendor-category.lending { color: #15803d; }
+    .vendor-category.plumbing { color: #0369a1; }
+    .vendor-category.hvac { color: #b45309; }
+    .vendor-category.electric { color: #7c3aed; }
+    .vendor-category.pest { color: #16a34a; }
+    .vendor-category.cleaning { color: #0891b2; }
+    .vendor-category.appliance { color: #dc2626; }
+    .vendor-category.notary { color: #7c3aed; }
+    .vendor-icon.notary { background: #f5f3ff; }
+    .vendor-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--navy); line-height: 1.25; margin-bottom: .15rem; }
+    .vendor-title { font-size: .8rem; color: var(--text-muted); font-weight: 500; }
+    .vendor-company { font-size: .8rem; color: var(--navy); font-weight: 600; margin-top: .1rem; }
+    .vendor-card-body { padding: 1.25rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: .75rem; }
+    .vendor-badge { display: inline-flex; align-items: center; gap: .35rem; font-size: .68rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: .25rem .7rem; border-radius: 9999px; background: rgba(201,169,110,.12); color: var(--gold); border: 1px solid rgba(201,169,110,.3); width: fit-content; }
+    .vendor-contacts { display: flex; flex-direction: column; gap: .5rem; }
+    .vendor-contact-item { display: flex; align-items: center; gap: .6rem; font-size: .84rem; color: var(--text-muted); }
+    .vendor-contact-item a { color: var(--navy); font-weight: 500; transition: color .15s; }
+    .vendor-contact-item a:hover { color: var(--gold); }
+    .vendor-note { font-size: .78rem; color: var(--text-muted); line-height: 1.5; font-style: italic; border-left: 2px solid var(--gold); padding-left: .75rem; }
+    .vendor-licenses { font-size: .73rem; color: var(--text-muted); line-height: 1.6; }
+    .vendor-licenses span { display: inline-block; background: var(--cream); border: 1px solid var(--border); border-radius: 4px; padding: .1rem .45rem; margin: .1rem .15rem .1rem 0; font-weight: 600; letter-spacing: .04em; }
+
+    /* ── SUBMIT CTA ── */
+    .vendor-cta { background: var(--navy-dark); padding: 3.5rem 0; text-align: center; }
+    .vendor-cta h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 600; color: #fff; margin-bottom: .75rem; }
+    .vendor-cta p { color: rgba(255,255,255,.6); font-size: .9rem; max-width: 480px; margin: 0 auto 1.5rem; }
+    .vendor-cta a { display: inline-block; background: var(--gold); color: #fff; font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .75rem 1.75rem; border-radius: 9999px; transition: background .15s; }
+    .vendor-cta a:hover { background: var(--gold-light); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy-950); color: rgba(255,255,255,.45); text-align: center; padding: 2.5rem 1.5rem; font-size: .78rem; line-height: 1.8; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.5rem; margin-bottom: 1.25rem; }
+    .footer-links a { color: rgba(255,255,255,.5); transition: color .15s; font-size: .76rem; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .nav-links, .btn-gold { display: none; }
+      .hamburger { display: flex; }
+      .nav-inner { gap: .4rem !important; padding-left: .75rem !important; padding-right: .75rem !important; }
+    }
+    @media (max-width: 600px) {
+      .vendors-grid { grid-template-columns: 1fr; }
+    }
+  
+    @media (max-width: 960px) {
+      .lang-btn { display: none !important; }
+      .tenant-btn { font-size: .68rem !important; padding: .35rem .65rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="drawer-close" onclick="document.getElementById('mobile-drawer').classList.remove('open');document.getElementById('hamburger-btn').classList.remove('open');document.body.style.overflow='';" aria-label="Close menu">&#10005;</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#about">About</a>
+  <a href="neighborhoods.html" class="gold">Neighborhoods</a>
+  <a href="news.html" class="gold">Market News</a>
+  <a href="cma.html" class="gold">Free CMA</a>
+  <a href="apply.html" class="gold">Apply Now</a>
+  <a href="vendors.html" class="gold">Vendors</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="tenant-portal.html">Tenant Login</a>
+  <a href="index.html#contact" class="drawer-cta">Book a Consultation</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Axial Realty LLC home">
+      <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Axial Realty LLC" role="img" height="60">
+        <path d="M14 46 L24 18 L34 46" stroke="#253151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M17.5 37 L30.5 37" stroke="#253151" stroke-width="2" stroke-linecap="round"/>
+        <line x1="27" y1="18" x2="27" y2="46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M27 18 Q38 18 38 26 Q38 34 27 34" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M27 34 L38 46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="52" y1="16" x2="52" y2="44" stroke="#c9a96e" stroke-width="1" opacity="0.4"/>
+        <text x="62" y="35" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#253151">AXIAL</text>
+        <text x="63" y="48" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="5" fill="#c9a96e">REALTY</text>
+        <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="neighborhoods.html" style="color:var(--gold);font-weight:700;">Neighborhoods</a></li>
+      <li><a href="news.html" style="color:var(--gold);font-weight:700;">Market News</a></li>
+      <li><a href="cma.html" style="color:var(--gold);font-weight:700;">Free CMA</a></li>
+      <li><a href="apply.html" style="color:var(--gold);font-weight:700;">Apply Now</a></li>
+      <li><a href="vendors.html" class="active" style="color:var(--gold);font-weight:700;">Vendors</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:3px;margin-right:6px;flex-shrink:0;">
+      <button class="lang-btn lang-active" data-lang="en" onclick="setLang('en')" title="English" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;line-height:1.6;">EN</button>
+      <button class="lang-btn" data-lang="zh-TW" onclick="setLang('zh-TW')" title="Traditional Chinese" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;line-height:1.6;">繁中</button>
+      <button class="lang-btn" data-lang="zh-CN" onclick="setLang('zh-CN')" title="Simplified Chinese" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;line-height:1.6;">简中</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:.75rem;">
+      <a href="tenant-portal.html" class="tenant-btn" style="display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:700;letter-spacing:.05em;color:var(--navy);text-decoration:none;padding:.45rem .9rem;border:1.5px solid var(--border);border-radius:9999px;transition:border-color .15s,color .15s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--navy)'">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Tenant
+      </a>
+      <a href="index.html#contact" class="btn-gold">Book a Consultation</a>
+      <button id="hamburger-btn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false" onclick="document.getElementById('mobile-drawer').classList.add('open');this.classList.add('open');document.body.style.overflow='hidden';"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Trusted Professionals</p>
+    <h1>Preferred <em>Vendors</em></h1>
+    <div class="gold-rule"></div>
+    <p>Hand-picked professionals personally vetted by David Tung. Each vendor on this list has earned our trust through quality work and integrity.</p>
+  </div>
+</div>
+
+<!-- ── FILTER BAR ── -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-inner">
+      <button class="filter-btn active" data-filter="all" onclick="filterVendors('all', this)">All</button>
+      <button class="filter-btn" data-filter="roofing" onclick="filterVendors('roofing', this)">Roofing</button>
+      <button class="filter-btn" data-filter="lending" onclick="filterVendors('lending', this)">Lending</button>
+      <button class="filter-btn" data-filter="plumbing" onclick="filterVendors('plumbing', this)">Plumbing</button>
+      <button class="filter-btn" data-filter="hvac" onclick="filterVendors('hvac', this)">HVAC</button>
+      <button class="filter-btn" data-filter="electric" onclick="filterVendors('electric', this)">Electrical</button>
+      <button class="filter-btn" data-filter="pest" onclick="filterVendors('pest', this)">Pest Control</button>
+      <button class="filter-btn" data-filter="cleaning" onclick="filterVendors('cleaning', this)">Cleaning</button>
+      <button class="filter-btn" data-filter="appliance" onclick="filterVendors('appliance', this)">Appliance</button>
+      <button class="filter-btn" data-filter="notary" onclick="filterVendors('notary', this)">Notary</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── VENDORS ── -->
+<section class="vendors-section">
+  <div class="container">
+
+    <div class="section-label">Our Preferred Vendors</div>
+    <div class="vendors-grid" id="vendors-grid">
+
+      <!-- John Yoon — Roofing -->
+      <div class="vendor-card" data-category="roofing">
+        <div class="vendor-card-top">
+          <div class="vendor-icon roofing" style="background:none;padding:0;overflow:hidden;border-radius:50%;width:70px;height:70px;flex-shrink:0;">
+            <img src="john-yoon.jpg" alt="John Yoon" style="width:70px;height:70px;object-fit:cover;object-position:center top;border-radius:50%;display:block;">
+          </div>
+          <div class="vendor-meta">
+            <div class="vendor-category roofing">Roofing &amp; Construction</div>
+            <div class="vendor-name">John Yoon</div>
+            <div class="vendor-title">Project Manager</div>
+            <div class="vendor-company">Qualis Roofing &amp; Construction</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <div class="vendor-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            U.S. Air Force Veteran
+          </div>
+          <div class="vendor-contacts">
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/></svg>
+              <a href="tel:+12017746901">Call or Text (201) 774-6901</a>
+            </div>
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:john@qualisgc.com">john@qualisgc.com</a>
+            </div>
+          </div>
+          <p class="vendor-note">Serving the DFW area with quality roofing and construction services. A proud U.S. Air Force veteran bringing discipline and integrity to every project.</p>
+        </div>
+      </div>
+
+      <!-- Lacie Lee — Lending -->
+      <div class="vendor-card" data-category="lending">
+        <div class="vendor-card-top">
+          <div class="vendor-icon lending" style="background:none;padding:0;overflow:hidden;border-radius:50%;width:88px;height:88px;flex-shrink:0;">
+            <img src="lacie-lee.jpg" alt="Lacie Lee" style="width:88px;height:88px;object-fit:cover;border-radius:50%;display:block;">
+          </div>
+          <div class="vendor-meta">
+            <div class="vendor-category lending">Mortgage Lending</div>
+            <div class="vendor-name">Lacie Lee</div>
+            <div class="vendor-title">Senior Loan Officer</div>
+            <div class="vendor-company">Cattell Incorporated</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <div class="vendor-contacts">
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/></svg>
+              <a href="tel:+18177296247">Call or Text (817) 729-6247</a>
+            </div>
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:loansbylacie@gmail.com">loansbylacie@gmail.com</a>
+            </div>
+          </div>
+          <div class="vendor-licenses">
+            Licensed in:
+            <span>TX · NMLS 1664669</span>
+            <span>FL · LO3211</span>
+            <span>OK · MLO33504</span>
+          </div>
+          <p class="vendor-note">Experienced senior loan officer helping buyers navigate financing across Texas, Florida, and Oklahoma with personalized service and competitive rates.</p>
+        </div>
+      </div>
+
+      <!-- Vivian Pak — Mortgage Lending -->
+      <div class="vendor-card" data-category="lending">
+        <div class="vendor-card-top">
+          <div class="vendor-icon lending" style="background:none;padding:0;overflow:hidden;border-radius:50%;width:88px;height:88px;flex-shrink:0;">
+            <img src="vivian-pak.jpg" alt="Vivian Pak" style="width:88px;height:88px;object-fit:cover;border-radius:50%;display:block;">
+          </div>
+          <div class="vendor-meta">
+            <div class="vendor-category lending">Mortgage Lending</div>
+            <div class="vendor-name">Vivian Pak</div>
+            <div class="vendor-title">Loan Originator &middot; <span style="font-size:.75rem;color:var(--gold);font-weight:700;">中 / EN</span></div>
+            <div class="vendor-company">AML Funding &middot; Team Infinite</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <div class="vendor-contacts">
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/></svg>
+              <a href="tel:+19729717699">Call or Text (972) 971-7699</a>
+            </div>
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:vivian.pak@absoluteml.com">vivian.pak@absoluteml.com</a>
+            </div>
+          </div>
+          <div class="vendor-licenses">
+            NMLS #2338194 &middot; AML Funding NMLS #1910591
+          </div>
+          <p class="vendor-note">Bilingual loan originator (English &amp; Chinese) serving DFW home buyers with personalized mortgage solutions. Vivian helps clients navigate the financing process in the language they are most comfortable with.</p>
+        </div>
+      </div>
+
+      <!-- HoneyDo Plumbing -->
+      <div class="vendor-card" data-category="plumbing">
+        <div class="vendor-card-top">
+          <div class="vendor-icon plumbing" style="background:none;padding:0;overflow:hidden;border-radius:50%;width:88px;height:88px;flex-shrink:0;">
+            <img src="honeydo-plumbing.jpg" alt="HoneyDo Plumbing" style="width:88px;height:88px;object-fit:cover;border-radius:50%;display:block;">
+          </div>
+          <div class="vendor-meta">
+            <div class="vendor-category plumbing">Plumbing</div>
+            <div class="vendor-name">HoneyDo Plumbing LLC</div>
+            <div class="vendor-title">Licensed Plumber</div>
+            <div class="vendor-company">McKinney, TX · Serving DFW</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <div class="vendor-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Available 24 Hours · 5.0 ★ on Google
+          </div>
+          <div class="vendor-contacts">
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/></svg>
+              <a href="tel:+14699819328">Call or Text (469) 981-9328</a>
+            </div>
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="https://honeydoplumbing.com" target="_blank" rel="noopener">honeydoplumbing.com</a>
+            </div>
+          </div>
+          <p class="vendor-note">Reliable, licensed plumber serving the DFW area around the clock. From repairs to full installations, HoneyDo Plumbing delivers quality work with a perfect 5-star reputation.</p>
+        </div>
+      </div>
+
+      <!-- Dipson Air Conditioning — HVAC -->
+      <div class="vendor-card" data-category="hvac">
+        <div class="vendor-card-top">
+          <div class="vendor-icon hvac" style="background:none;padding:0;overflow:hidden;border-radius:50%;width:88px;height:88px;flex-shrink:0;">
+            <img src="dipson-ac.jpg" alt="Dipson Air Conditioning" style="width:88px;height:88px;object-fit:cover;border-radius:50%;display:block;">
+          </div>
+          <div class="vendor-meta">
+            <div class="vendor-category hvac">Heating &amp; Air Conditioning</div>
+            <div class="vendor-name">Dipson Air Conditioning</div>
+            <div class="vendor-title">HVAC Contractor</div>
+            <div class="vendor-company">Richardson, TX &middot; Serving DFW</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <div class="vendor-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Residential &amp; Commercial &middot; 4.9 &#9733; on Google
+          </div>
+          <div class="vendor-contacts">
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/></svg>
+              <a href="tel:+19723332615">Call or Text (972) 333-2615</a>
+            </div>
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="http://dipsonair.com" target="_blank" rel="noopener">dipsonair.com</a>
+            </div>
+          </div>
+          <p class="vendor-note">Trusted HVAC contractor serving residential and commercial clients across DFW. Dipson Air Conditioning handles everything from routine maintenance to full system installations with a 4.9-star Google reputation.</p>
+        </div>
+      </div>
+
+      <!-- Safe Plug Electric — Electrical -->
+      <div class="vendor-card" data-category="electric">
+        <div class="vendor-card-top">
+          <div class="vendor-icon electric" style="background:none;padding:0;overflow:hidden;border-radius:50%;width:88px;height:88px;flex-shrink:0;">
+            <img src="safe-plug-electric.jpg" alt="Safe Plug Electric" style="width:88px;height:88px;object-fit:cover;border-radius:50%;display:block;">
+          </div>
+          <div class="vendor-meta">
+            <div class="vendor-category electric">Electrical</div>
+            <div class="vendor-name">Safe Plug Electric</div>
+            <div class="vendor-title">Licensed Electrician</div>
+            <div class="vendor-company">Garland, TX &middot; Serving DFW</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <div class="vendor-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Available 24 Hours &middot; 4.9 &#9733; on Google
+          </div>
+          <div class="vendor-contacts">
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/></svg>
+              <a href="tel:+12143800034">Call or Text (214) 380-0034</a>
+            </div>
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="https://safeplugelectric.com" target="_blank" rel="noopener">safeplugelectric.com</a>
+            </div>
+          </div>
+          <p class="vendor-note">Licensed electrician serving Garland, Dallas, and the greater DFW area around the clock. From panel upgrades to ceiling fans and safety inspections, Safe Plug Electric brings reliability and a 4.9-star track record to every job.</p>
+        </div>
+      </div>
+
+      <!-- Ephlora Pest Solutions — Pest Control -->
+      <div class="vendor-card" data-category="pest">
+        <div class="vendor-card-top">
+          <div class="vendor-icon pest" style="background:none;padding:0;overflow:hidden;border-radius:50%;width:88px;height:88px;flex-shrink:0;">
+            <img src="ephlora-pest.jpg" alt="Ephlora Pest Solutions" style="width:88px;height:88px;object-fit:cover;border-radius:50%;display:block;">
+          </div>
+          <div class="vendor-meta">
+            <div class="vendor-category pest">Pest Control</div>
+            <div class="vendor-name">Ephlora Pest Solutions</div>
+            <div class="vendor-title">Pest Control Service</div>
+            <div class="vendor-company">Frisco, TX &middot; Serving DFW</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <div class="vendor-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            5.0 &#9733; on Google
+          </div>
+          <div class="vendor-contacts">
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/></svg>
+              <a href="tel:+12146639996">Call or Text (214) 663-9996</a>
+            </div>
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="http://www.ephlora.com" target="_blank" rel="noopener">ephlora.com</a>
+            </div>
+          </div>
+          <p class="vendor-note">Frisco-based pest control specialists serving the DFW area with eco-conscious treatments for ants, wasps, rodents, spiders, and more. Ephlora Pest Solutions holds a perfect 5-star Google rating.</p>
+        </div>
+      </div>
+
+      <!-- Handy Expert Services — Cleaning & Handyman -->
+      <div class="vendor-card" data-category="cleaning">
+        <div class="vendor-card-top">
+          <div class="vendor-icon cleaning" style="background:none;padding:0;overflow:hidden;border-radius:50%;width:88px;height:88px;flex-shrink:0;">
+            <img src="handy-expert.jpg" alt="Handy Expert Services" style="width:88px;height:88px;object-fit:cover;border-radius:50%;display:block;">
+          </div>
+          <div class="vendor-meta">
+            <div class="vendor-category cleaning">Cleaning &amp; Handyman</div>
+            <div class="vendor-name">Handy Expert Services</div>
+            <div class="vendor-title">House Cleaning &amp; Carpet Cleaning</div>
+            <div class="vendor-company">Anna, TX &middot; Serving DFW</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <div class="vendor-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            5.0 &#9733; on Google &middot; 60 Reviews &middot; Women-Owned
+          </div>
+          <div class="vendor-contacts">
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/></svg>
+              <a href="tel:+14697749051">Call or Text (469) 774-9051</a>
+            </div>
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="https://www.handyexpertservices.com" target="_blank" rel="noopener">handyexpertservices.com</a>
+            </div>
+          </div>
+          <p class="vendor-note">Women-owned, fully insured home services company serving DFW. Specializing in house cleaning, carpet &amp; upholstery cleaning, power washing, handyman repairs, and more &mdash; with a perfect 5-star rating across 60 Google reviews.</p>
+        </div>
+      </div>
+
+      <!-- Sensor Appliance Repair -->
+      <div class="vendor-card" data-category="appliance">
+        <div class="vendor-card-top">
+          <div class="vendor-icon appliance" style="background:none;padding:0;overflow:hidden;border-radius:50%;width:88px;height:88px;flex-shrink:0;">
+            <img src="sensor-appliance.jpg" alt="Sensor Appliance Repair" style="width:88px;height:88px;object-fit:cover;border-radius:50%;display:block;">
+          </div>
+          <div class="vendor-meta">
+            <div class="vendor-category appliance">Appliance Repair</div>
+            <div class="vendor-name">Sensor Appliance Repair</div>
+            <div class="vendor-title">Appliance Repair Service</div>
+            <div class="vendor-company">Plano, TX &middot; Serving DFW</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <div class="vendor-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            7AM &ndash; 11PM Daily &middot; 5.0 &#9733; on Google
+          </div>
+          <div class="vendor-contacts">
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/></svg>
+              <a href="tel:+14697696545">Call or Text (469) 769-6545</a>
+            </div>
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="https://sensorappliancerepair.com" target="_blank" rel="noopener">sensorappliancerepair.com</a>
+            </div>
+          </div>
+          <p class="vendor-note">Plano-based appliance repair specialists serving the DFW area. From refrigerators and ovens to washers and dryers, Sensor Appliance Repair offers extended daily hours and a perfect 5-star Google rating for fast, reliable service.</p>
+        </div>
+      </div>
+
+      <!-- Alice — Signatures & Initials Loan Signing Service -->
+      <div class="vendor-card" data-category="notary">
+        <div class="vendor-card-top">
+          <div class="vendor-icon notary" style="background:none;padding:0;overflow:hidden;border-radius:50%;width:88px;height:88px;flex-shrink:0;">
+            <img src="alice-notary.jpg" alt="Alice, Signatures &amp; Initials Loan Signing Service" style="width:88px;height:88px;object-fit:cover;object-position:top;border-radius:50%;display:block;">
+          </div>
+          <div class="vendor-meta">
+            <div class="vendor-category notary">Notary Public</div>
+            <div class="vendor-name">Alice Fu</div>
+            <div class="vendor-title">Certified Notary Public</div>
+            <div class="vendor-company">Signatures &amp; Initials Loan Signing Service &middot; Dallas, TX</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <div class="vendor-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            In-Office &middot; Mobile &middot; RON &middot; Since 2021
+          </div>
+          <div class="vendor-contacts">
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/></svg>
+              <a href="tel:+19728367304">Call or Text (972) 836-7304</a>
+            </div>
+            <div class="vendor-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:signaturesandinitials@yahoo.com">signaturesandinitials@yahoo.com</a>
+            </div>
+          </div>
+          <p class="vendor-note">Certified Notary Public since 2021, specializing in real estate closings and estate planning signings. Available in-office, mobile, and via Remote Online Notarization (RON). Serving Allen, Frisco, McKinney, Plano, Richardson, and surrounding DFW communities.</p>
+        </div>
+      </div>
+
+    </div><!-- /vendors-grid -->
+
+  </div>
+</section>
+
+<!-- ── SUBMIT YOUR BUSINESS CTA ── -->
+<div class="vendor-cta">
+  <div class="container">
+    <h2>Are You a Trusted Professional?</h2>
+    <p>We are always looking for reliable vendors who share our commitment to quality and client care. Get in touch to be considered.</p>
+    <a href="index.html#contact">Contact David Tung</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="neighborhoods.html">Neighborhoods</a>
+    <a href="news.html">Market News</a>
+    <a href="cma.html" style="color:var(--gold);">Free CMA</a>
+    <a href="apply.html" style="color:var(--gold);font-weight:600;">Apply Now</a>
+    <a href="vendors.html" style="color:var(--gold);font-weight:600;">Vendors</a>
+    <a href="tenant-portal.html">Tenant Login</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:.75rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" width="22" height="24" aria-label="Equal Housing Opportunity" role="img">
+      <polygon points="50,5 95,45 85,45 85,105 15,105 15,45 5,45" fill="white" stroke="white" stroke-width="2"/>
+      <rect x="38" y="72" width="24" height="33" fill="#1b2540"/>
+      <rect x="22" y="55" width="56" height="6" fill="#1b2540"/>
+      <rect x="22" y="65" width="40" height="6" fill="#1b2540"/>
+    </svg>
+    <span style="font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.06em;">Equal Housing Opportunity</span>
+  </div>
+  <div style="margin-bottom:.5rem;">
+    <a href="IABS-2026.pdf" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:3px;letter-spacing:.02em;">Texas law requires all license holders to provide the Information About Brokerage Services form to prospective clients.</a>
+  </div>
+  <div>&copy; 2026 Axial Realty LLC. All rights reserved. Licensed Real Estate Brokerage &middot; Texas.</div>
+  <div style="margin-top:.4rem;">Frisco, TX &middot; Call or Text (469) 980-8298 &middot; <a href="mailto:davidtung@axialrealty.com">davidtung@axialrealty.com</a></div>
+</footer>
+
+<!-- Google Translate -->
+<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
+<script>
+(function() {
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,zh-TW,zh-CN', autoDisplay: false }, 'google_translate_element');
+  };
+  var _pendingLang = null, _pollInterval = null;
+  function applyLang(lang) {
+    var sel = document.querySelector('.goog-te-combo');
+    if (!sel) return false;
+    sel.value = lang; sel.dispatchEvent(new Event('change')); return true;
+  }
+  window.setLang = function(lang) {
+    document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.toggle('lang-active', b.dataset.lang === lang); });
+    if (!applyLang(lang)) {
+      _pendingLang = lang;
+      if (!_pollInterval) { _pollInterval = setInterval(function() { if (applyLang(_pendingLang)) { clearInterval(_pollInterval); _pollInterval = null; _pendingLang = null; } }, 200); }
+    }
+    try { localStorage.setItem('axial_lang', lang); } catch(e) {}
+  };
+  window.addEventListener('load', function() { setTimeout(function() { try { var s = localStorage.getItem('axial_lang'); if (s && s !== 'en') window.setLang(s); } catch(e) {} }, 1200); });
+  var s = document.createElement('script'); s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; s.async = true; document.head.appendChild(s);
+})();
+</script>
+
+<script>
+// Filter vendors by category
+function filterVendors(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.vendor-card').forEach(function(card) {
+    card.style.display = (cat === 'all' || card.dataset.category === cat) ? '' : 'none';
+  });
+}
+// Mobile hamburger
+document.getElementById('hamburger-btn').addEventListener('click', function() {
+  document.getElementById('mobile-drawer').classList.add('open');
+  this.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+});
+</script>
+</body>
+</html>
