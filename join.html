@@ -207,17 +207,10 @@
       .market-pill { font-size: .8rem; padding: .35rem .75rem; }
     }
   
-    html, body { overflow-x: hidden; max-width: 100%; }
+    html, body { overflow-x: hidden; }
     * { box-sizing: border-box; }
-    img, svg, video { max-width: 100%; }
-    .container { max-width: 100%; }
+    img, svg, video { max-width: 100%; height: auto; }
     .contact-detail, .form-detail { word-break: break-word; }
-    @media (max-width: 768px) {
-      .contact-info h3, .form-info h3 { font-size: 1.2rem; }
-      .contact-detail, .form-detail { font-size: .85rem; }
-      .hero-ctas, .cta-btns { flex-direction: column; align-items: flex-start; }
-      .hero-ctas .btn, .cta-btns .btn { width: 100%; justify-content: center; box-sizing: border-box; }
-    }
   </style>
 </head>
 <body>
@@ -590,13 +583,21 @@
           <a href="property-owners.html" style="color:var(--gold);">For Property Owners</a>
           <a href="join.html" style="color:var(--gold);">Join Our Team</a>
           <a href="cma.html" style="color:var(--gold);">Free CMA</a>
-          <a href="apply.html" style="color:var(--gold);">Apply Now</a>
-          <a href="vendors.html">Vendors</a>
           <a href="tenant-portal.html">Tenant Login</a>
         </div>
       </div>
       <div style="text-align:center;margin-bottom:.5rem;">
         <a href="IABS-2026.pdf" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.4);text-decoration:underline;text-underline-offset:3px;">Texas law requires all license holders to provide the Information About Brokerage Services form to prospective clients.</a>
+      </div>
+            <div style="display:flex;align-items:center;gap:1rem;justify-content:center;margin-bottom:.75rem;flex-wrap:wrap;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" width="22" height="24" aria-label="Equal Housing Opportunity" role="img">
+          <polygon points="50,5 95,45 85,45 85,105 15,105 15,45 5,45" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+          <rect x="38" y="72" width="24" height="33" fill="var(--navy-deep)"/>
+          <rect x="22" y="55" width="56" height="6" fill="var(--navy-deep)"/>
+          <rect x="22" y="65" width="40" height="6" fill="var(--navy-deep)"/>
+          <text x="50" y="50" text-anchor="middle" font-size="18" fill="var(--navy-deep)" font-weight="bold">&#9166;</text>
+        </svg>
+        <span style="font-size:.72rem;color:rgba(255,255,255,.4);">Equal Housing Opportunity</span>
       </div>
       <div class="footer-copy">© 2026 Axial Realty LLC. All rights reserved. Licensed Real Estate Brokerage · Texas.</div>
     </div>

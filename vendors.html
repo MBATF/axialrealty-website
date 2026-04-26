@@ -147,18 +147,16 @@
       .tenant-btn { font-size: .68rem !important; padding: .35rem .65rem !important; }
     }
   
-    html, body { overflow-x: hidden; max-width: 100%; }
+    html, body { overflow-x: hidden; }
     * { box-sizing: border-box; }
-    img, svg, video { max-width: 100%; }
-    .container { max-width: 100%; }
+    img, svg, video { max-width: 100%; height: auto; }
     .contact-detail, .form-detail { word-break: break-word; }
-    @media (max-width: 768px) {
-      .contact-info h3, .form-info h3 { font-size: 1.2rem; }
-      .contact-detail, .form-detail { font-size: .85rem; }
-      .hero-ctas, .cta-btns { flex-direction: column; align-items: flex-start; }
-      .hero-ctas .btn, .cta-btns .btn { width: 100%; justify-content: center; box-sizing: border-box; }
-    }
   </style>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Preferred Vendors | Axial Realty LLC">
+  <meta property="og:description" content="Trusted vendors recommended by Axial Realty — roofing, lending, HVAC, plumbing, electrical, pest control, and more across DFW.">
+  <meta property="og:url" content="https://axialrealty.com/vendors.html">
+  <meta property="og:image" content="https://axialrealty.com/axial-logo-pdf-v2.png">
 </head>
 <body>
 
@@ -170,8 +168,6 @@
   <a href="neighborhoods.html" class="gold">Neighborhoods</a>
   <a href="news.html" class="gold">Market News</a>
   <a href="cma.html" class="gold">Free CMA</a>
-  <a href="apply.html" class="gold">Apply Now</a>
-  <a href="vendors.html" class="gold">Vendors</a>
   <a href="index.html#contact">Contact</a>
   <a href="tenant-portal.html">Tenant Login</a>
   <a href="index.html#contact" class="drawer-cta">Book a Consultation</a>
@@ -193,15 +189,18 @@
         <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
       </svg>
     </a>
-    <ul class="nav-links">
+        <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#services">Services</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="neighborhoods.html" style="color:var(--gold);font-weight:700;">Neighborhoods</a></li>
-      <li><a href="news.html" style="color:var(--gold);font-weight:700;">Market News</a></li>
+      <li><a href="news.html">Market News</a></li>
+      <li><a href="neighborhoods.html">Neighborhoods</a></li>
       <li><a href="cma.html" style="color:var(--gold);font-weight:700;">Free CMA</a></li>
       <li><a href="apply.html" style="color:var(--gold);font-weight:700;">Apply Now</a></li>
-      <li><a href="vendors.html" class="active" style="color:var(--gold);font-weight:700;">Vendors</a></li>
+      <li><a href="vendors.html" class="active">Vendors</a></li>
+      <li><a href="property-owners.html" style="color:var(--gold);font-weight:700;">For Owners</a></li>
+      <li><a href="join.html">Join Us</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:3px;margin-right:6px;flex-shrink:0;">
       <button class="lang-btn lang-active" data-lang="en" onclick="setLang('en')" title="English" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;line-height:1.6;">EN</button>
