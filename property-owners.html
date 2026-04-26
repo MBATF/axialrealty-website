@@ -129,7 +129,7 @@
     .process-section .section-sub { color: rgba(255,255,255,.65); }
     .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem; margin-top: var(--space-5); position: relative; }
     .process-step { text-align: center; }
-    .step-num { width: 52px; height: 52px; border-radius: 50%; background: rgba(201,169,110,.15); border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3); font-family: 'Cormorant Garamond', serif; font-size: var(--text-2xl); font-weight: 700; color: var(--gold); flex-shrink: 0; }
+    .step-num { width: 60px; height: 60px; border-radius: 50%; background: rgba(201,169,110,.15); border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3); font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 700; color: var(--gold); line-height: 1; }
     .process-step h3 { font-size: var(--text-base); font-weight: 700; color: #fff; margin-bottom: var(--space-1); }
     .process-step p { font-size: var(--text-sm); color: rgba(255,255,255,.55); line-height: 1.6; }
 
@@ -204,18 +204,14 @@
       .section-title { font-size: clamp(1.5rem, 5vw, 2rem); }
       .pain-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr; }
-      .process-step { display: flex; align-items: flex-start; gap: 1.25rem; text-align: left; }
-      .step-num { margin: 0; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
       .areas-grid { gap: .5rem; }
       .cta-btns { flex-direction: column; align-items: center; }
       .why-card { margin-top: var(--space-4); }
       .contact-form { padding: var(--space-4) var(--space-3); }
     }
     @media (max-width: 480px) {
-      .process-steps { grid-template-columns: 1fr; }
-      .process-step { display: flex; align-items: flex-start; gap: 1.25rem; text-align: left; }
-      .step-num { margin: 0; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
     }
   
     html, body { overflow-x: hidden; }
