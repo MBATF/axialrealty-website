@@ -43,7 +43,8 @@
     .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; flex-shrink: 0; }
     .hamburger span { display: block; height: 2px; background: var(--navy); border-radius: 2px; transition: .2s; }
     @media (max-width: 860px) { .nav-links { display: none; } .hamburger { display: flex; } }
-    @media (max-width: 480px) { .lang-wrap { display: none; } }
+    @media (max-width: 640px) { .lang-wrap { display: none !important; } }
+    @media (max-width: 480px) { .tenant-pill span { display: none; } }
 
     /* ── MOBILE DRAWER ── */
     .mobile-drawer { display: none; position: fixed; inset: 0; background: var(--navy-dark); z-index: 200; flex-direction: column; padding: 2rem 1.75rem; gap: 1.25rem; overflow-y: auto; }
@@ -157,9 +158,9 @@
           <button class="lang-btn" data-lang="zh-TW" onclick="setLang('zh-TW')" title="Traditional Chinese" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;line-height:1.6;">繁中</button>
           <button class="lang-btn" data-lang="zh-CN" onclick="setLang('zh-CN')" title="Simplified Chinese" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;line-height:1.6;">简中</button>
         </div>
-        <a href="tenant-portal.html" style="display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:700;letter-spacing:.05em;color:var(--navy);text-decoration:none;padding:.35rem .7rem;border:1.5px solid var(--border);border-radius:9999px;transition:border-color .15s,color .15s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--navy)'">
+        <a href="tenant-portal.html" class="tenant-pill" style="display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:700;letter-spacing:.05em;color:var(--navy);text-decoration:none;padding:.35rem .7rem;border:1.5px solid var(--border);border-radius:9999px;transition:border-color .15s,color .15s;white-space:nowrap;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--navy)'">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Tenant Login
+          <span>Tenant Login</span>
         </a>
         <button id="hamburger-btn" class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mobile-drawer').classList.add('open');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';">
           <span></span><span></span><span></span>
@@ -183,7 +184,6 @@
   <button class="filter-btn" onclick="filterVendors('roofing',this)">Roofing</button>
   <button class="filter-btn" onclick="filterVendors('lending',this)">Lending</button>
   <button class="filter-btn" onclick="filterVendors('lending',this)">Lending</button>
-  <button class="filter-btn" onclick="filterVendors('insurance',this)">Insurance</button>
   <button class="filter-btn" onclick="filterVendors('hvac',this)">HVAC</button>
   <button class="filter-btn" onclick="filterVendors('plumbing',this)">Plumbing</button>
   <button class="filter-btn" onclick="filterVendors('electrical',this)">Electrical</button>
