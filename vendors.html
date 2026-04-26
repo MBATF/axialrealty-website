@@ -213,7 +213,221 @@
           Tenant Login
         </a>
     <a href="index.html#contact">Contact</a>
+    <button id="hamburger-btn" class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mobile-drawer').classList.add('open');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="page-hero">
+  <div class="container" style="text-align:center;">
+    <div class="eyebrow" style="color:rgba(201,169,110,.7);margin-bottom:.75rem;">Trusted Partners</div>
+    <h1 style="font-size:clamp(2rem,5vw,3rem);color:#fff;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin-bottom:1rem;">Preferred Vendors</h1>
+    <p>Vetted professionals we trust and recommend across DFW.</p>
+  </div>
+</section>
+
+<!-- ── FILTER BAR ── -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" onclick="filterVendors('all',this)">All</button>
+    <button class="filter-btn" onclick="filterVendors('financial',this)">Financial</button>
+    <button class="filter-btn" onclick="filterVendors('insurance',this)">Insurance</button>
+    <button class="filter-btn" onclick="filterVendors('hvac',this)">HVAC</button>
+    <button class="filter-btn" onclick="filterVendors('plumbing',this)">Plumbing</button>
+    <button class="filter-btn" onclick="filterVendors('electrical',this)">Electrical</button>
+    <button class="filter-btn" onclick="filterVendors('pest',this)">Pest Control</button>
+    <button class="filter-btn" onclick="filterVendors('appliance',this)">Appliances</button>
+    <button class="filter-btn" onclick="filterVendors('handyman',this)">Handyman</button>
+    <button class="filter-btn" onclick="filterVendors('notary',this)">Notary</button>
+  </div>
+</div>
+
+<!-- ── VENDOR GRID ── -->
+<section style="padding:3rem 0 5rem;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;">
+
+      <!-- John Yoon -->
+      <div class="vendor-card" data-category="financial">
+        <div class="vendor-card-top">
+          <img src="john-yoon.jpg" alt="John Yoon" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;">Mortgage</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--navy-dark);">John Yoon</div>
+            <div style="font-size:.82rem;color:#666;">Loan Officer</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <p style="font-size:.85rem;color:#555;margin:0;">Competitive mortgage solutions for home buyers across DFW. Pre-approval, purchase loans, and refinancing.</p>
+          <div style="display:flex;flex-direction:column;gap:.35rem;margin-top:auto;padding-top:.75rem;">
+            <a href="tel:9725940886" style="font-size:.82rem;color:var(--navy);text-decoration:none;">(972) 594-0886</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lacie Lee -->
+      <div class="vendor-card" data-category="insurance">
+        <div class="vendor-card-top">
+          <img src="lacie-lee.jpg" alt="Lacie Lee" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;">Insurance</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--navy-dark);">Lacie Lee</div>
+            <div style="font-size:.82rem;color:#666;">Insurance Agent</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <p style="font-size:.85rem;color:#555;margin:0;">Home, auto, and life insurance solutions tailored to DFW homeowners and investors.</p>
+          <div style="display:flex;flex-direction:column;gap:.35rem;margin-top:auto;padding-top:.75rem;">
+            <a href="tel:9725761950" style="font-size:.82rem;color:var(--navy);text-decoration:none;">(972) 576-1950</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vivian Pak -->
+      <div class="vendor-card" data-category="insurance">
+        <div class="vendor-card-top">
+          <img src="vivian-pak.jpg" alt="Vivian Pak" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;">Insurance &middot; 中/英</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--navy-dark);">Vivian Pak</div>
+            <div style="font-size:.82rem;color:#666;">Insurance Agent</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <p style="font-size:.85rem;color:#555;margin:0;">Bilingual insurance in English and Mandarin. Home, auto, and life coverage for DFW families.</p>
+        </div>
+      </div>
+
+      <!-- HoneyDo Plumbing -->
+      <div class="vendor-card" data-category="plumbing">
+        <div class="vendor-card-top">
+          <img src="honeydo-plumbing.jpg" alt="HoneyDo Plumbing" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;">Plumbing</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--navy-dark);">HoneyDo Plumbing</div>
+            <div style="font-size:.82rem;color:#666;">Licensed Plumber</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <p style="font-size:.85rem;color:#555;margin:0;">Reliable plumbing services for DFW homeowners — repairs, installations, and emergency calls.</p>
+          <div style="display:flex;flex-direction:column;gap:.35rem;margin-top:auto;padding-top:.75rem;">
+            <a href="https://maps.app.goo.gl/honeydo" target="_blank" rel="noopener" style="font-size:.82rem;color:var(--gold);text-decoration:none;">View on Google Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dipson AC -->
+      <div class="vendor-card" data-category="hvac">
+        <div class="vendor-card-top">
+          <img src="dipson-ac.jpg" alt="Dipson AC" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;">HVAC</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--navy-dark);">Dipson AC</div>
+            <div style="font-size:.82rem;color:#666;">HVAC Contractor</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <p style="font-size:.85rem;color:#555;margin:0;">Heating, cooling, and air quality services for North Texas homes. Installations, repairs, and maintenance.</p>
+        </div>
+      </div>
+
+      <!-- Safe Plug Electric -->
+      <div class="vendor-card" data-category="electrical">
+        <div class="vendor-card-top">
+          <img src="safe-plug-electric.jpg" alt="Safe Plug Electric" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;">Electrical</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--navy-dark);">Safe Plug Electric</div>
+            <div style="font-size:.82rem;color:#666;">Licensed Electrician</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <p style="font-size:.85rem;color:#555;margin:0;">Licensed electrical services — panels, wiring, outlets, EV charger installation, and safety inspections across DFW.</p>
+        </div>
+      </div>
+
+      <!-- Ephlora Pest Solutions -->
+      <div class="vendor-card" data-category="pest">
+        <div class="vendor-card-top">
+          <img src="ephlora-pest.jpg" alt="Ephlora Pest Solutions" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;">Pest Control</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--navy-dark);">Ephlora Pest Solutions</div>
+            <div style="font-size:.82rem;color:#666;">Pest Control Specialist</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <p style="font-size:.85rem;color:#555;margin:0;">Effective and eco-friendly pest control treatments for DFW homes and properties.</p>
+        </div>
+      </div>
+
+      <!-- Handy Expert Services -->
+      <div class="vendor-card" data-category="handyman">
+        <div class="vendor-card-top">
+          <img src="handy-expert.jpg" alt="Handy Expert Services" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;">Handyman</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--navy-dark);">Handy Expert Services</div>
+            <div style="font-size:.82rem;color:#666;">General Contractor</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <p style="font-size:.85rem;color:#555;margin:0;">Trusted handyman and general repair services for homeowners and landlords across North Texas.</p>
+          <div style="display:flex;flex-direction:column;gap:.35rem;margin-top:auto;padding-top:.75rem;">
+            <a href="https://maps.app.goo.gl/4dABa6mLZYWLRDNg7" target="_blank" rel="noopener" style="font-size:.82rem;color:var(--gold);text-decoration:none;">View on Google Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sensor Appliance Repair -->
+      <div class="vendor-card" data-category="appliance">
+        <div class="vendor-card-top">
+          <img src="sensor-appliance.jpg" alt="Sensor Appliance Repair" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;">Appliance Repair</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--navy-dark);">Sensor Appliance Repair</div>
+            <div style="font-size:.82rem;color:#666;">Appliance Technician</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <p style="font-size:.85rem;color:#555;margin:0;">Professional appliance repair for washers, dryers, refrigerators, ovens, and more across DFW.</p>
+          <div style="display:flex;flex-direction:column;gap:.35rem;margin-top:auto;padding-top:.75rem;">
+            <a href="https://maps.app.goo.gl/1AxRnWBj8CaGQE428" target="_blank" rel="noopener" style="font-size:.82rem;color:var(--gold);text-decoration:none;">View on Google Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alice Fu - Notary -->
+      <div class="vendor-card" data-category="notary">
+        <div class="vendor-card-top">
+          <img src="alice-notary.jpg" alt="Alice Fu" style="width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;">Notary</div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--navy-dark);">Alice Fu</div>
+            <div style="font-size:.82rem;color:#666;">Notary Public</div>
+          </div>
+        </div>
+        <div class="vendor-card-body">
+          <p style="font-size:.85rem;color:#555;margin:0;">Professional notary services for real estate documents, contracts, and legal paperwork across DFW.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="vendor-cta">
+  <div class="container" style="text-align:center;">
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;color:#fff;margin-bottom:.75rem;">Know a Great Vendor?</h2>
+    <p style="color:rgba(255,255,255,.6);font-size:.9rem;max-width:480px;margin:0 auto 1.5rem;">We're always looking to connect with trusted professionals who serve DFW homeowners.</p>
+    <a href="index.html#contact" style="display:inline-block;background:var(--gold);color:#fff;font-size:.85rem;font-weight:700;letter-spacing:.07em;padding:.85rem 2rem;border-radius:6px;text-decoration:none;text-transform:uppercase;">Get in Touch</a>
+  </div>
+</section>
+
+<footer>
   <div style="display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:.75rem;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" width="22" height="24" aria-label="Equal Housing Opportunity" role="img">
       <polygon points="50,5 95,45 85,45 85,105 15,105 15,45 5,45" fill="white" stroke="white" stroke-width="2"/>
