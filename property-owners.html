@@ -219,6 +219,7 @@
     img, svg, video { max-width: 100%; height: auto; }
     .contact-detail, .form-detail { word-break: break-word; }
   </style>
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lc7-8ssAAAAAPdr1Ccw2ijtgD8drJsIhYhqlNDh" async defer></script>
 </head>
 <body>
 
@@ -717,7 +718,10 @@
         btn.textContent = 'Sending...';
         btn.disabled = true;
         try {
-          const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+          const _pmToken = await new Promise(resolve => grecaptcha.ready(() => grecaptcha.execute('6Lc7-8ssAAAAAPdr1Ccw2ijtgD8drJsIhYhqlNDh', {action:'property_owners'}).then(resolve)));
+          const _pmFD = new FormData(form);
+          _pmFD.append('g-recaptcha-response', _pmToken);
+          const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: _pmFD });
           const json = await res.json();
           if (json.success) {
             form.querySelectorAll('input,select,textarea,button').forEach(el => el.style.display = 'none');

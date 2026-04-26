@@ -745,6 +745,7 @@
   <meta property="og:description" content="Apply for a rental property managed by Axial Realty LLC. Secure online application — TXR-2003 compliant lease application form.">
   <meta property="og:url" content="https://axialrealty.com/apply.html">
   <meta property="og:image" content="https://axialrealty.com/axial-logo-pdf-v2.png">
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lc7-8ssAAAAAPdr1Ccw2ijtgD8drJsIhYhqlNDh" async defer></script>
 </head>
 <body>
 
@@ -1308,7 +1309,9 @@ function sendResumeLink() {
   var encoded = btoa(unescape(encodeURIComponent(JSON.stringify(data)))).replace(/\+/g,'_').replace(/\//g,'-').replace(/=/g,'');
   var resumeUrl = window.location.origin + '/apply.html?resume=' + encoded;
   // Send email via Web3Forms
-  fetch('https://api.web3forms.com/submit', {
+  const _rcToken = await new Promise(resolve => grecaptcha.ready(() => grecaptcha.execute('6Lc7-8ssAAAAAPdr1Ccw2ijtgD8drJsIhYhqlNDh', {action:'apply'}).then(resolve)));
+      finalData.append('g-recaptcha-response', _rcToken);
+      fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

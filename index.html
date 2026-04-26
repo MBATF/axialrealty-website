@@ -926,6 +926,7 @@
     img, svg, video { max-width: 100%; height: auto; }
     .contact-detail, .form-detail { word-break: break-word; }
   </style>
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lc7-8ssAAAAAPdr1Ccw2ijtgD8drJsIhYhqlNDh" async defer></script>
 </head>
 <body>
 
@@ -1582,7 +1583,9 @@
             <p>Whether you're ready to buy, thinking about selling, or just exploring your options — we're here to help you make a confident, informed decision. Reach out and let's start the conversation.</p>
           </div>
           <div class="cta-form">
-            <form class="form-shell" action="https://formspree.io/f/xjgjrkpj" method="POST">
+            <form class="form-shell" id="contact-form" action="https://formspree.io/f/xjgjrkpj" method="POST">
+              <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+
               <div class="form-field">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your name" required>

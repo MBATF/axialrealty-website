@@ -346,6 +346,7 @@
   <meta property="og:description" content="Request a free Comparative Market Analysis for your North Texas home. Get a professional valuation from David Tung, Broker.">
   <meta property="og:url" content="https://axialrealty.com/cma.html">
   <meta property="og:image" content="https://axialrealty.com/axial-logo-pdf-v2.png">
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lc7-8ssAAAAAPdr1Ccw2ijtgD8drJsIhYhqlNDh" async defer></script>
 </head>
 <body>
 
@@ -479,6 +480,8 @@
               <div class="form-divider"></div>
 
               <form id="cmaForm" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+
                 <input type="hidden" name="access_key" value="09ac0000-3fab-42b0-8fad-5cb87c7df530">
                 <input type="hidden" name="subject" value="New CMA Request — Axial Realty">
                 <input type="hidden" name="from_name" value="Axial Realty Website">
@@ -587,7 +590,9 @@
       // Dynamically set _replyto to customer email
       data.set('_replyto', data.get('email') || '');
       try {
-        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        const token = await new Promise(resolve => grecaptcha.ready(() => grecaptcha.execute('6Lc7-8ssAAAAAPdr1Ccw2ijtgD8drJsIhYhqlNDh', {action:'cma'}).then(resolve)));
+          data.append('g-recaptcha-response', token);
+          const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
         const json = await res.json();
         if (json.success) {
           form.style.display = 'none';
