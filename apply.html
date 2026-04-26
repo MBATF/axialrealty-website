@@ -852,6 +852,7 @@
     <div style="text-align:center;margin-bottom:.6rem;">
       <a href="IABS-2026.pdf" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:3px;letter-spacing:.02em;transition:color .15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Texas law requires all license holders to provide the Information About Brokerage Services form to prospective clients.</a>
     </div>
+    <div style="text-align:center;margin-bottom:.5rem;font-size:.72rem;"><a href="privacy-policy.html" style="color:rgba(255,255,255,.5);text-decoration:none;letter-spacing:.03em;transition:color .15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Privacy Policy</a><span style="color:rgba(255,255,255,.2);margin:0 .5rem;">·</span><a href="terms.html" style="color:rgba(255,255,255,.5);text-decoration:none;letter-spacing:.03em;transition:color .15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Terms of Service</a><span style="color:rgba(255,255,255,.2);margin:0 .5rem;">·</span><a href="cookie-policy.html" style="color:rgba(255,255,255,.5);text-decoration:none;letter-spacing:.03em;transition:color .15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Cookie Policy</a></div>
     <div class="footer-copy">© 2026 Axial Realty LLC. All rights reserved. Licensed Real Estate Brokerage · Texas.</div>
   </div>
 </footer>
@@ -1111,22 +1112,61 @@ document.getElementById('lease-form').addEventListener('submit', async function(
   var formData = collectFormData();
 
   try {
-    var response = await fetch('/api/lease-application', {
+    // Get reCAPTCHA token
+    var rcToken = await new Promise(function(resolve) {
+      grecaptcha.ready(function() {
+        grecaptcha.execute('6Lc7-8ssAAAAAPdr1Ccw2ijtgD8drJsIhYhqlNDh', { action: 'apply' }).then(resolve);
+      });
+    });
+
+    // Build a readable summary for the email
+    var summary = [];
+    var fieldLabels = {
+      applicant_name: 'Applicant Name', email: 'Email', phone: 'Phone',
+      dob: 'Date of Birth', ssn: 'SSN (last 4 only — not stored)',
+      current_address: 'Current Address', current_city: 'City', current_state: 'State', current_zip: 'ZIP',
+      monthly_rent: 'Current Monthly Rent', move_reason: 'Reason for Moving',
+      employer: 'Employer', job_title: 'Job Title', employment_type: 'Employment Type',
+      monthly_income: 'Monthly Income', employment_start: 'Employment Start',
+      supervisor: 'Supervisor', supervisor_phone: 'Supervisor Phone',
+      prev_employer: 'Previous Employer', prev_income: 'Previous Monthly Income',
+      bank_name: 'Bank', account_type: 'Account Type',
+      emergency_name: 'Emergency Contact', emergency_phone: 'Emergency Phone', emergency_relation: 'Relationship',
+      co_applicant_name: 'Co-Applicant Name', co_applicant_email: 'Co-Applicant Email',
+      pets: 'Pets', pet_details: 'Pet Details',
+      vehicles: 'Vehicles', vehicle_details: 'Vehicle Details',
+      eviction_history: 'Eviction History', criminal_history: 'Criminal History',
+      bankruptcy_history: 'Bankruptcy', additional_notes: 'Additional Notes'
+    };
+    for (var key in formData) {
+      if (formData[key] && key !== 'access_key' && key !== '__step' && key !== '__savedAt') {
+        var label = fieldLabels[key] || key;
+        summary.push(label + ': ' + formData[key]);
+      }
+    }
+
+    var payload = {
+      access_key: '09ac0000-3fab-42b0-8fad-5cb87c7df530',
+      subject: 'New Lease Application — ' + (formData.applicant_name || 'Applicant'),
+      from_name: 'Axial Realty Apply Form',
+      'g-recaptcha-response': rcToken,
+      message: 'New lease application submitted via axialrealty.com/apply.html\n\n' + summary.join('\n')
+    };
+
+    var response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(payload)
     });
 
     var result = await response.json();
 
-    if (response.ok && result.success) {
-      // Hide form, show success
+    if (result.success) {
       clearSavedData();
       document.getElementById('lease-form').style.display = 'none';
       var successEl = document.getElementById('submit-success');
       successEl.style.display = 'block';
       successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Hide progress bar
       document.querySelector('.progress-wrap').style.display = 'none';
     } else {
       throw new Error(result.message || 'Submission failed');
@@ -1138,7 +1178,6 @@ document.getElementById('lease-form').addEventListener('submit', async function(
     document.getElementById('error-message').textContent = err.message || 'There was an error submitting your application. Please try again or contact us directly.';
     errorEl.style.display = 'block';
     errorEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // Hide form
     document.getElementById('lease-form').style.display = 'none';
   }
 });
