@@ -172,7 +172,7 @@
     .site-footer { background: var(--navy-deep); color: rgba(255,255,255,.5); padding: 2rem 0 1.25rem; }
     .footer-inner { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,.08); }
     .footer-logo svg { height: 44px; width: auto; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
     .footer-links a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .875rem; transition: color .15s; }
     .footer-links a:hover { color: var(--gold); }
     .footer-copy { text-align: center; font-size: .72rem; letter-spacing: .04em; }
@@ -189,13 +189,22 @@
       .process-steps { grid-template-columns: 1fr 1fr; }
       .form-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+      .hero { padding: 3rem 0 2.5rem; }
+      .hero h1 { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+      .hero p { font-size: .95rem; }
       .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .hero-ctas .btn { width: 100%; justify-content: center; box-sizing: border-box; }
       .cta-btns { flex-direction: column; align-items: center; }
+      .cta-btns .btn { width: 100%; max-width: 320px; justify-content: center; }
+      .benefit-card { flex-direction: column; }
+      section { padding: 2.5rem 0; }
+      .hero::before { display: none; }
     }
     @media (max-width: 480px) {
       .process-steps { grid-template-columns: 1fr; }
       .who-grid { grid-template-columns: 1fr; }
+      .markets-grid { gap: .4rem; }
+      .market-pill { font-size: .8rem; padding: .35rem .75rem; }
     }
   </style>
 </head>
