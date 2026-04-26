@@ -335,6 +335,18 @@
       .lang-btn { display: none !important; }
       .tenant-btn { font-size: .68rem !important; padding: .35rem .65rem !important; }
     }
+  
+    html, body { overflow-x: hidden; max-width: 100%; }
+    * { box-sizing: border-box; }
+    img, svg, video { max-width: 100%; }
+    .container { max-width: 100%; }
+    .contact-detail, .form-detail { word-break: break-word; }
+    @media (max-width: 768px) {
+      .contact-info h3, .form-info h3 { font-size: 1.2rem; }
+      .contact-detail, .form-detail { font-size: .85rem; }
+      .hero-ctas, .cta-btns { flex-direction: column; align-items: flex-start; }
+      .hero-ctas .btn, .cta-btns .btn { width: 100%; justify-content: center; box-sizing: border-box; }
+    }
   </style>
 </head>
 <body>
