@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preferred Vendors | Axial Realty LLC</title>
   <meta name="description" content="Hand-picked professionals personally vetted by David Tung. Trusted vendors for roofing, lending, HVAC, plumbing, electrical, pest control, and more across DFW.">
-  <meta name="keywords" content="preferred vendors DFW, trusted contractors Frisco TX, real estate vendors North Texas, Axial Realty vendors">
   <link rel="canonical" href="https://axialrealty.com/vendors.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Preferred Vendors | Axial Realty LLC">
   <meta property="og:description" content="Trusted vendors recommended by Axial Realty — roofing, lending, HVAC, plumbing, electrical, pest control, and more across DFW.">
   <meta property="og:url" content="https://axialrealty.com/vendors.html">
   <meta property="og:image" content="https://axialrealty.com/axial-logo-pdf-v2.png">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -25,28 +23,28 @@
       --border: rgba(37,49,81,.12);
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'Inter', Arial, sans-serif;
-      --text: #253151;
     }
     html, body { overflow-x: hidden; }
-    body { font-family: var(--font-body); color: var(--text); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--navy); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     img { max-width: 100%; display: block; }
-    .container { width: 100%; max-width: 680px; margin: 0 auto; padding: 0 1.25rem; }
+    .container { width: 100%; max-width: 700px; margin: 0 auto; padding: 0 1.25rem; }
 
-    /* ── NAV ── */
+    /* NAV */
     header { background: var(--cream-2); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-    .nav-inner { display: flex; align-items: center; gap: 0.5rem; height: 64px; }
+    .nav-inner { display: flex; align-items: center; height: 64px; gap: .5rem; padding: 0 1.25rem; max-width: 1160px; margin: 0 auto; }
     .nav-logo svg { height: 52px; width: auto; }
     .nav-links { display: flex; list-style: none; gap: 1.5rem; margin-left: 1.5rem; }
     .nav-links a { font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--navy); text-decoration: none; opacity: .7; transition: opacity .15s; }
     .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
-    .nav-right { margin-left: auto; display: flex; align-items: center; gap: .75rem; }
+    .nav-right { margin-left: auto; display: flex; align-items: center; gap: .5rem; }
+    .tenant-pill { display: inline-flex; align-items: center; gap: .3rem; font-size: .68rem; font-weight: 700; letter-spacing: .05em; color: var(--navy); text-decoration: none; padding: .35rem .7rem; border: 1.5px solid var(--border); border-radius: 9999px; transition: border-color .15s, color .15s; white-space: nowrap; flex-shrink: 0; }
+    .tenant-pill:hover { border-color: var(--gold); color: var(--gold); }
     .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; flex-shrink: 0; }
-    .hamburger span { display: block; height: 2px; background: var(--navy); border-radius: 2px; transition: .2s; }
+    .hamburger span { display: block; height: 2px; background: var(--navy); border-radius: 2px; }
     @media (max-width: 860px) { .nav-links { display: none; } .hamburger { display: flex; } }
-    @media (max-width: 640px) { .lang-wrap { display: none !important; } }
-    @media (max-width: 480px) { .tenant-pill span { display: none; } }
+    @media (max-width: 600px) { .lang-wrap { display: none !important; } }
 
-    /* ── MOBILE DRAWER ── */
+    /* MOBILE DRAWER */
     .mobile-drawer { display: none; position: fixed; inset: 0; background: var(--navy-dark); z-index: 200; flex-direction: column; padding: 2rem 1.75rem; gap: 1.25rem; overflow-y: auto; }
     .mobile-drawer.open { display: flex; }
     .mobile-drawer a { color: #fff; text-decoration: none; font-size: 1rem; font-weight: 500; opacity: .85; }
@@ -54,49 +52,47 @@
     .mobile-drawer .drawer-close { background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; align-self: flex-end; margin-bottom: .5rem; }
     .mobile-drawer .drawer-cta { margin-top: 1rem; background: var(--gold); color: #fff !important; padding: .75rem 1.5rem; border-radius: 6px; text-align: center; font-weight: 700 !important; opacity: 1 !important; }
 
-    /* ── HERO ── */
+    /* HERO */
     .page-hero { background: var(--navy-dark); padding: 4rem 1.25rem 3.5rem; text-align: center; }
-    .page-hero .eyebrow { font-family: var(--font-body); font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .page-hero .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
     .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem,6vw,3.2rem); font-weight: 600; color: #fff; margin-bottom: .75rem; line-height: 1.15; }
     .page-hero h1 em { font-style: italic; font-weight: 400; }
     .hero-rule { width: 48px; height: 2px; background: var(--gold); margin: 1rem auto 1.5rem; border: none; }
     .page-hero p { color: rgba(255,255,255,.65); font-size: .9rem; max-width: 420px; margin: 0 auto; line-height: 1.7; }
 
-    /* ── FILTER BAR ── */
+    /* FILTER BAR */
     .filter-bar { background: var(--cream-2); border-bottom: 1px solid var(--border); padding: .9rem 1.25rem; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; white-space: nowrap; }
     .filter-bar::-webkit-scrollbar { display: none; }
-    .filter-btn { display: inline-block; font-family: var(--font-body); font-size: .75rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; padding: .45rem 1.1rem; border-radius: 9999px; border: 1.5px solid var(--border); background: transparent; color: var(--navy); cursor: pointer; transition: all .15s; margin-right: .5rem; }
+    .filter-btn { display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; padding: .45rem 1.1rem; border-radius: 9999px; border: 1.5px solid var(--border); background: transparent; color: var(--navy); cursor: pointer; transition: all .15s; margin-right: .5rem; }
     .filter-btn.active { background: var(--navy-dark); color: #fff; border-color: var(--navy-dark); }
     .filter-btn:hover:not(.active) { border-color: var(--gold); color: var(--gold); }
 
-    /* ── SECTION LABEL ── */
+    /* SECTION LABEL */
     .section-label { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); padding: 2rem 0 .75rem; }
     .section-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 1.5rem; }
 
-    /* ── VENDOR CARDS ── */
-    .vendor-list { display: flex; flex-direction: column; gap: 0; }
-    .vendor-card { background: var(--cream-2); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; margin-bottom: 1rem; }
-    .vendor-card-top { display: flex; align-items: flex-start; gap: 1.1rem; margin-bottom: 1rem; }
+    /* VENDOR CARDS */
+    .vendor-card { background: var(--cream-2); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; margin-bottom: 1rem; }
+    .vendor-card-top { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
     .vendor-photo { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--border); }
-    .vendor-photo-placeholder { width: 76px; height: 76px; border-radius: 50%; flex-shrink: 0; background: rgba(201,169,110,.12); border: 2px solid rgba(201,169,110,.3); display: grid; place-items: center; }
-    .vendor-cat { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); margin-bottom: .2rem; }
-    .vendor-name { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: var(--navy-dark); line-height: 1.2; margin-bottom: .1rem; }
-    .vendor-role { font-size: .82rem; color: #777; }
-    .vendor-company { font-size: .85rem; font-weight: 700; color: var(--navy); margin-top: .15rem; }
-    .vendor-badge { display: inline-flex; align-items: center; gap: .35rem; font-size: .72rem; font-weight: 600; color: var(--gold); border: 1.5px solid rgba(201,169,110,.4); border-radius: 9999px; padding: .3rem .85rem; margin-bottom: .9rem; background: rgba(201,169,110,.06); }
-    .vendor-contacts { display: flex; flex-direction: column; gap: .5rem; }
-    .vendor-contacts a { font-size: .85rem; color: var(--navy); text-decoration: none; display: flex; align-items: center; gap: .6rem; }
+    .vendor-cat { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: .2rem; }
+    .vendor-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--navy-dark); line-height: 1.15; margin-bottom: .15rem; }
+    .vendor-role { font-size: .82rem; color: #777; margin-bottom: .1rem; }
+    .vendor-company { font-size: .84rem; font-weight: 700; color: var(--navy); margin-top: .1rem; line-height: 1.3; }
+    .vendor-badge { display: inline-flex; align-items: center; gap: .4rem; font-size: .7rem; font-weight: 600; color: var(--gold); border: 1.5px solid rgba(201,169,110,.35); border-radius: 9999px; padding: .32rem 1rem; margin-bottom: 1rem; background: rgba(201,169,110,.06); }
+    .vendor-contacts { display: flex; flex-direction: column; gap: .55rem; margin-bottom: 1rem; }
+    .vendor-contacts a { font-size: .84rem; color: var(--navy); text-decoration: none; display: flex; align-items: center; gap: .55rem; }
     .vendor-contacts a:hover { color: var(--gold); }
-    .vendor-contacts svg { flex-shrink: 0; opacity: .6; }
-    .vendor-desc { font-size: .83rem; color: #666; line-height: 1.6; margin-bottom: .9rem; }
+    .vendor-contacts svg { flex-shrink: 0; opacity: .55; }
+    .vendor-desc { font-family: var(--font-display); font-style: italic; font-size: .95rem; color: #666; line-height: 1.65; border-left: 3px solid var(--gold); padding-left: .85rem; margin-top: .25rem; }
 
-    /* ── CTA ── */
+    /* CTA */
     .vendor-cta { background: var(--navy-dark); padding: 3.5rem 1.25rem; text-align: center; margin-top: 2rem; }
     .vendor-cta h2 { font-family: var(--font-display); font-size: clamp(1.5rem,4vw,2rem); font-weight: 600; color: #fff; margin-bottom: .75rem; }
     .vendor-cta p { color: rgba(255,255,255,.6); font-size: .88rem; margin-bottom: 1.5rem; }
     .btn-gold { display: inline-block; background: var(--gold); color: #fff; font-size: .82rem; font-weight: 700; letter-spacing: .08em; padding: .85rem 2rem; border-radius: 6px; text-decoration: none; text-transform: uppercase; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer { background: var(--navy-deeper); color: rgba(255,255,255,.45); font-size: .75rem; text-align: center; padding: 2.5rem 1.5rem; line-height: 1.9; }
     footer a { color: rgba(255,255,255,.5); text-decoration: none; }
     footer a:hover { color: var(--gold); }
@@ -106,7 +102,7 @@
 
 <!-- MOBILE DRAWER -->
 <div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-  <button class="drawer-close" onclick="document.getElementById('mobile-drawer').classList.remove('open');document.getElementById('hamburger-btn').classList.remove('open');document.body.style.overflow='';" aria-label="Close menu">&#10005;</button>
+  <button class="drawer-close" onclick="document.getElementById('mobile-drawer').classList.remove('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','false');document.body.style.overflow='';" aria-label="Close menu">&#10005;</button>
   <a href="index.html">Home</a>
   <a href="index.html#services">Services</a>
   <a href="index.html#about">About</a>
@@ -124,48 +120,46 @@
 
 <!-- HEADER -->
 <header>
-  <div class="container" style="max-width:1160px;">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Axial Realty LLC home">
-        <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Axial Realty LLC" role="img" height="52">
-          <path d="M14 46 L24 18 L34 46" stroke="#253151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M17.5 37 L30.5 37" stroke="#253151" stroke-width="2" stroke-linecap="round"/>
-          <line x1="27" y1="18" x2="27" y2="46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M27 18 Q38 18 38 26 Q38 34 27 34" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M27 34 L38 46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="52" y1="16" x2="52" y2="44" stroke="#c9a96e" stroke-width="1" opacity="0.4"/>
-          <text x="62" y="35" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#253151">AXIAL</text>
-          <text x="63" y="48" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="5" fill="#c9a96e">REALTY</text>
-          <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
-        </svg>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="news.html">Market News</a></li>
-        <li><a href="neighborhoods.html">Neighborhoods</a></li>
-        <li><a href="cma.html" style="color:var(--gold);font-weight:700;">Free CMA</a></li>
-        <li><a href="apply.html" style="color:var(--gold);font-weight:700;">Apply Now</a></li>
-        <li><a href="vendors.html" class="active">Vendors</a></li>
-        <li><a href="property-owners.html">For Owners</a></li>
-        <li><a href="join.html">Join Us</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-      <div class="nav-right">
-        <div class="lang-wrap" style="display:flex;align-items:center;gap:3px;">
-          <button class="lang-btn lang-active" data-lang="en" onclick="setLang('en')" title="English" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;line-height:1.6;">EN</button>
-          <button class="lang-btn" data-lang="zh-TW" onclick="setLang('zh-TW')" title="Traditional Chinese" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;line-height:1.6;">繁中</button>
-          <button class="lang-btn" data-lang="zh-CN" onclick="setLang('zh-CN')" title="Simplified Chinese" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;line-height:1.6;">简中</button>
-        </div>
-        <a href="tenant-portal.html" class="tenant-pill" style="display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:700;letter-spacing:.05em;color:var(--navy);text-decoration:none;padding:.35rem .7rem;border:1.5px solid var(--border);border-radius:9999px;transition:border-color .15s,color .15s;white-space:nowrap;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--navy)'">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          <span>Tenant Login</span>
-        </a>
-        <button id="hamburger-btn" class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mobile-drawer').classList.add('open');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';">
-          <span></span><span></span><span></span>
-        </button>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Axial Realty LLC home">
+      <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" height="52">
+        <path d="M14 46 L24 18 L34 46" stroke="#253151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M17.5 37 L30.5 37" stroke="#253151" stroke-width="2" stroke-linecap="round"/>
+        <line x1="27" y1="18" x2="27" y2="46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M27 18 Q38 18 38 26 Q38 34 27 34" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M27 34 L38 46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="52" y1="16" x2="52" y2="44" stroke="#c9a96e" stroke-width="1" opacity="0.4"/>
+        <text x="62" y="35" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#253151">AXIAL</text>
+        <text x="63" y="48" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="5" fill="#c9a96e">REALTY</text>
+        <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="news.html">Market News</a></li>
+      <li><a href="neighborhoods.html">Neighborhoods</a></li>
+      <li><a href="cma.html" style="color:var(--gold);font-weight:700;">Free CMA</a></li>
+      <li><a href="apply.html" style="color:var(--gold);font-weight:700;">Apply Now</a></li>
+      <li><a href="vendors.html" class="active">Vendors</a></li>
+      <li><a href="property-owners.html">For Owners</a></li>
+      <li><a href="join.html">Join Us</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-wrap" style="display:flex;align-items:center;gap:3px;">
+        <button class="lang-btn lang-active" data-lang="en" onclick="setLang('en')" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);line-height:1.6;">EN</button>
+        <button class="lang-btn" data-lang="zh-TW" onclick="setLang('zh-TW')" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);line-height:1.6;">繁中</button>
+        <button class="lang-btn" data-lang="zh-CN" onclick="setLang('zh-CN')" style="font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:2px 7px;cursor:pointer;color:var(--navy);line-height:1.6;">简中</button>
       </div>
+      <a href="tenant-portal.html" class="tenant-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Tenant
+      </a>
+      <button id="hamburger-btn" class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mobile-drawer').classList.add('open');this.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
@@ -183,9 +177,8 @@
   <button class="filter-btn active" onclick="filterVendors('all',this)">All</button>
   <button class="filter-btn" onclick="filterVendors('roofing',this)">Roofing</button>
   <button class="filter-btn" onclick="filterVendors('lending',this)">Lending</button>
-  <button class="filter-btn" onclick="filterVendors('lending',this)">Lending</button>
-  <button class="filter-btn" onclick="filterVendors('hvac',this)">HVAC</button>
   <button class="filter-btn" onclick="filterVendors('plumbing',this)">Plumbing</button>
+  <button class="filter-btn" onclick="filterVendors('hvac',this)">HVAC</button>
   <button class="filter-btn" onclick="filterVendors('electrical',this)">Electrical</button>
   <button class="filter-btn" onclick="filterVendors('pest',this)">Pest Control</button>
   <button class="filter-btn" onclick="filterVendors('appliance',this)">Appliances</button>
@@ -197,197 +190,210 @@
 <div class="container" style="padding-top:.5rem;padding-bottom:3rem;">
   <div class="section-label">Our Preferred Vendors</div>
   <hr class="section-divider">
-  <div class="vendor-list" id="vendor-list">
 
-    <!-- John Yoon -->
-    <div class="vendor-card" data-category="roofing">
-      <div class="vendor-card-top">
-        <img src="john-yoon.jpg" alt="John Yoon" class="vendor-photo">
-        <div>
-          <div class="vendor-cat">Roofing &amp; Construction</div>
-          <div class="vendor-name">John Yoon</div>
-          <div class="vendor-role">Project Manager</div>
-          <div class="vendor-company">Qualis Roofing &amp; Construction</div>
-        </div>
-      </div>
-      <div class="vendor-badge">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        U.S. Air Force Veteran
-      </div>
-      <div class="vendor-contacts">
-        <a href="tel:2017746901">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.98-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call or Text (201) 774-6901
-        </a>
-        <a href="mailto:john@qualisgc.com">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          john@qualisgc.com
-        </a>
+  <!-- John Yoon -->
+  <div class="vendor-card" data-category="roofing">
+    <div class="vendor-card-top">
+      <img src="john-yoon.jpg" alt="John Yoon" class="vendor-photo">
+      <div>
+        <div class="vendor-cat">Roofing &amp; Construction</div>
+        <div class="vendor-name">John Yoon</div>
+        <div class="vendor-role">Project Manager</div>
+        <div class="vendor-company">Qualis Roofing &amp; Construction</div>
       </div>
     </div>
+    <div class="vendor-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      U.S. Air Force Veteran
+    </div>
+    <div class="vendor-contacts">
+      <a href="tel:2017746901">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.98-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call or Text (201) 774-6901
+      </a>
+      <a href="mailto:john@qualisgc.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        john@qualisgc.com
+      </a>
+    </div>
+  </div>
 
-    <!-- Lacie Lee -->
-    <div class="vendor-card" data-category="lending">
-      <div class="vendor-card-top">
-        <img src="lacie-lee.jpg" alt="Lacie Lee" class="vendor-photo">
-        <div>
-          <div class="vendor-cat">Lending</div>
-          <div class="vendor-name">Lacie Lee</div>
-          <div class="vendor-role">Sr. Loan Officer</div>
-          <div class="vendor-company">Cattell Incorporated</div>
-        </div>
-      </div>
-      <div class="vendor-desc">Senior loan officer specializing in home purchase and refinance solutions for DFW buyers.</div>
-      <div class="vendor-contacts">
-        <a href="tel:8177296247">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.98-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call or Text (817) 729-6247
-        </a>
-        <a href="mailto:loansbylacie@gmail.com">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          loansbylacie@gmail.com
-        </a>
+  <!-- Lacie Lee -->
+  <div class="vendor-card" data-category="lending">
+    <div class="vendor-card-top">
+      <img src="lacie-lee.jpg" alt="Lacie Lee" class="vendor-photo">
+      <div>
+        <div class="vendor-cat">Lending</div>
+        <div class="vendor-name">Lacie Lee</div>
+        <div class="vendor-role">Sr. Loan Officer</div>
+        <div class="vendor-company">Cattell Incorporated</div>
       </div>
     </div>
+    <div class="vendor-contacts">
+      <a href="tel:8177296247">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.98-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call or Text (817) 729-6247
+      </a>
+      <a href="mailto:loansbylacie@gmail.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        loansbylacie@gmail.com
+      </a>
+    </div>
+    <div class="vendor-desc">Senior loan officer specializing in home purchase and refinance solutions for DFW buyers and investors.</div>
+  </div>
 
-    <!-- Vivian Pak -->
-    <div class="vendor-card" data-category="lending">
-      <div class="vendor-card-top">
-        <img src="vivian-pak.jpg" alt="Vivian Pak" class="vendor-photo">
-        <div>
-          <div class="vendor-cat">Lending · 中/英</div>
-          <div class="vendor-name">Vivian Pak</div>
-          <div class="vendor-role">Loan Originator</div>
-          <div class="vendor-company">AML Funding · Team Infinite</div>
-        </div>
-      </div>
-      <div class="vendor-badge">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        English &amp; Mandarin
-      </div>
-      <div class="vendor-desc">Bilingual loan originator in English and Mandarin. Home purchase and refinance solutions for DFW families.</div>
-      <div class="vendor-contacts">
-        <a href="tel:9729717699">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.98-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call or Text (972) 971-7699
-        </a>
-        <a href="mailto:vivian.pak@absoluteml.com">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          vivian.pak@absoluteml.com
-        </a>
+  <!-- Vivian Pak -->
+  <div class="vendor-card" data-category="lending">
+    <div class="vendor-card-top">
+      <img src="vivian-pak.jpg" alt="Vivian Pak" class="vendor-photo">
+      <div>
+        <div class="vendor-cat">Lending · 中/英</div>
+        <div class="vendor-name">Vivian Pak</div>
+        <div class="vendor-role">Loan Originator</div>
+        <div class="vendor-company">AML Funding · Team Infinite</div>
       </div>
     </div>
+    <div class="vendor-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      English &amp; Mandarin
+    </div>
+    <div class="vendor-contacts">
+      <a href="tel:9729717699">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.98-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call or Text (972) 971-7699
+      </a>
+      <a href="mailto:vivian.pak@absoluteml.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        vivian.pak@absoluteml.com
+      </a>
+    </div>
+    <div class="vendor-desc">Bilingual loan originator in English and Mandarin. Home purchase and refinance solutions for DFW families.</div>
+  </div>
 
-    <!-- HoneyDo Plumbing -->
-    <div class="vendor-card" data-category="plumbing">
-      <div class="vendor-card-top">
-        <img src="honeydo-plumbing.jpg" alt="HoneyDo Plumbing" class="vendor-photo">
-        <div>
-          <div class="vendor-cat">Plumbing</div>
-          <div class="vendor-name">HoneyDo Plumbing</div>
-          <div class="vendor-role">Licensed Plumber · DFW</div>
-        </div>
-      </div>
-      <div class="vendor-desc">Reliable plumbing services for DFW homeowners — repairs, installations, and emergency calls.</div>
-      <div class="vendor-contacts">
-        <a href="https://maps.app.goo.gl/honeydo" target="_blank" rel="noopener">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          View on Google Maps
-        </a>
+  <!-- HoneyDo Plumbing -->
+  <div class="vendor-card" data-category="plumbing">
+    <div class="vendor-card-top">
+      <img src="honeydo-plumbing.jpg" alt="HoneyDo Plumbing" class="vendor-photo">
+      <div>
+        <div class="vendor-cat">Plumbing</div>
+        <div class="vendor-name">HoneyDo Plumbing</div>
+        <div class="vendor-role">Licensed Plumber · DFW</div>
       </div>
     </div>
-
-    <!-- Dipson AC -->
-    <div class="vendor-card" data-category="hvac">
-      <div class="vendor-card-top">
-        <img src="dipson-ac.jpg" alt="Dipson AC" class="vendor-photo">
-        <div>
-          <div class="vendor-cat">HVAC</div>
-          <div class="vendor-name">Dipson AC</div>
-          <div class="vendor-role">HVAC Contractor · DFW</div>
-        </div>
-      </div>
-      <div class="vendor-desc">Heating, cooling, and air quality services for North Texas homes. Installations, repairs, and maintenance.</div>
+    <div class="vendor-contacts">
+      <a href="https://maps.app.goo.gl/honeydo" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        View on Google Maps
+      </a>
     </div>
+    <div class="vendor-desc">Reliable plumbing services for DFW homeowners — repairs, installations, and emergency calls.</div>
+  </div>
 
-    <!-- Safe Plug Electric -->
-    <div class="vendor-card" data-category="electrical">
-      <div class="vendor-card-top">
-        <img src="safe-plug-electric.jpg" alt="Safe Plug Electric" class="vendor-photo">
-        <div>
-          <div class="vendor-cat">Electrical</div>
-          <div class="vendor-name">Safe Plug Electric</div>
-          <div class="vendor-role">Licensed Electrician · DFW</div>
-        </div>
-      </div>
-      <div class="vendor-desc">Licensed electrical services — panels, wiring, outlets, EV charger installation, and safety inspections.</div>
-    </div>
-
-    <!-- Ephlora Pest Solutions -->
-    <div class="vendor-card" data-category="pest">
-      <div class="vendor-card-top">
-        <img src="ephlora-pest.jpg" alt="Ephlora Pest Solutions" class="vendor-photo">
-        <div>
-          <div class="vendor-cat">Pest Control</div>
-          <div class="vendor-name">Ephlora Pest Solutions</div>
-          <div class="vendor-role">Pest Control Specialist · DFW</div>
-        </div>
-      </div>
-      <div class="vendor-desc">Effective and eco-friendly pest control treatments for DFW homes and properties.</div>
-    </div>
-
-    <!-- Handy Expert Services -->
-    <div class="vendor-card" data-category="handyman">
-      <div class="vendor-card-top">
-        <img src="handy-expert.jpg" alt="Handy Expert Services" class="vendor-photo">
-        <div>
-          <div class="vendor-cat">Handyman</div>
-          <div class="vendor-name">Handy Expert Services</div>
-          <div class="vendor-role">General Contractor · DFW</div>
-        </div>
-      </div>
-      <div class="vendor-desc">Trusted handyman and general repair services for homeowners and landlords across North Texas.</div>
-      <div class="vendor-contacts">
-        <a href="https://maps.app.goo.gl/4dABa6mLZYWLRDNg7" target="_blank" rel="noopener">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          View on Google Maps
-        </a>
+  <!-- Dipson AC -->
+  <div class="vendor-card" data-category="hvac">
+    <div class="vendor-card-top">
+      <img src="dipson-ac.jpg" alt="Dipson AC" class="vendor-photo">
+      <div>
+        <div class="vendor-cat">HVAC</div>
+        <div class="vendor-name">Dipson AC</div>
+        <div class="vendor-role">HVAC Contractor · DFW</div>
       </div>
     </div>
+    <div class="vendor-desc">Heating, cooling, and air quality services for North Texas homes. Installations, repairs, and maintenance.</div>
+  </div>
 
-    <!-- Sensor Appliance Repair -->
-    <div class="vendor-card" data-category="appliance">
-      <div class="vendor-card-top">
-        <img src="sensor-appliance.jpg" alt="Sensor Appliance Repair" class="vendor-photo">
-        <div>
-          <div class="vendor-cat">Appliance Repair</div>
-          <div class="vendor-name">Sensor Appliance Repair</div>
-          <div class="vendor-role">Appliance Technician · DFW</div>
-        </div>
-      </div>
-      <div class="vendor-desc">Professional appliance repair for washers, dryers, refrigerators, ovens, and more.</div>
-      <div class="vendor-contacts">
-        <a href="https://maps.app.goo.gl/1AxRnWBj8CaGQE428" target="_blank" rel="noopener">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          View on Google Maps
-        </a>
+  <!-- Safe Plug Electric -->
+  <div class="vendor-card" data-category="electrical">
+    <div class="vendor-card-top">
+      <img src="safe-plug-electric.jpg" alt="Safe Plug Electric" class="vendor-photo">
+      <div>
+        <div class="vendor-cat">Electrical</div>
+        <div class="vendor-name">Safe Plug Electric</div>
+        <div class="vendor-role">Licensed Electrician · DFW</div>
       </div>
     </div>
+    <div class="vendor-desc">Licensed electrical services — panels, wiring, outlets, EV charger installation, and safety inspections across DFW.</div>
+  </div>
 
-    <!-- Alice Fu - Notary -->
-    <div class="vendor-card" data-category="notary">
-      <div class="vendor-card-top">
-        <img src="alice-notary.jpg" alt="Alice Fu" class="vendor-photo">
-        <div>
-          <div class="vendor-cat">Notary</div>
-          <div class="vendor-name">Alice Fu</div>
-          <div class="vendor-role">Notary Public · DFW</div>
-        </div>
+  <!-- Ephlora Pest Solutions -->
+  <div class="vendor-card" data-category="pest">
+    <div class="vendor-card-top">
+      <img src="ephlora-pest.jpg" alt="Ephlora Pest Solutions" class="vendor-photo">
+      <div>
+        <div class="vendor-cat">Pest Control</div>
+        <div class="vendor-name">Ephlora Pest Solutions</div>
+        <div class="vendor-role">Pest Control Specialist · DFW</div>
       </div>
-      <div class="vendor-desc">Professional notary services for real estate documents, contracts, and legal paperwork.</div>
     </div>
+    <div class="vendor-desc">Effective and eco-friendly pest control treatments for DFW homes and properties.</div>
+  </div>
 
-  </div><!-- end vendor-list -->
+  <!-- Handy Expert Services -->
+  <div class="vendor-card" data-category="handyman">
+    <div class="vendor-card-top">
+      <img src="handy-expert.jpg" alt="Handy Expert Services" class="vendor-photo">
+      <div>
+        <div class="vendor-cat">Handyman</div>
+        <div class="vendor-name">Handy Expert Services</div>
+        <div class="vendor-role">General Contractor · DFW</div>
+      </div>
+    </div>
+    <div class="vendor-contacts">
+      <a href="https://maps.app.goo.gl/4dABa6mLZYWLRDNg7" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        View on Google Maps
+      </a>
+    </div>
+    <div class="vendor-desc">Trusted handyman and general repair services for homeowners and landlords across North Texas.</div>
+  </div>
+
+  <!-- Sensor Appliance Repair -->
+  <div class="vendor-card" data-category="appliance">
+    <div class="vendor-card-top">
+      <img src="sensor-appliance.jpg" alt="Sensor Appliance Repair" class="vendor-photo">
+      <div>
+        <div class="vendor-cat">Appliance Repair</div>
+        <div class="vendor-name">Sensor Appliance Repair</div>
+        <div class="vendor-role">Appliance Technician · DFW</div>
+      </div>
+    </div>
+    <div class="vendor-contacts">
+      <a href="https://maps.app.goo.gl/1AxRnWBj8CaGQE428" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        View on Google Maps
+      </a>
+    </div>
+    <div class="vendor-desc">Professional appliance repair for washers, dryers, refrigerators, ovens, and more across DFW.</div>
+  </div>
+
+  <!-- Alice Fu -->
+  <div class="vendor-card" data-category="notary">
+    <div class="vendor-card-top">
+      <img src="alice-notary.jpg" alt="Alice Fu" class="vendor-photo">
+      <div>
+        <div class="vendor-cat">Notary Public</div>
+        <div class="vendor-name">Alice Fu</div>
+        <div class="vendor-role">Certified Notary Public</div>
+        <div class="vendor-company">Signatures &amp; Initials Loan Signing Service · Dallas, TX</div>
+      </div>
+    </div>
+    <div class="vendor-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      In-Office · Mobile · RON · Since 2021
+    </div>
+    <div class="vendor-contacts">
+      <a href="tel:9728367304">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.98-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call or Text (972) 836-7304
+      </a>
+      <a href="mailto:signaturesandinitials@yahoo.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        signaturesandinitials@yahoo.com
+      </a>
+    </div>
+    <div class="vendor-desc">Certified Notary Public since 2021, specializing in real estate closings and estate planning signings. Available in-office, mobile, and via Remote Online Notarization (RON). Serving Allen, Frisco, McKinney, Plano, Richardson, and surrounding DFW communities.</div>
+  </div>
+
 </div>
 
 <!-- CTA -->
@@ -411,13 +417,12 @@
     <span style="font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.06em;">Equal Housing Opportunity</span>
   </div>
   <div style="margin-bottom:.5rem;">
-    <a href="IABS-2026.pdf" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:3px;letter-spacing:.02em;">Texas law requires all license holders to provide the Information About Brokerage Services form to prospective clients.</a>
+    <a href="IABS-2026.pdf" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:3px;">Texas law requires all license holders to provide the Information About Brokerage Services form to prospective clients.</a>
   </div>
   <div>&copy; 2026 Axial Realty LLC. All rights reserved. Licensed Real Estate Brokerage &middot; Texas.</div>
   <div style="margin-top:.4rem;">Frisco, TX &middot; Call or Text (469) 980-8298 &middot; <a href="mailto:davidtung@axialrealty.com">davidtung@axialrealty.com</a></div>
 </footer>
 
-<!-- Google Translate -->
 <div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
 <script>
 (function() {
@@ -425,17 +430,10 @@
     new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,zh-TW,zh-CN', autoDisplay: false }, 'google_translate_element');
   };
   var _pendingLang = null, _pollInterval = null;
-  function applyLang(lang) {
-    var sel = document.querySelector('.goog-te-combo');
-    if (!sel) return false;
-    sel.value = lang; sel.dispatchEvent(new Event('change')); return true;
-  }
+  function applyLang(lang) { var sel = document.querySelector('.goog-te-combo'); if (!sel) return false; sel.value = lang; sel.dispatchEvent(new Event('change')); return true; }
   window.setLang = function(lang) {
     document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.toggle('lang-active', b.dataset.lang === lang); });
-    if (!applyLang(lang)) {
-      _pendingLang = lang;
-      if (!_pollInterval) { _pollInterval = setInterval(function() { if (applyLang(_pendingLang)) { clearInterval(_pollInterval); _pollInterval = null; _pendingLang = null; } }, 200); }
-    }
+    if (!applyLang(lang)) { _pendingLang = lang; if (!_pollInterval) { _pollInterval = setInterval(function() { if (applyLang(_pendingLang)) { clearInterval(_pollInterval); _pollInterval = null; _pendingLang = null; } }, 200); } }
     try { localStorage.setItem('axial_lang', lang); } catch(e) {}
   };
   window.addEventListener('load', function() { setTimeout(function() { try { var s = localStorage.getItem('axial_lang'); if (s && s !== 'en') window.setLang(s); } catch(e) {} }, 1200); });
