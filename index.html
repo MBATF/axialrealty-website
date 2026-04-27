@@ -917,8 +917,12 @@
 
 
     @media (max-width: 960px) {
-      .lang-btn { display: none !important; }
       .tenant-btn { font-size: .68rem !important; padding: .35rem .65rem !important; }
+      .nav-right { gap: .4rem !important; }
+      .lang-wrap { gap: 3px !important; }
+    }
+    @media (max-width: 600px) {
+      .lang-btn { display: none !important; }
     }
   
     html, body { overflow-x: hidden; }
@@ -979,8 +983,8 @@
           </ul>
         </div>
       </nav>
-      <div style="display:flex;align-items:center;gap:.75rem;">
-        <div style="display:flex;align-items:center;gap:4px;margin-right:4px;">
+      <div class="nav-right" style="display:flex;align-items:center;gap:.75rem;">
+        <div class="lang-wrap" style="display:flex;align-items:center;gap:4px;margin-right:4px;">
           <button class="lang-btn lang-active" data-lang="en" onclick="setLang('en')" title="English" style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;">EN</button>
           <button class="lang-btn" data-lang="zh-TW" onclick="setLang('zh-TW')" title="Traditional Chinese" style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;">繁</button>
           <button class="lang-btn" data-lang="zh-CN" onclick="setLang('zh-CN')" title="Simplified Chinese" style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;">简</button>
