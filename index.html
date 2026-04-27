@@ -907,23 +907,12 @@
       .hamburger { flex-shrink: 0; }
     }
 
-  
-  .lang-btn.lang-active { background:var(--navy) !important; color:var(--cream) !important; border-color:var(--navy) !important; }
-  .lang-btn:hover:not(.lang-active) { border-color:var(--gold) !important; color:var(--gold) !important; }
-  /* Hide Google Translate top bar */
-  .goog-te-banner-frame, .skiptranslate { display:none !important; }
-  body { top: 0 !important; }
-  .goog-te-gadget { display:none !important; }
-
 
     @media (max-width: 960px) {
       .tenant-btn { font-size: .68rem !important; padding: .35rem .65rem !important; }
-      .nav-right { gap: .4rem !important; }
-      .lang-wrap { gap: 3px !important; }
     }
     @media (max-width: 600px) {
-      .lang-btn { display: none !important; }
-    }
+  }
   
     html, body { overflow-x: hidden; }
     * { box-sizing: border-box; }
@@ -984,11 +973,6 @@
         </div>
       </nav>
       <div class="nav-right" style="display:flex;align-items:center;gap:.75rem;">
-        <div class="lang-wrap" style="display:flex;align-items:center;gap:4px;margin-right:4px;">
-          <button class="lang-btn lang-active" data-lang="en" onclick="setLang('en')" title="English" style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;">EN</button>
-          <button class="lang-btn" data-lang="zh-TW" onclick="setLang('zh-TW')" title="Traditional Chinese" style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;">繁</button>
-          <button class="lang-btn" data-lang="zh-CN" onclick="setLang('zh-CN')" title="Simplified Chinese" style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;">简</button>
-        </div>
         <a href="tenant-portal.html" class="tenant-btn" style="display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:700;letter-spacing:.05em;color:var(--navy);text-decoration:none;padding:.35rem .7rem;border:1.5px solid var(--border);border-radius:9999px;transition:border-color .15s,color .15s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--navy)'">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           <span class="tenant-btn-text">Tenant Login</span>
@@ -1739,39 +1723,11 @@
     }
     return true;
   }
-
-  window.setLang = function(lang) {
-    // Update button active states immediately
-    document.querySelectorAll('.lang-btn').forEach(function(b) {
-      b.classList.toggle('lang-active', b.dataset.lang === lang);
-    });
-    // Try to apply now
-    if (!applyLang(lang)) {
-      // Widget not ready yet — store pending and start polling
-      _pendingLang = lang;
-      if (!_pollInterval) {
-        _pollInterval = setInterval(function() {
-          if (applyLang(_pendingLang)) {
-            clearInterval(_pollInterval);
-            _pollInterval = null;
-            _pendingLang = null;
-          }
-        }, 200);
-      }
-    }
-    // Save preference
-    try { localStorage.setItem('axial_lang', lang); } catch(e) {}
-  };
-
   // Restore saved preference after widget loads
   window.addEventListener('load', function() {
     setTimeout(function() {
       try {
-        var saved = localStorage.getItem('axial_lang');
-        if (saved && saved !== 'en') {
-          window.setLang(saved);
-        }
-      } catch(e) {}
+  } catch(e) {}
     }, 1200);
   });
 
