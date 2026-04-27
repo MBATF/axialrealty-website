@@ -289,5 +289,49 @@
     <div class="footer-copy">© 2026 Axial Realty LLC. All rights reserved. Licensed Real Estate Brokerage · Texas.</div>
     </div>
   </footer>
+<script>
+  (function() {
+    var btn = document.getElementById('hamburger-btn');
+    var drawer = document.getElementById('mobile-drawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('open');
+      drawer.classList.toggle('open');
+      document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+    });
+    drawer.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        btn.classList.remove('open');
+        drawer.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
+</script>
+
+<script>
+(function() {
+  var dd = document.querySelector('.nav-dropdown');
+  var ddBtn = dd && dd.querySelector('.nav-dropdown-btn');
+  if (!dd || !ddBtn) return;
+  ddBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var isOpen = dd.classList.toggle('open');
+    ddBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(e) {
+    if (!dd.contains(e.target)) {
+      dd.classList.remove('open');
+      ddBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  dd.querySelectorAll('.nav-dropdown-menu a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      dd.classList.remove('open');
+      ddBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 </body>
 </html>
