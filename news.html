@@ -470,7 +470,7 @@
     /* ── MOBILE NAV OVERFLOW FIX ── */
     @media (max-width: 960px) {
       /* Shrink logo so it takes less horizontal space */
-      .logo svg, .nav-logo svg { height: 44px !important; }
+      .logo .logo-img, .nav-logo .logo-img, .logo-img { height: 44px !important; }
       /* Tighten nav-inner */
       .nav-inner { gap: .4rem !important; padding-left: .75rem !important; padding-right: .75rem !important; }
       /* Hide desktop nav links & Book a Consultation CTA */
@@ -529,17 +529,7 @@
 <header>
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo" aria-label="Axial Realty LLC home">
-      <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Axial Realty LLC" role="img" height="60">
-        <path d="M14 46 L24 18 L34 46" stroke="#253151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <path d="M17.5 37 L30.5 37" stroke="#253151" stroke-width="2" stroke-linecap="round"/>
-        <line x1="27" y1="18" x2="27" y2="46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
-        <path d="M27 18 Q38 18 38 26 Q38 34 27 34" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <path d="M27 34 L38 46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="52" y1="16" x2="52" y2="44" stroke="#c9a96e" stroke-width="1" opacity="0.4"/>
-        <text x="62" y="35" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#253151">AXIAL</text>
-        <text x="63" y="48" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="5" fill="#c9a96e">REALTY</text>
-        <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
-      </svg>
+      <img src="axial-logo.png" alt="Axial Realty LLC" class="logo-img" style="height:60px;width:auto;display:block;">
     </a>
         <ul class="nav-links">
       <li><a href="index.html">Home</a></li>

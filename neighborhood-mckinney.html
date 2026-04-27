@@ -21,7 +21,7 @@
     /* ── NAV ── */
     header{position:sticky;top:0;z-index:100;background:rgba(253,252,249,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;gap:0.5rem;}
-    .nav-logo svg{height:60px;width:auto;}
+    .nav-logo .logo-img { height: 60px; width: auto; }
     .nav-links{display:flex;list-style:none;gap:0.7rem;}
     .nav-links a{font-size:.65rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);opacity:.7;transition:opacity .15s;}
     .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--navy);}
@@ -43,7 +43,7 @@
     .drawer-close{position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.6);font-size:1.5rem;line-height:1;padding:.5rem;}
     @media(max-width:960px){
       .hamburger{display:flex;}
-      .logo svg,.nav-logo svg{height:44px!important;}
+      .logo .logo-img, .nav-logo .logo-img, .logo-img { height: 44px !important; }
       .nav-inner{gap:.4rem!important;padding-left:.75rem!important;padding-right:.75rem!important;}
       nav,.nav-cta,.btn-gold.nav-cta{display:none!important;}
       header .btn-gold{display:none!important;}
@@ -163,17 +163,7 @@
 <header>
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo" aria-label="Axial Realty LLC home">
-      <svg viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg" height="60">
-        <path d="M14 46 L24 18 L34 46" stroke="#253151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <path d="M17.5 37 L30.5 37" stroke="#253151" stroke-width="2" stroke-linecap="round"/>
-        <line x1="27" y1="18" x2="27" y2="46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
-        <path d="M27 18 Q38 18 38 26 Q38 34 27 34" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <path d="M27 34 L38 46" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="52" y1="16" x2="52" y2="44" stroke="#c9a96e" stroke-width="1" opacity="0.4"/>
-        <text x="62" y="35" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#253151">AXIAL</text>
-        <text x="63" y="48" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="5" fill="#c9a96e">REALTY</text>
-        <line x1="63" y1="38.5" x2="175" y2="38.5" stroke="#c9a96e" stroke-width=".8" opacity="0.5"/>
-      </svg>
+      <img src="axial-logo.png" alt="Axial Realty LLC" class="logo-img" style="height:60px;width:auto;display:block;">
     </a>
     <nav>
           <ul class="nav-links">
