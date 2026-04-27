@@ -21,7 +21,7 @@
     /* ── NAV ── */
     header{position:sticky;top:0;z-index:100;background:rgba(253,252,249,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;gap:0.5rem;}
-    .nav-logo .logo-img { height: 80px; width: auto; }
+    .nav-logo .logo-img { height: 144px; width: auto; }
     .nav-links{display:flex;list-style:none;gap:0.7rem;}
     .nav-links a{font-size:.65rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);opacity:.7;transition:opacity .15s;}
     .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--navy);}
@@ -112,6 +112,8 @@
       .lang-btn { display: none !important; }
       .tenant-btn { font-size: .68rem !important; padding: .35rem .65rem !important; }
     }
+      .footer-logo-wrap { display:flex; justify-content:center; margin-bottom:1.25rem; }
+    .footer-logo-wrap img { height:53px; width:auto; display:block; }
   </style>
   <link rel="canonical" href="https://axialrealty.com/neighborhood-frisco.html">
 
@@ -265,6 +267,11 @@
 
 <!-- ── FOOTER ── -->
 <footer>
+  <div class="footer-logo-wrap">
+    <a href="index.html" aria-label="Axial Realty LLC">
+      <img src="axial-logo-footer.png" alt="Axial Realty LLC" style="height:53px;width:auto;display:block;">
+    </a>
+  </div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="neighborhoods.html">Neighborhoods</a>

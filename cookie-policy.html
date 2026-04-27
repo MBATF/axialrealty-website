@@ -32,12 +32,15 @@
     footer{background:var(--navy-deeper);color:rgba(255,255,255,.45);font-size:.75rem;text-align:center;padding:2rem 1.5rem;line-height:1.9}
     footer a{color:rgba(255,255,255,.5);text-decoration:none}
     footer a:hover{color:var(--gold)}
+      .footer-logo-wrap { display:flex; justify-content:center; margin-bottom:1.25rem; }
+    .footer-logo-wrap img { height:53px; width:auto; display:block; }
+      .logo .logo-img { height: 144px; width: auto; }
   </style>
 </head>
 <body>
 <header>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">AXIAL <span>REALTY</span></a>
+    <a href="index.html" class="logo" aria-label="Axial Realty LLC"><img src="axial-logo.png" alt="Axial Realty LLC" class="logo-img" style="height:144px;width:auto;display:block;"></a>
     <a href="index.html" class="back-link">← Back to Home</a>
   </div>
 </header>
@@ -113,6 +116,11 @@
 </div>
 
 <footer>
+  <div class="footer-logo-wrap">
+    <a href="index.html" aria-label="Axial Realty LLC">
+      <img src="axial-logo-footer.png" alt="Axial Realty LLC" style="height:53px;width:auto;display:block;">
+    </a>
+  </div>
   <div>&copy; 2026 Axial Realty LLC. All rights reserved.</div>
   <div style="margin-top:.4rem;">
     <a href="privacy-policy.html">Privacy Policy</a> &middot;
