@@ -54,8 +54,8 @@
     .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
 
     /* ── NAV ── */
-    .site-header { position: sticky; top: 0; z-index: 100; background: var(--cream-light); border-bottom: 1px solid var(--border); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: .75rem 1rem; gap: .5rem; max-width: 100%; overflow: hidden; }
+    
+    
     .logo svg { height: 60px; width: auto; display: block; }
     nav { display: flex; align-items: center; gap: 0.65rem; flex-wrap: nowrap; }
     .nav-dropdown { position: relative; }
@@ -76,7 +76,7 @@
     .btn-outline { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
     .btn-outline:hover { background: var(--navy); color: #fff; }
     .nav-cta { font-size: .8rem; padding: .5rem 1.1rem; }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: .4rem; flex-direction: column; gap: 5px; }
+    
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .3s; }
 
     /* ── HERO ── */
@@ -179,18 +179,18 @@
     .form-success { display: none; text-align: center; padding: var(--space-4); color: var(--navy); font-weight: 600; }
 
     /* ── FOOTER ── */
-    .site-footer { background: var(--navy-deep); color: rgba(255,255,255,.5); padding: var(--space-6) 0 var(--space-4); }
-    .footer-inner { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; justify-content: space-between; margin-bottom: var(--space-4); padding-bottom: var(--space-4); border-bottom: 1px solid rgba(255,255,255,.08); }
-    .footer-logo .logo-img { height: 53px; width: auto; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+    
+    
+    
+    
     .footer-links a { color: rgba(255,255,255,.5); text-decoration: none; font-size: var(--text-sm); transition: color .15s; }
     .footer-links a:hover { color: var(--gold); }
-    .footer-copy { text-align: center; font-size: var(--text-xs); letter-spacing: .04em; }
+    
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav, .nav-cta { display: none; }
-      .hamburger { display: flex; }
+      
       .lang-btns { display: none !important; }
       .why-grid, .contact-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
@@ -218,6 +218,86 @@
     * { box-sizing: border-box; }
     img, svg, video { max-width: 100%; height: auto; }
     .contact-detail, .form-detail { word-break: break-word; }
+  
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(18px) saturate(1.3);
+      -webkit-backdrop-filter: blur(18px) saturate(1.3);
+      background: rgba(248,245,239,.92);
+      border-bottom: 1px solid rgba(201,169,110,.18);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .7rem 0; gap: var(--space-3);
+    }
+    .logo { display: flex; align-items: center; gap: 0; flex-shrink: 0; }
+    .logo .logo-img { height: 80px; width: auto; }
+    nav { display: flex; align-items: center; gap: 0.65rem; flex-wrap: nowrap; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-btn {
+      background: none; border: none; cursor: pointer; font: inherit;
+      font-size: var(--text-sm); font-weight: 600; letter-spacing: .04em;
+      color: var(--navy-dark); display: flex; align-items: center; gap: .25rem; padding: .25rem 0;
+    }
+    .nav-dropdown-btn:hover { opacity: .8; }
+    .nav-dropdown-menu {
+      display: none; position: absolute; top: calc(100% + .5rem); left: 0;
+      background: var(--cream); border: 1px solid rgba(201,169,110,.3);
+      border-radius: 8px; min-width: 180px; box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      padding: .4rem 0; z-index: 100; list-style: none; margin: 0;
+    }
+    .nav-dropdown-menu li a { display: block; padding: .5rem 1rem; font-size: var(--text-sm); font-weight: 500; color: var(--navy-dark); text-decoration: none; }
+    .nav-dropdown-menu li a:hover { background: var(--cream); color: var(--navy); }
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown.open .nav-dropdown-btn { opacity: .75; }
+    nav a { font-size: var(--text-sm); font-weight: 600; letter-spacing: .04em; color: var(--navy-dark); text-decoration: none; }
+    nav a:hover { color: var(--navy); }
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 40px; height: 40px; background: none; border: none;
+      cursor: pointer; padding: 4px; border-radius: 8px; flex-shrink: 0; z-index: 200;
+    }
+    .hamburger span { display: block; height: 2px; background: var(--navy, #253151); border-radius: 2px; transition: transform .25s, opacity .25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 960px) { .hamburger { display: flex; } }
+    @media (max-width: 960px) {
+      .logo .logo-img, .nav-logo .logo-img, .logo-img { height: 56px !important; }
+      .nav-inner { gap: .4rem !important; padding-left: .75rem !important; padding-right: .75rem !important; }
+      nav, .nav-cta, .btn-gold.nav-cta { display: none !important; }
+      header .btn-gold { display: none !important; }
+      .tenant-btn-text { display: none !important; }
+      .tenant-btn { padding: .4rem .5rem !important; gap: 0 !important; }
+      .hamburger { flex-shrink: 0; }
+    }
+    .site-footer {
+      background: var(--navy-deep); color: rgba(255,255,255,.5);
+      padding: var(--space-10) 0 var(--space-8);
+      font-size: var(--text-sm);
+    }
+    .footer-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: var(--space-6); flex-wrap: wrap;
+    }
+    .footer-logo .logo-img { height: 53px; width: auto; }
+    .footer-links { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+    .footer-links a {
+      font-size: var(--text-xs); font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.4); transition: color .15s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy {
+      margin-top: var(--space-6); padding-top: var(--space-6);
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: rgba(255,255,255,.28); font-size: var(--text-xs);
+    }
+    @media (max-width: 960px) {
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-links { gap: var(--space-3); }
+      .footer-links a { font-size: .65rem; }
+    }
+
   </style>
   <script src="https://www.google.com/recaptcha/api.js?render=6Lc7-8ssAAAAAPdr1Ccw2ijtgD8drJsIhYhqlNDh" async defer></script>
 </head>
@@ -225,21 +305,28 @@
 
   <!-- ── HEADER ── -->
   <header class="site-header">
-    <div class="nav-inner">
-      <a class="logo" href="index.html" aria-label="Axial Realty LLC home">
+    <div class="container nav-inner">
+
+      <!-- ── LOGO ── -->
+      <a class="logo" href="#" aria-label="Axial Realty LLC home">
         <img src="axial-logo.png" alt="Axial Realty LLC" class="logo-img" style="height:80px;width:auto;display:block;">
       </a>
+
       <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#reviews">Reviews</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#property-management">Property Mgmt</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+              <a href="#sold-map" class="nav-link">Sold Map</a>
+        <a href="#market">Areas</a>
+        <a href="#contact">Contact</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">More <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
           <ul class="nav-dropdown-menu">
             <li><a href="neighborhoods.html">Neighborhoods</a></li>
             <li><a href="news.html">Market News</a></li>
+            <li><a href="property-owners.html">For Property Owners</a></li>
+            <li><a href="join.html">Join Our Team</a></li>
             <li><a href="cma.html">Free CMA</a></li>
             <li><a href="apply.html">Apply Now</a></li>
             <li><a href="vendors.html">Vendors</a></li>
@@ -247,17 +334,17 @@
         </div>
       </nav>
       <div style="display:flex;align-items:center;gap:.75rem;">
-        <div class="lang-btns" style="display:flex;align-items:center;gap:4px;">
-          <button style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);">EN</button>
-          <button style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);">繁</button>
-          <button style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);">简</button>
+        <div style="display:flex;align-items:center;gap:4px;margin-right:4px;">
+          <button class="lang-btn lang-active" data-lang="en" onclick="setLang('en')" title="English" style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;">EN</button>
+          <button class="lang-btn" data-lang="zh-TW" onclick="setLang('zh-TW')" title="Traditional Chinese" style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;">繁</button>
+          <button class="lang-btn" data-lang="zh-CN" onclick="setLang('zh-CN')" title="Simplified Chinese" style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.04em;background:transparent;border:1.5px solid var(--border);border-radius:9999px;padding:3px 9px;cursor:pointer;color:var(--navy);transition:all .15s;white-space:nowrap;">简</button>
         </div>
-        <a href="tenant-portal.html" style="display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:700;letter-spacing:.05em;color:var(--navy);text-decoration:none;padding:.35rem .7rem;border:1.5px solid var(--border);border-radius:9999px;transition:border-color .15s,color .15s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--navy)'">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Tenant Login
+        <a href="tenant-portal.html" class="tenant-btn" style="display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:700;letter-spacing:.05em;color:var(--navy);text-decoration:none;padding:.35rem .7rem;border:1.5px solid var(--border);border-radius:9999px;transition:border-color .15s,color .15s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--navy)'">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span class="tenant-btn-text">Tenant Login</span>
         </a>
-        <a class="btn btn-gold nav-cta" href="#contact-form">Get a Free Consultation</a>
-        <button id="hamburger-btn" class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a class="btn btn-gold nav-cta" href="#contact">Book a Consultation</a>
+        <button id="hamburger-btn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
@@ -641,32 +728,54 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-        <a class="footer-logo" href="index.html" aria-label="Axial Realty LLC">
+        <a class="footer-logo" href="#" aria-label="Axial Realty LLC">
           <img src="axial-logo-footer.png" alt="Axial Realty LLC" class="logo-img" style="height:53px;width:auto;display:block;">
         </a>
         <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="index.html#services">Services</a>
-          <a href="index.html#about">About</a>
-          <a href="index.html#reviews">Reviews</a>
+          <a href="#services">Services</a>
+          <a href="#property-management">Property Mgmt</a>
+          <a href="#about">About</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#market">Areas</a>
+          <a href="#contact">Contact</a>
           <a href="news.html" style="color:var(--gold);font-weight:600;">Market News</a>
           <a href="cma.html" style="color:var(--gold);font-weight:600;">Free CMA</a>
+          <a href="property-owners.html" style="color:var(--gold);font-weight:600;">For Property Owners</a>
+          <a href="join.html" style="color:var(--gold);font-weight:600;">Join Our Team</a>
           <a href="tenant-portal.html">Tenant Login</a>
         </div>
-        <div style="color:rgba(255,255,255,.35);font-size:var(--text-xs);letter-spacing:.06em;">Frisco, TX · North Texas</div>
+        <div style="color:rgba(255,255,255,.35); font-size:var(--text-xs); letter-spacing:.06em;">Frisco, TX · North Texas</div>
+      </div>
+      <!-- Variation 2: SVG flags in footer -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:.75rem;padding:var(--space-4) 0 var(--space-2);border-top:1px solid rgba(255,255,255,.08);margin-top:var(--space-4);">
+        <!-- US Flag SVG -->
+        <span title="United States of America" style="display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.06em;">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="16" viewBox="0 0 7410 3900" aria-label="United States Flag" role="img" style="border-radius:2px;box-shadow:0 1px 4px rgba(0,0,0,.4);flex-shrink:0;"><path d="M0,0h7410v3900H0" fill="#b31942"/><path d="M0,300H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#FFF" stroke-width="300"/><path d="M0,0h2964v2100H0" fill="#0a3161"/><g fill="#FFF"><g id="f1"><g id="f2"><g id="f3"><g id="f4"><path id="f5" d="M247,90 317.53,307.08 132.87,172.92H361.13L176.47,307.08z"/><use href="#f5" y="420"/><use href="#f5" y="840"/><use href="#f5" y="1260"/></g><use href="#f5" y="1680"/></g><use href="#f4" x="247" y="210"/></g><use href="#f2" x="494"/></g><use href="#f1" x="988"/><use href="#f2" x="1976"/><use href="#f3" x="2470"/></g></svg>
+          <span>United States</span>
+        </span>
+        <span style="color:rgba(255,255,255,.15);">·</span>
+        <!-- Equal Housing Opportunity -->
+        <span title="Equal Housing Opportunity" style="display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.06em;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" width="24" height="26" aria-label="Equal Housing Opportunity" role="img">
+            <!-- House outline -->
+            <polygon points="50,5 95,45 85,45 85,105 15,105 15,45 5,45" fill="white" stroke="white" stroke-width="2"/>
+            <!-- Door -->
+            <rect x="38" y="72" width="24" height="33" fill="#1b2540"/>
+            <!-- EHO bars -->
+            <rect x="22" y="55" width="56" height="6" fill="#1b2540"/>
+            <rect x="22" y="65" width="40" height="6" fill="#1b2540"/>
+          </svg>
+          <span>Equal Housing</span>
+        </span>
+        <span style="color:rgba(255,255,255,.15);">·</span>
+        <!-- Texas Flag SVG -->
+        <span title="State of Texas" style="display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.06em;">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="16" viewBox="0 0 900 600" aria-label="Texas State Flag" role="img" style="border-radius:2px;box-shadow:0 1px 4px rgba(0,0,0,.4);flex-shrink:0;"><path d="M0 0h900v600H0z" fill="#bf0a30"/><path d="M0 0h900v300H0z" fill="#FFF"/><path d="M0 0h300v600H0z" fill="#00205B"/><g fill="#FFF" transform="translate(150 300)"><g id="ft1"><path id="ft2" d="M0-112.5V0h50" transform="rotate(18 0 -112.5)"/><use href="#ft2" transform="scale(-1 1)"/></g><use href="#ft1" transform="rotate(72)"/><use href="#ft1" transform="rotate(144)"/><use href="#ft1" transform="rotate(216)"/><use href="#ft1" transform="rotate(288)"/></g></svg>
+          <span>Texas</span>
+        </span>
       </div>
       <div style="text-align:center;margin-bottom:.6rem;">
-        <a href="IABS-2026.pdf" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:3px;letter-spacing:.02em;">Texas law requires all license holders to provide the Information About Brokerage Services form to prospective clients.</a>
-      </div>
-            <div style="display:flex;align-items:center;gap:1rem;justify-content:center;margin-bottom:.75rem;flex-wrap:wrap;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" width="22" height="24" aria-label="Equal Housing Opportunity" role="img">
-          <polygon points="50,5 95,45 85,45 85,105 15,105 15,45 5,45" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-          <rect x="38" y="72" width="24" height="33" fill="var(--navy-deep)"/>
-          <rect x="22" y="55" width="56" height="6" fill="var(--navy-deep)"/>
-          <rect x="22" y="65" width="40" height="6" fill="var(--navy-deep)"/>
-          <text x="50" y="50" text-anchor="middle" font-size="18" fill="var(--navy-deep)" font-weight="bold">&#9166;</text>
-        </svg>
-        <span style="font-size:.72rem;color:rgba(255,255,255,.4);">Equal Housing Opportunity</span>
+        <a href="IABS-2026.pdf" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:underline;text-underline-offset:3px;letter-spacing:.02em;transition:color .15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Texas law requires all license holders to provide the Information About Brokerage Services form to prospective clients.</a>
       </div>
       <div style="text-align:center;margin-bottom:.5rem;font-size:.72rem;"><a href="privacy-policy.html" style="color:rgba(255,255,255,.5);text-decoration:none;letter-spacing:.03em;transition:color .15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Privacy Policy</a><span style="color:rgba(255,255,255,.2);margin:0 .5rem;">·</span><a href="terms.html" style="color:rgba(255,255,255,.5);text-decoration:none;letter-spacing:.03em;transition:color .15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Terms of Service</a><span style="color:rgba(255,255,255,.2);margin:0 .5rem;">·</span><a href="cookie-policy.html" style="color:rgba(255,255,255,.5);text-decoration:none;letter-spacing:.03em;transition:color .15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Cookie Policy</a></div>
     <div class="footer-copy">© 2026 Axial Realty LLC. All rights reserved. Licensed Real Estate Brokerage · Texas.</div>
