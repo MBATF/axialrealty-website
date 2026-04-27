@@ -116,6 +116,27 @@
   </style>
 </head>
 <body>
+<div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="drawer-close" onclick="document.getElementById('mobile-drawer').classList.remove('open');document.getElementById('hamburger-btn').classList.remove('open');document.body.style.overflow='';" aria-label="Close menu">&#10005;</button>
+  <a href="#services">Services</a>
+  <a href="#property-management">Property Mgmt</a>
+  <a href="#about">About</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#sold-map">Sold Map</a>
+  <a href="#market">Areas</a>
+  <a href="#contact">Contact</a>
+  <a href="neighborhoods.html" class="gold">Neighborhoods</a>
+  <a href="news.html" class="gold">Market News</a>
+  <a href="cma.html" class="gold">Free CMA</a>
+  <a href="vendors.html" class="gold">Vendors</a>
+  <a href="tenant-portal.html">Tenant Login</a>
+  <a href="#contact" class="drawer-cta">Book a Consultation</a>
+</div>
+
+  <!-- ══════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+
 <header class="site-header">
     <div class="container nav-inner">
 
@@ -313,6 +334,31 @@
     });
   });
 })();
+</script>
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--navy-dark,#1b2540);color:rgba(255,255,255,.85);font-family:'Inter',sans-serif;font-size:.8rem;padding:.9rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:0 -2px 16px rgba(0,0,0,.18);">
+  <span>We use cookies to improve your experience. By using this site you agree to our <a href="cookie-policy.html" style="color:#c9a96e;text-decoration:underline;">Cookie Policy</a> and <a href="privacy-policy.html" style="color:#c9a96e;text-decoration:underline;">Privacy Policy</a>.</span>
+  <div style="display:flex;gap:.6rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="background:#c9a96e;color:#fff;border:none;border-radius:6px;padding:.45rem 1.1rem;font-size:.78rem;font-weight:700;cursor:pointer;letter-spacing:.04em;">Accept</button>
+    <button onclick="declineCookies()" style="background:transparent;color:rgba(255,255,255,.55);border:1.5px solid rgba(255,255,255,.2);border-radius:6px;padding:.45rem 1rem;font-size:.78rem;cursor:pointer;">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    if (!localStorage.getItem('axial_cookie_consent')) {
+      var b = document.getElementById('cookie-banner');
+      if (b) b.style.display = 'flex';
+    }
+  } catch(e) {}
+})();
+function acceptCookies() {
+  try { localStorage.setItem('axial_cookie_consent','accepted'); } catch(e) {}
+  var b = document.getElementById('cookie-banner'); if(b) b.style.display='none';
+}
+function declineCookies() {
+  try { localStorage.setItem('axial_cookie_consent','declined'); } catch(e) {}
+  var b = document.getElementById('cookie-banner'); if(b) b.style.display='none';
+}
 </script>
 </body>
 </html>

@@ -547,5 +547,33 @@ function declineCookies() {
   var b = document.getElementById('cookie-banner'); if(b) b.style.display='none';
 }
 </script>
+
+<!-- More ▾ dropdown toggle -->
+<script>
+(function() {
+  var dd = document.querySelector('.nav-dropdown');
+  var ddBtn = dd && dd.querySelector('.nav-dropdown-btn');
+  if (!dd || !ddBtn) return;
+  ddBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var isOpen = dd.classList.toggle('open');
+    ddBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  // Close when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!dd.contains(e.target)) {
+      dd.classList.remove('open');
+      ddBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  // Close when a menu item is clicked
+  dd.querySelectorAll('.nav-dropdown-menu a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      dd.classList.remove('open');
+      ddBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 </body>
 </html>
