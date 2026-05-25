@@ -4,129 +4,125 @@
   <!-- Core pages -->
   <url>
     <loc>https://axialrealty.com/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhoods.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhoods</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/news.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/news</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/cma.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/cma</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/tenant-portal.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/tenant-portal</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Neighborhood guides -->
   <url>
-    <loc>https://axialrealty.com/neighborhood-frisco.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-frisco</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-plano.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-plano</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-allen.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-allen</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-mckinney.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-mckinney</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-prosper.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-prosper</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-celina.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-celina</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-melissa.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-melissa</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-anna.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-anna</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-lewisville.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-lewisville</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-flower-mound.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-flower-mound</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-coppell.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-coppell</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/neighborhood-richardson.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://axialrealty.com/neighborhood-richardson</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://axialrealty.com/vendors.html</loc>
+    <loc>https://axialrealty.com/vendors</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://axialrealty.com/apply.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://axialrealty.com/property-owners.html</loc>
-    <lastmod>2026-04-26</lastmod>
+    <loc>https://axialrealty.com/property-owners</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://axialrealty.com/join.html</loc>
-    <lastmod>2026-04-26</lastmod>
+    <loc>https://axialrealty.com/join</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
