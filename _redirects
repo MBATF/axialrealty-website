@@ -1,0 +1,41 @@
+# Cloudflare Pages _redirects
+# This site is deployed on Cloudflare Pages (server: cloudflare, cf-cache-status
+# in response headers, _headers file is honored but netlify.toml is not).
+#
+# Pages serves "pretty URLs" by 307-redirecting /foo.html -> /foo. We override
+# that with explicit 301s so search engines consolidate link equity to the
+# canonical extensionless URL. The trailing "!" forces our rule to win over
+# Pages' built-in 307.
+#
+# Reference: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Legacy .html URLs -> extensionless canonical (301, forced)
+/index.html             /                          301!
+/apply.html             /apply                     301!
+/cma.html               /cma                       301!
+/cma-success.html       /cma-success               301!
+/cookie-policy.html     /cookie-policy             301!
+/join.html              /join                      301!
+/news.html              /news                      301!
+/neighborhoods.html     /neighborhoods             301!
+/neighborhood-allen.html         /neighborhood-allen          301!
+/neighborhood-anna.html          /neighborhood-anna           301!
+/neighborhood-celina.html        /neighborhood-celina         301!
+/neighborhood-coppell.html       /neighborhood-coppell        301!
+/neighborhood-flower-mound.html  /neighborhood-flower-mound   301!
+/neighborhood-frisco.html        /neighborhood-frisco         301!
+/neighborhood-lewisville.html    /neighborhood-lewisville     301!
+/neighborhood-mckinney.html      /neighborhood-mckinney       301!
+/neighborhood-melissa.html       /neighborhood-melissa        301!
+/neighborhood-plano.html         /neighborhood-plano          301!
+/neighborhood-prosper.html       /neighborhood-prosper        301!
+/neighborhood-richardson.html    /neighborhood-richardson     301!
+/privacy-policy.html    /privacy-policy            301!
+/property-owners.html   /property-owners           301!
+/tenant-portal.html     /tenant-portal             301!
+/terms.html             /terms                     301!
+/vendors.html           /vendors                   301!
+
+# Lease application proxy (preserves the Netlify Functions endpoint pattern used
+# by the form). If functions are not yet deployed on Pages, this is a no-op.
+/api/lease-application  /.netlify/functions/lease-application  200

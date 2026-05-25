@@ -1,3 +1,9 @@
+# NOTE: Production deployment is Cloudflare Pages, not Netlify.
+# Cloudflare Pages does NOT read netlify.toml. Active redirect rules live in
+# the _redirects file at the repo root, which Cloudflare Pages honors.
+# This file is retained only in case the Netlify Functions endpoint
+# (api/lease-application) is exercised in a separate Netlify preview build.
+
 [build]
   functions = "netlify/functions"
 
