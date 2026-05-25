@@ -1,6 +1,27 @@
 [build]
   functions = "netlify/functions"
 
+# Canonical host: redirect www to apex (301)
+[[redirects]]
+  from = "https://www.axialrealty.com/*"
+  to = "https://axialrealty.com/:splat"
+  status = 301
+  force = true
+
+# Legacy .html URLs → extensionless canonical (301)
+# Permanent redirects consolidate link equity to the canonical form.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/api/lease-application"
   to = "/.netlify/functions/lease-application"
@@ -11,3 +32,16 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
+
+# Cache manifest and llms.txt briefly so updates propagate
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600"

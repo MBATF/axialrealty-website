@@ -1,0 +1,24 @@
+{
+  "name": "Axial Realty LLC",
+  "short_name": "Axial Realty",
+  "description": "Boutique DFW real estate brokerage and property management — David Tung, Broker/Owner.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#f8f5ef",
+  "theme_color": "#141c32",
+  "icons": [
+    {
+      "src": "/axial-logo-transparent.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/axial-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
