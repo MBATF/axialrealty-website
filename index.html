@@ -579,8 +579,11 @@
     }
     .team-section .eyebrow { color: var(--gold); margin-bottom: var(--space-6); }
     .team-cards {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      display: grid; grid-template-columns: repeat(2, 1fr);
       gap: var(--space-6);
+    }
+    @media (max-width: 960px) {
+      .team-cards { grid-template-columns: 1fr; }
     }
     .agent-card {
       background: rgba(255,255,255,.05);
@@ -622,7 +625,6 @@
     @media (max-width: 700px) {
       .cred-grid { grid-template-columns: 1fr; }
       .broker-award-strip { flex-wrap: wrap; gap: var(--space-3); }
-      .team-cards { grid-template-columns: 1fr; }
     }
 
     /* ══════════════════════════════════════
