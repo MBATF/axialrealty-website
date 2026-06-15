@@ -1,0 +1,8 @@
+name = "axialrealty-website"
+main = "worker.js"
+compatibility_date = "2026-05-25"
+compatibility_flags = ["nodejs_compat"]
+account_id = "d9a1be196ab01ad92be1826fd36a7b67"
+
+[assets]
+directory = "."
