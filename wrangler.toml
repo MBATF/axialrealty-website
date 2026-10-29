@@ -6,3 +6,4 @@ account_id = "d9a1be196ab01ad92be1826fd36a7b67"
 
 [assets]
 directory = "."
+not_found_handling = "404-page"
