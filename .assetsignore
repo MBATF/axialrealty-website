@@ -1,0 +1,9 @@
+.git
+.wrangler
+.gitignore
+.assetsignore
+wrangler.toml
+worker.js
+DEPLOYMENT.md
+README.md
+node_modules
